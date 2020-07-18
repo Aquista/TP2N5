@@ -10,10 +10,13 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 
 ## Grupo 5
 
-* **Integrante 1** - [integrante1](https://github.com/Aquista)
-* **Integrante 2** - [integrante2](https://github.com/gonzalogordyn)
-* **Integrante 3** - [integrante3](https://github.com/fedetorcini)
-* **Integrante 4** - [integrante4](https://github.com/federicoburman)
+* **Integrante 1** - [Kailásh Aquista](https://github.com/Aquista)
+* **Integrante 2** - [Federico Burman](https://github.com/federicoburman)
+* **Integrante 3** - [Federico Torcini](https://github.com/fedetorcini)
+* **Integrante 4** - [Gonzalo Gordyn Biello](https://github.com/gonzalogordyn)
+* **Integrante 5** - [Kevin Mendoza](https://github.com/k3v1nnnn)
+
+
 
 Corrector: **Diego Sanchez**
 
