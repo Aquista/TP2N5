@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JugadorTest {
 
     @Test
-    public void creoUnJugadorYLeSumoUnPunto() {
-        Jugador j1 = new Jugador();
+    public void test01creoUnJugadorYLeSumoUnPunto() {
+        Jugador primerJugador = new Jugador();
         int cantidadASumar = 1;
-        j1.sumarPuntos(cantidadASumar);
+        primerJugador.sumarPuntos(cantidadASumar);
 
-        assertEquals(j1.getPuntos(), cantidadASumar);
+        assertEquals(cantidadASumar,primerJugador.misPuntos());
     }
 }

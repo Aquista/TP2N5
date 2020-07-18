@@ -1,12 +1,14 @@
 package edu.fiuba.algo3.modelo;
 
 public class Jugador {
-    int puntos = 0;
+    private int puntos = 0;
 
     public void sumarPuntos(int puntosASumar) {
+
         puntos += puntosASumar;
     }
-    public int getPuntos() {
+    public int misPuntos() {
+
         return puntos;
     }
 }
