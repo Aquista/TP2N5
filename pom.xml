@@ -10,7 +10,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <junit.jupiter.version>5.4.0</junit.jupiter.version>
         <mockito-mockito-core-version>3.3.0</mockito-mockito-core-version>
-        <maven-surefire-version>${maven-surefire-version}</maven-surefire-version>
+        <maven-surefire-version>3.0.0-M3</maven-surefire-version>
     </properties>
     <dependencies>
         <dependency>
@@ -52,7 +52,7 @@
             </plugin><plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>${maven-surefire-version}</version>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
