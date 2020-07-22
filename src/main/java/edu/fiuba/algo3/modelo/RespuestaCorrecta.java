@@ -1,14 +1,13 @@
 package edu.fiuba.algo3.modelo;
 
 public class RespuestaCorrecta implements IRespuesta{
-    private boolean valor;
+    String texto;
 
-    public RespuestaCorrecta(boolean valor) {
-
-        this.valor = valor;
+    public RespuestaCorrecta(String texto) {
+        this.texto = texto;
     }
-    public void evaluar(Jugador jugador, int puntos) {
 
-        jugador.sumarPuntos(puntos);
+    public void evaluar(Marcador marcador) {
+        marcador.sumarRespuestasCorrectas();
     }
 }
