@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2.svg?branch=master)](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2)
+[![Build Status](https://travis-ci.com/Aquista/TP2N5.svg?branch=master)](https://travis-ci.com/Aquista/TP2N5)
 
 
 [![codecov](https://codecov.io/gh/Aquista/TP2N5/branch/master/graph/badge.svg)](https://codecov.io/gh/Aquista/TP2N5)
