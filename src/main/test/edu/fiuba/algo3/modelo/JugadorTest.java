@@ -9,12 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JugadorTest {
 
     @Test
-    public void test01CreoUnJugadorYLeSumo1Punto() {
+    public void test01JugadorNuevoTiene0Puntos() {
         Jugador primerJugador = new Jugador();
-        int puntos = 1;
-        primerJugador.actualizarPuntaje(puntos);
-
-        assertEquals(puntos, primerJugador.getPuntaje());
+        assertEquals(0,primerJugador.getPuntaje());
     }
     @Test
     public void test02CreoUnJugadorYLeSumo3Puntos() {
