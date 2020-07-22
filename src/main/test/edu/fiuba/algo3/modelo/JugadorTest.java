@@ -9,23 +9,45 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JugadorTest {
 
     @Test
-    public void test01CreoUnJugadorYLeSumoUnPunto() {
+    public void test01CreoUnJugadorYLeSumo1Punto() {
         Jugador primerJugador = new Jugador();
-        int cantidadASumar = 1;
-        primerJugador.actualizarPuntaje(cantidadASumar);
+        int puntos = 1;
+        primerJugador.actualizarPuntaje(puntos);
 
-        assertEquals(cantidadASumar,primerJugador.getPuntaje());
+        assertEquals(puntos, primerJugador.getPuntaje());
     }
     @Test
-    public void test02CreoUnJugadorYLeSumoTresPuntos() {
+    public void test02CreoUnJugadorYLeSumo3Puntos() {
         Jugador primerJugador = new Jugador();
-        int cantidadASumar = 3;
-        primerJugador.actualizarPuntaje(cantidadASumar);
+        int puntos = 3;
+        primerJugador.actualizarPuntaje(puntos);
 
-        assertEquals(cantidadASumar,primerJugador.getPuntaje());
+        assertEquals(puntos, primerJugador.getPuntaje());
     }
     @Test
-    public void test03CreoUnJugadorCon1RespuestaCorrectaYSeEvalua() {
+    public void test03AUnJugadorCon0PuntosLeResto1PuntoYSigueTeniendo0Puntos() {
+        Jugador primerJugador = new Jugador();
+        int puntos = -1;
+        int puntosEsperados = 0;
+        primerJugador.actualizarPuntaje(puntos);
+
+        assertEquals(puntosEsperados, primerJugador.getPuntaje());
+    }
+    @Test
+    public void test04AUnJugadorCon6PuntosLeResto4PuntosYTiene2Puntos() {
+        Jugador primerJugador = new Jugador();
+        int puntosIniciales = 6;
+        int puntosARestar = -4;
+        int puntosEsperados = 2;
+        primerJugador.actualizarPuntaje(puntosIniciales);
+        primerJugador.actualizarPuntaje(puntosARestar);
+
+
+        assertEquals(puntosEsperados, primerJugador.getPuntaje());
+    }
+
+    @Test
+    public void test05CreoUnJugadorCon1RespuestaCorrectaYSeEvalua() {
         int cantidadRespuestasCorrectas = 1;
         Jugador jugador = new Jugador();
         Marcador marcador = new Marcador(jugador);
@@ -39,7 +61,7 @@ public class JugadorTest {
         assertEquals(marcador.getRespuestasCorrectas(), cantidadRespuestasCorrectas);
     }
     @Test
-    public void test04CreoUnJugadorCon1RespuestaIncorrectaYSeEvalua() {
+    public void test06CreoUnJugadorCon1RespuestaIncorrectaYSeEvalua() {
         int cantidadRespuestasIncorrectas = 1;
         Jugador jugador = new Jugador();
         Marcador marcador = new Marcador(jugador);
@@ -52,5 +74,6 @@ public class JugadorTest {
 
         assertEquals(marcador.getRespuestasIncorrectas(), cantidadRespuestasIncorrectas);
     }
+
 
 }

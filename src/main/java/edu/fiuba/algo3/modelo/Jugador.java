@@ -8,6 +8,9 @@ public class Jugador {
 
     public void actualizarPuntaje(int puntos) {
         puntaje += puntos;
+        if(puntaje < 0){
+            puntaje = 0;
+        }
     }
     public int getPuntaje() {
         return puntaje;

@@ -19,8 +19,10 @@ public class PreguntaVF implements IPregunta{
             jugador.evaluarRespuestas(marcador);
             marcadores.add(marcador);
         }
+
         actualizarPuntajes(marcadores);
     }
+
     private void actualizarPuntajes(ArrayList<Marcador> marcadores) {
         Jugador jugadorActual;
 
