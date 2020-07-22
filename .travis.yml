@@ -1,3 +1,3 @@
 language: java
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t 76a1f193-1dd6-47b3-80b9-778bc94440be
