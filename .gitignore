@@ -12,3 +12,4 @@ buildNumber.properties
 .iml
 .gradle/
 ${project.build.directory}/
+nb-configuration.xml
