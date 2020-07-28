@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PreguntaVFTest {
 
     @Test
-    public void test01CreoUnaPreguntaYEvaluo1JugadorCon1RespuestaCorrecta() {
+    public void test01CreoUnaPreguntaClasicaYEvaluo1JugadorCon1RespuestaCorrecta() {
         int puntajeEsperado = 1;
 
         RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("true");
@@ -32,7 +32,7 @@ public class PreguntaVFTest {
     }
 
     @Test
-    public void test02CreoUnaPreguntaYEvaluo2Jugadores() {
+    public void test02CreoUnaPreguntaClasicaYEvaluo2Jugadores() {
 
         RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("true");
         RespuestaIncorrecta respuestaIncorrecta = new RespuestaIncorrecta("false");
@@ -59,5 +59,65 @@ public class PreguntaVFTest {
 
         assertEquals(1,jugador1.getPuntaje());
         assertEquals(0,jugador2.getPuntaje());
+    }
+    
+    @Test
+    public void test03CreoUnaPreguntaConPenalidadYEvaluo1JugadorCon1RespuestaCorrecta() {
+
+        int puntajeEsperado = 1;
+        Jugador primerJugador = new Jugador();
+
+        RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("true");
+        RespuestaIncorrecta respuestaIncorrecta = new RespuestaIncorrecta("false");
+        ArrayList<IRespuesta> respuestasPregunta = new ArrayList<>();
+        respuestasPregunta.add(respuestaCorrecta);
+        respuestasPregunta.add(respuestaIncorrecta);
+        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad(respuestasPregunta);
+
+        ArrayList<IRespuesta> respuestasPrimerJugador = new ArrayList<>();
+        respuestasPrimerJugador.add(respuestaCorrecta);
+        primerJugador.establecerRespuestas(respuestasPrimerJugador);
+
+
+        ArrayList<Jugador> jugadores = new ArrayList<>();
+        jugadores.add(primerJugador);      
+        pregunta.evaluarJugadores(jugadores);
+
+        assertEquals(puntajeEsperado,primerJugador.getPuntaje());
+    }
+
+    @Test
+    public void test04CreoUnaPreguntaConPenalidadYEvaluo2JugadoresConRespuestaCorrectaEInconrrecta() {
+        
+        int puntosGanados=4;
+        Jugador primerJugador = new Jugador();
+        Jugador segundoJugador= new Jugador();
+        primerJugador.actualizarPuntaje(puntosGanados);
+        segundoJugador.actualizarPuntaje(puntosGanados);
+        
+        
+        RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("true");
+        RespuestaIncorrecta respuestaIncorrecta = new RespuestaIncorrecta("false");
+        ArrayList<IRespuesta> respuestasPregunta = new ArrayList<>();
+        respuestasPregunta.add(respuestaCorrecta);
+        respuestasPregunta.add(respuestaIncorrecta);
+        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad(respuestasPregunta);
+
+        ArrayList<IRespuesta> respuestasPrimerJugador = new ArrayList<>();
+        respuestasPrimerJugador.add(respuestaCorrecta);
+        primerJugador.establecerRespuestas(respuestasPrimerJugador);
+
+        ArrayList<IRespuesta> respuestasSegundoJugador = new ArrayList<>();
+        respuestasSegundoJugador.add(respuestaIncorrecta);
+        segundoJugador.establecerRespuestas(respuestasSegundoJugador);
+
+        ArrayList<Jugador> jugadores = new ArrayList<>();
+        jugadores.add(primerJugador);
+        jugadores.add(segundoJugador);
+
+        pregunta.evaluarJugadores(jugadores);
+
+        assertEquals(puntosGanados+1,primerJugador.getPuntaje());
+        assertEquals(puntosGanados-1,segundoJugador.getPuntaje());
     }
 }
