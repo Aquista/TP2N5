@@ -47,29 +47,29 @@ public class JugadorTest {
     public void test05CreoUnJugadorCon1RespuestaCorrectaYSeEvalua() {
         int cantidadRespuestasCorrectas = 1;
         Jugador jugador = new Jugador();
-        Marcador marcador = new Marcador(jugador);
+        PuntajeClasico unPuntaje = new PuntajeClasico();
         RespuestaCorrecta resCorrecta = new RespuestaCorrecta("true");
         ArrayList<IRespuesta> respuestas = new ArrayList<IRespuesta>();
         respuestas.add(resCorrecta);
         jugador.establecerRespuestas(respuestas);
 
-        jugador.evaluarRespuestas(marcador);
+        jugador.evaluarRespuestas(unPuntaje);
 
-        assertEquals(marcador.getRespuestasCorrectas(), cantidadRespuestasCorrectas);
+        assertEquals(unPuntaje.getRespuestasCorrectas(), cantidadRespuestasCorrectas);
     }
     @Test
     public void test06CreoUnJugadorCon1RespuestaIncorrectaYSeEvalua() {
         int cantidadRespuestasIncorrectas = 1;
         Jugador jugador = new Jugador();
-        Marcador marcador = new Marcador(jugador);
+        PuntajeClasico unPuntaje = new PuntajeClasico();
         RespuestaIncorrecta resIncorrecta = new RespuestaIncorrecta("false");
         ArrayList<IRespuesta> respuestas = new ArrayList<IRespuesta>();
         respuestas.add(resIncorrecta);
         jugador.establecerRespuestas(respuestas);
 
-        jugador.evaluarRespuestas(marcador);
+        jugador.evaluarRespuestas(unPuntaje);
 
-        assertEquals(marcador.getRespuestasIncorrectas(), cantidadRespuestasIncorrectas);
+        assertEquals(unPuntaje.getRespuestasIncorrectas(), cantidadRespuestasIncorrectas);
     }
 
 

@@ -11,23 +11,12 @@ public class PreguntaVF implements IPregunta{
 
     @Override
     public void evaluarJugadores(ArrayList<Jugador> jugadores) {
-        ArrayList<Marcador> marcadores = new ArrayList<Marcador>();
+        ArrayList<PuntajeClasico> puntajes = new ArrayList<PuntajeClasico>();
 
         for(Jugador jugador : jugadores) {
-            Marcador marcador = new Marcador(jugador);
-            jugador.evaluarRespuestas(marcador);
-            marcadores.add(marcador);
-        }
-
-        actualizarPuntajes(marcadores);
-    }
-
-    private void actualizarPuntajes(ArrayList<Marcador> marcadores) {
-        Jugador jugadorActual;
-
-        for(Marcador marcador : marcadores) {
-            jugadorActual = marcador.getJugador();
-            jugadorActual.actualizarPuntaje(marcador.getRespuestasCorrectas());
+            PuntajeClasico unPuntaje = new PuntajeClasico();
+            unPuntaje.calcularPuntaje(jugador);
         }
     }
+    
 }

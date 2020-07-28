@@ -16,10 +16,10 @@ public class Jugador {
         return puntaje;
     }
 
-    public void evaluarRespuestas(Marcador marcador) {
+    public void evaluarRespuestas(IPuntaje unPuntaje) {
 
         for(IRespuesta respuesta : respuestas) {
-            respuesta.evaluar(marcador);
+            respuesta.evaluar(unPuntaje);
         }
     }
     public void establecerRespuestas(ArrayList<IRespuesta> respuestas) {

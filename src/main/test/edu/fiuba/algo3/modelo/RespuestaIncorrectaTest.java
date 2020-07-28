@@ -10,10 +10,11 @@ public class RespuestaIncorrectaTest {
         int cantidadRespuestasIncorrectas = 1;
         RespuestaIncorrecta respuestaIncorrecta = new RespuestaIncorrecta("Soy una respuesta incorrecta");
         Jugador jugador = new Jugador();
-        Marcador marcador = new Marcador(jugador);
+        PuntajeClasico unPuntaje = new PuntajeClasico();
 
-        respuestaIncorrecta.evaluar(marcador);
 
-        assertEquals(marcador.getRespuestasIncorrectas(), cantidadRespuestasIncorrectas);
+        respuestaIncorrecta.evaluar(unPuntaje);
+
+        assertEquals(unPuntaje.getRespuestasIncorrectas(), cantidadRespuestasIncorrectas);
     }
 }

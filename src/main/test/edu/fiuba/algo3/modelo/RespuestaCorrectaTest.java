@@ -10,11 +10,11 @@ public class RespuestaCorrectaTest {
         int cantidadRespuestasCorrectas = 1;
         RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("Soy una respuesta correcta");
         Jugador jugador = new Jugador();
-        Marcador marcador = new Marcador(jugador);
+        PuntajeClasico unPuntaje = new PuntajeClasico();
 
-        respuestaCorrecta.evaluar(marcador);
+        respuestaCorrecta.evaluar(unPuntaje);
 
-        assertEquals(marcador.getRespuestasCorrectas(), cantidadRespuestasCorrectas);
+        assertEquals(unPuntaje.getRespuestasCorrectas(), cantidadRespuestasCorrectas);
     }
 
 }

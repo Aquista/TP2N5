@@ -7,7 +7,7 @@ public class RespuestaIncorrecta implements IRespuesta{
         this.texto = texto;
     }
 
-    public void evaluar(Marcador marcador) {
-        marcador.sumarRespuestasIncorrectas();
+    public void evaluar(IPuntaje unPuntaje) {
+        unPuntaje.sumarIncorrecta();
     }
 }
