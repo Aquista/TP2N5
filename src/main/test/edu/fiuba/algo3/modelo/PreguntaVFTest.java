@@ -28,7 +28,7 @@ public class PreguntaVFTest {
 
         pregunta.evaluarJugadores(jugadores);
 
-        assertEquals(jugador.getPuntaje(), puntajeEsperado);
+        assertEquals(puntajeEsperado,jugador.getPuntaje());
     }
 
     @Test
@@ -57,7 +57,7 @@ public class PreguntaVFTest {
 
         pregunta.evaluarJugadores(jugadores);
 
-        assertEquals(jugador1.getPuntaje(), 1);
-        assertEquals(jugador2.getPuntaje(), 0);
+        assertEquals(1,jugador1.getPuntaje());
+        assertEquals(0,jugador2.getPuntaje());
     }
 }
