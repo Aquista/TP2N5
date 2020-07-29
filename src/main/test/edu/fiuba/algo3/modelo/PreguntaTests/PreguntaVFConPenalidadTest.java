@@ -34,7 +34,7 @@ public class PreguntaVFConPenalidadTest {
         jugadores.add(primerJugador);
         pregunta.evaluarJugadores(jugadores);
 
-        assertEquals(puntajeEsperado,primerJugador.getPuntaje());
+        assertEquals(puntajeEsperado, primerJugador.getPuntaje());
     }
 
     @Test
@@ -68,7 +68,7 @@ public class PreguntaVFConPenalidadTest {
 
         pregunta.evaluarJugadores(jugadores);
 
-        assertEquals(puntosGanados+1,primerJugador.getPuntaje());
-        assertEquals(puntosGanados-1,segundoJugador.getPuntaje());
+        assertEquals(puntosGanados + 1, primerJugador.getPuntaje());
+        assertEquals(puntosGanados - 1, segundoJugador.getPuntaje());
     }
 }

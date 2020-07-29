@@ -11,8 +11,8 @@ public class PreguntaVF extends Pregunta {
     @Override
     public void evaluarJugadores(ArrayList<Jugador> jugadores) {
         for(Jugador jugador : jugadores) {
-            PuntajeClasico unPuntaje = new PuntajeClasico();
-            unPuntaje.calcularPuntaje(jugador, cantidadPreguntasCorrectas);
+            PuntajeClasico puntajeJugador = new PuntajeClasico();
+            puntajeJugador.calcularPuntaje(jugador, cantidadPreguntasCorrectas);
         }
     }
     
