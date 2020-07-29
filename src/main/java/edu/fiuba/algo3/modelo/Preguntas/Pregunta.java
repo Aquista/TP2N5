@@ -8,8 +8,12 @@ import java.util.ArrayList;
 
 public abstract class Pregunta {
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
+    private String texto;
     private int totalCorrectas = 0;
 
+    public Pregunta(String texto){
+        this.texto = texto;
+    }
 
     public abstract void evaluarJugadores(ArrayList<Jugador> jugadores);
 

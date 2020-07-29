@@ -21,7 +21,7 @@ public class PreguntaVFConPenalidadTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad();
+        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad("Soy una pregunta");
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
@@ -50,7 +50,7 @@ public class PreguntaVFConPenalidadTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad();
+        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad("Soy una pregunta");
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
