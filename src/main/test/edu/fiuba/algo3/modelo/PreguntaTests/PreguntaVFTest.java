@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaVFConPenalidad;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.modelo.JugadorTests;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import edu.fiuba.algo3.modelo.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.PuntajeClasico;
-import edu.fiuba.algo3.modelo.RespuestaVF;
+import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
 

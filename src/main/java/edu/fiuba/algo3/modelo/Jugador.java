@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-import java.util.ArrayList;
+import edu.fiuba.algo3.modelo.Puntajes.IPuntaje;
+import edu.fiuba.algo3.modelo.Respuestas.IRespuesta;
 
 public class Jugador {
     private int puntaje = 0;

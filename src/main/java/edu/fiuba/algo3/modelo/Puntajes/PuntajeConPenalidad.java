@@ -1,5 +1,7 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.Puntajes;
 
+
+import edu.fiuba.algo3.modelo.Jugador;
 
 public class PuntajeConPenalidad extends IPuntaje{
     
