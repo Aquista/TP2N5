@@ -8,7 +8,6 @@ public class PuntajeClasico extends Puntaje {
 
     public void calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta) {
         unJugador.evaluarRespuestas(this);
-
         if(cantidadCorrectas == cantidadRespCorrectasPregunta && cantidadIncorrectas == 0)
             unJugador.actualizarPuntaje(puntos);
     }
