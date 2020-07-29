@@ -7,6 +7,10 @@ import java.util.ArrayList;
 
 public class PreguntaMultipleChoiceParcial extends Pregunta{
 
+    public PreguntaMultipleChoiceParcial(String texto) {
+        super(texto);
+    }
+
     @Override
     public void evaluarJugadores(ArrayList<Jugador> jugadores) {
         for(Jugador jugador : jugadores) {

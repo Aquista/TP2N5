@@ -23,7 +23,7 @@ public class PreguntaMultipleChoiceParcialTest {
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = new OpcionIncorrecta("texto opcion 3");
-        PreguntaMultipleChoiceParcial pregunta = new PreguntaMultipleChoiceParcial();
+        PreguntaMultipleChoiceParcial pregunta = new PreguntaMultipleChoiceParcial("Soy unaa pregunta");
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
@@ -51,7 +51,7 @@ public class PreguntaMultipleChoiceParcialTest {
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = new OpcionIncorrecta("texto opcion 3");
-        PreguntaMultipleChoiceParcial pregunta = new PreguntaMultipleChoiceParcial();
+        PreguntaMultipleChoiceParcial pregunta = new PreguntaMultipleChoiceParcial("Soy unaa pregunta");
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
