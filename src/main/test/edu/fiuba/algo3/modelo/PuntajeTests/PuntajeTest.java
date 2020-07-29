@@ -1,6 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.PuntajeTests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import edu.fiuba.algo3.modelo.*;
 import org.junit.jupiter.api.Test;
 
 

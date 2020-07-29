@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.PuntajeTests;
 
 import org.junit.jupiter.api.Test;
 

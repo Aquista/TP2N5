@@ -1,6 +1,11 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.RespuestaTests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import edu.fiuba.algo3.modelo.OpcionCorrecta;
+import edu.fiuba.algo3.modelo.OpcionIncorrecta;
+import edu.fiuba.algo3.modelo.PuntajeClasico;
+import edu.fiuba.algo3.modelo.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
 
