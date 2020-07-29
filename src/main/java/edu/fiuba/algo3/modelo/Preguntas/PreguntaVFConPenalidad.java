@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 public class PreguntaVFConPenalidad extends Pregunta {
 
+    public PreguntaVFConPenalidad(String texto){
+        super(texto);
+    }
+
     @Override
     public void evaluarJugadores(ArrayList<Jugador> jugadores) {
         for(Jugador jugador : jugadores) {

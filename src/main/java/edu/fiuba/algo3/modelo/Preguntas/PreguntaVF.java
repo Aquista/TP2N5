@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 public class PreguntaVF extends Pregunta {
     private final int cantidadPreguntasCorrectas = 1;
+
+    public PreguntaVF(String texto){
+        super(texto);
+    }
+
     @Override
     public void evaluarJugadores(ArrayList<Jugador> jugadores) {
         for(Jugador jugador : jugadores) {

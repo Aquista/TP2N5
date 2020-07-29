@@ -20,7 +20,7 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        PreguntaVF pregunta = new PreguntaVF();
+        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta");
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
@@ -42,7 +42,7 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        PreguntaVF pregunta = new PreguntaVF();
+        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta");
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
         

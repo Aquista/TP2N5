@@ -21,7 +21,7 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = new OpcionIncorrecta("texto opcion 3");
-        PreguntaMultipleChoiceConPenalidad pregunta = new PreguntaMultipleChoiceConPenalidad();
+        PreguntaMultipleChoiceConPenalidad pregunta = new PreguntaMultipleChoiceConPenalidad("Soy una pregunta");
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
@@ -49,7 +49,7 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = new OpcionIncorrecta("texto opcion 3");
-        PreguntaMultipleChoiceConPenalidad pregunta = new PreguntaMultipleChoiceConPenalidad();
+        PreguntaMultipleChoiceConPenalidad pregunta = new PreguntaMultipleChoiceConPenalidad("Soy una pregunta");
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
