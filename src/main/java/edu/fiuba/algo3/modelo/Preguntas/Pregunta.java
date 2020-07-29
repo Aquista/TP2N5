@@ -7,10 +7,11 @@ import java.util.ArrayList;
 public abstract class Pregunta {
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
     private String texto;
-    protected int totalCorrectas = 0;
+    protected int totalCorrectas ;
 
     public Pregunta(String texto){
         this.texto = texto;
+        this.totalCorrectas=0;
     }
 
     public abstract void evaluarJugadores(ArrayList<Jugador> jugadores);
