@@ -23,7 +23,7 @@ public class PuntajeTest {
         unJugador.establecerRespuestas(respuesta);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
-        unPuntaje.calcularPuntaje(unJugador);
+        unPuntaje.calcularPuntaje(unJugador, 1);
         assertEquals(1,unJugador.getPuntaje());
     }
     @Test
@@ -37,7 +37,7 @@ public class PuntajeTest {
         unJugador.establecerRespuestas(respuesta);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
-        unPuntaje.calcularPuntaje(unJugador);
+        unPuntaje.calcularPuntaje(unJugador, 1);
         assertEquals(puntosGanados,unJugador.getPuntaje());
     }
     @Test

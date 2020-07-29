@@ -7,12 +7,12 @@ import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import java.util.ArrayList;
 
 public class PreguntaVF extends Pregunta {
-
+    private final int cantidadPreguntasCorrectas = 1;
     @Override
     public void evaluarJugadores(ArrayList<Jugador> jugadores) {
         for(Jugador jugador : jugadores) {
             PuntajeClasico unPuntaje = new PuntajeClasico();
-            unPuntaje.calcularPuntaje(jugador);
+            unPuntaje.calcularPuntaje(jugador, cantidadPreguntasCorrectas);
         }
     }
     
