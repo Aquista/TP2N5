@@ -55,7 +55,7 @@ public class JugadorTest {
         OpcionCorrecta opcion = new OpcionCorrecta("true");
         RespuestaVF respuesta = new RespuestaVF();
         respuesta.agregarOpcion(opcion);
-        jugador.establecerRespuestas(respuesta);
+        jugador.establecerRespuesta(respuesta);
         jugador.evaluarRespuestas(unPuntaje);
 
         assertEquals(unPuntaje.getRespuestasCorrectas(), cantidadRespuestasCorrectas);
@@ -68,7 +68,7 @@ public class JugadorTest {
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
         RespuestaVF respuesta = new RespuestaVF();
         respuesta.agregarOpcion(opcion);
-        jugador.establecerRespuestas(respuesta);
+        jugador.establecerRespuesta(respuesta);
 
         jugador.evaluarRespuestas(unPuntaje);
 

@@ -21,7 +21,7 @@ public class Jugador {
         this.respuesta.evaluar(unPuntaje);
     }
     
-    public void establecerRespuestas(IRespuesta unaRespuesta) {
+    public void establecerRespuesta(IRespuesta unaRespuesta) {
         this.respuesta = unaRespuesta;
     }
 }

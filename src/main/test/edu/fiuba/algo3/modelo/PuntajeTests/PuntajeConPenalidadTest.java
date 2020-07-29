@@ -16,7 +16,7 @@ public class PuntajeConPenalidadTest {
         OpcionCorrecta opcion = new OpcionCorrecta("true");
         RespuestaVF respuesta = new RespuestaVF();
         respuesta.agregarOpcion(opcion);
-        unJugador.establecerRespuestas(respuesta);
+        unJugador.establecerRespuesta(respuesta);
 
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
         unPuntaje.calcularPuntaje(unJugador);
@@ -30,7 +30,7 @@ public class PuntajeConPenalidadTest {
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
         RespuestaVF respuesta = new RespuestaVF();
         respuesta.agregarOpcion(opcion);
-        unJugador.establecerRespuestas(respuesta);
+        unJugador.establecerRespuesta(respuesta);
 
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
         unPuntaje.calcularPuntaje(unJugador);

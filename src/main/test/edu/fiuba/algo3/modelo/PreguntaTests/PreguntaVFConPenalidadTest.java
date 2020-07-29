@@ -27,7 +27,7 @@ public class PreguntaVFConPenalidadTest {
 
         RespuestaVF respuesta1=new RespuestaVF();
         respuesta1.agregarOpcion(opcionCorrecta);
-        primerJugador.establecerRespuestas(respuesta1);
+        primerJugador.establecerRespuesta(respuesta1);
 
 
         ArrayList<Jugador> jugadores = new ArrayList<>();
@@ -56,11 +56,11 @@ public class PreguntaVFConPenalidadTest {
 
         RespuestaVF respuesta1=new RespuestaVF();
         respuesta1.agregarOpcion(opcionCorrecta);
-        primerJugador.establecerRespuestas(respuesta1);
+        primerJugador.establecerRespuesta(respuesta1);
 
         RespuestaVF respuesta2=new RespuestaVF();
         respuesta2.agregarOpcion(opcionIncorrecta);
-        segundoJugador.establecerRespuestas(respuesta2);
+        segundoJugador.establecerRespuesta(respuesta2);
 
         ArrayList<Jugador> jugadores = new ArrayList<>();
         jugadores.add(primerJugador);

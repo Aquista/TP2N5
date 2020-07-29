@@ -1,11 +1,9 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaVFConPenalidad;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +27,7 @@ public class PreguntaVFTest {
         Jugador jugador = new Jugador();
         RespuestaVF respuesta=new RespuestaVF();
         respuesta.agregarOpcion(opcionCorrecta);
-        jugador.establecerRespuestas(respuesta);
+        jugador.establecerRespuesta(respuesta);
         ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
         jugadores.add(jugador);
 
@@ -51,13 +49,13 @@ public class PreguntaVFTest {
         Jugador jugador1 = new Jugador();
         RespuestaVF respuesta1=new RespuestaVF();
         respuesta1.agregarOpcion(opcionCorrecta);
-        jugador1.establecerRespuestas(respuesta1);
+        jugador1.establecerRespuesta(respuesta1);
         
 
         Jugador jugador2 = new Jugador();
         RespuestaVF respuesta2=new RespuestaVF();
         respuesta2.agregarOpcion(opcionIncorrecta);
-        jugador2.establecerRespuestas(respuesta2);
+        jugador2.establecerRespuesta(respuesta2);
 
         ArrayList<Jugador> jugadores = new ArrayList<>();
         jugadores.add(jugador1);
