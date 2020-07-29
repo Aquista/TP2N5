@@ -48,11 +48,11 @@ public class JugadorTest {
         int cantidadRespuestasCorrectas = 1;
         Jugador jugador = new Jugador();
         PuntajeClasico unPuntaje = new PuntajeClasico();
-        RespuestaCorrecta resCorrecta = new RespuestaCorrecta("true");
-        ArrayList<IRespuesta> respuestas = new ArrayList<IRespuesta>();
-        respuestas.add(resCorrecta);
-        jugador.establecerRespuestas(respuestas);
-
+        
+        OpcionCorrecta opcion = new OpcionCorrecta("true");
+        RespuestaVF respuesta = new RespuestaVF();
+        respuesta.agregarOpcion(opcion);
+        jugador.establecerRespuestas(respuesta);
         jugador.evaluarRespuestas(unPuntaje);
 
         assertEquals(unPuntaje.getRespuestasCorrectas(), cantidadRespuestasCorrectas);
@@ -62,10 +62,10 @@ public class JugadorTest {
         int cantidadRespuestasIncorrectas = 1;
         Jugador jugador = new Jugador();
         PuntajeClasico unPuntaje = new PuntajeClasico();
-        RespuestaIncorrecta resIncorrecta = new RespuestaIncorrecta("false");
-        ArrayList<IRespuesta> respuestas = new ArrayList<IRespuesta>();
-        respuestas.add(resIncorrecta);
-        jugador.establecerRespuestas(respuestas);
+        OpcionIncorrecta opcion = new OpcionIncorrecta("true");
+        RespuestaVF respuesta = new RespuestaVF();
+        respuesta.agregarOpcion(opcion);
+        jugador.establecerRespuestas(respuesta);
 
         jugador.evaluarRespuestas(unPuntaje);
 

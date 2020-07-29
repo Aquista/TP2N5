@@ -3,10 +3,10 @@ package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
 
 public class PreguntaVF implements IPregunta{
-    private ArrayList<IRespuesta> respuestas;
+    private ArrayList<Opcion> opciones;
     private int puntos;
-    public PreguntaVF(ArrayList<IRespuesta> respuestas) {
-        this.respuestas = respuestas;
+    public PreguntaVF(ArrayList<Opcion> unasOpciones) {
+        this.opciones = unasOpciones;
     }
 
     @Override

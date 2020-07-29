@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Jugador {
     private int puntaje = 0;
-    private ArrayList<IRespuesta> respuestas = new ArrayList<>();
+    private IRespuesta respuesta;
 
     public void actualizarPuntaje(int puntos) {
         puntaje += puntos;
@@ -17,12 +17,10 @@ public class Jugador {
     }
 
     public void evaluarRespuestas(IPuntaje unPuntaje) {
-
-        for(IRespuesta respuesta : respuestas) {
-            respuesta.evaluar(unPuntaje);
-        }
+        this.respuesta.evaluar(unPuntaje);
     }
-    public void establecerRespuestas(ArrayList<IRespuesta> respuestas) {
-        this.respuestas = respuestas;
+    
+    public void establecerRespuestas(IRespuesta unaRespuesta) {
+        this.respuesta = unaRespuesta;
     }
 }

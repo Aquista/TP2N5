@@ -3,7 +3,6 @@ package edu.fiuba.algo3.modelo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 
 public class PuntajeTest {
     
@@ -11,10 +10,10 @@ public class PuntajeTest {
     public void test01PuntajeClasicoAgrega1PuntoSiUnJugadorRespondeCorrectamente(){
         Jugador unJugador = new Jugador();
 
-        RespuestaCorrecta resCorrecta = new RespuestaCorrecta("true");
-        ArrayList<IRespuesta> respuestas = new ArrayList<IRespuesta>();
-        respuestas.add(resCorrecta);
-        unJugador.establecerRespuestas(respuestas);
+        OpcionCorrecta opcion = new OpcionCorrecta("true");
+        RespuestaVF respuesta = new RespuestaVF();
+        respuesta.agregarOpcion(opcion);
+        unJugador.establecerRespuestas(respuesta);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.calcularPuntaje(unJugador);
@@ -25,10 +24,10 @@ public class PuntajeTest {
         int puntosGanados=5;
         Jugador unJugador = new Jugador();
         unJugador.actualizarPuntaje(puntosGanados);
-        RespuestaIncorrecta resIncorrecta = new RespuestaIncorrecta("false");
-        ArrayList<IRespuesta> respuestas = new ArrayList<IRespuesta>();
-        respuestas.add(resIncorrecta);
-        unJugador.establecerRespuestas(respuestas);
+        OpcionIncorrecta opcion = new OpcionIncorrecta("true");
+        RespuestaVF respuesta = new RespuestaVF();
+        respuesta.agregarOpcion(opcion);
+        unJugador.establecerRespuestas(respuesta);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.calcularPuntaje(unJugador);
@@ -37,10 +36,11 @@ public class PuntajeTest {
     @Test
     public void test03PuntajeConPenalidadAgrega1PuntoSiUnJugadorRespondeCorrectamente(){
         Jugador unJugador = new Jugador(); 
-        RespuestaCorrecta resCorrecta = new RespuestaCorrecta("true");
-        ArrayList<IRespuesta> respuestas = new ArrayList<IRespuesta>();
-        respuestas.add(resCorrecta);
-        unJugador.establecerRespuestas(respuestas);
+        OpcionCorrecta opcion = new OpcionCorrecta("true");
+        RespuestaVF respuesta = new RespuestaVF();
+        respuesta.agregarOpcion(opcion);
+        unJugador.establecerRespuestas(respuesta);
+        
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
         unPuntaje.calcularPuntaje(unJugador);
         assertEquals(1,unJugador.getPuntaje()); 
@@ -50,10 +50,11 @@ public class PuntajeTest {
         int puntosGanados=5;
         Jugador unJugador = new Jugador();
         unJugador.actualizarPuntaje(puntosGanados);
-        RespuestaIncorrecta resIncorrecta = new RespuestaIncorrecta("true");
-        ArrayList<IRespuesta> respuestas = new ArrayList<IRespuesta>();
-        respuestas.add(resIncorrecta);
-        unJugador.establecerRespuestas(respuestas);
+        OpcionIncorrecta opcion = new OpcionIncorrecta("true");
+        RespuestaVF respuesta = new RespuestaVF();
+        respuesta.agregarOpcion(opcion);
+        unJugador.establecerRespuestas(respuesta);
+        
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
         unPuntaje.calcularPuntaje(unJugador);
         assertEquals(puntosGanados-1,unJugador.getPuntaje()); 

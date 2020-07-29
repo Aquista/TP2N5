@@ -12,17 +12,17 @@ public class PreguntaVFTest {
     public void test01CreoUnaPreguntaClasicaYEvaluo1JugadorCon1RespuestaCorrecta() {
         int puntajeEsperado = 1;
 
-        RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("true");
-        RespuestaIncorrecta respuestaIncorrecta = new RespuestaIncorrecta("false");
-        ArrayList<IRespuesta> respuestasPregunta = new ArrayList<IRespuesta>();
-        respuestasPregunta.add(respuestaCorrecta);
-        respuestasPregunta.add(respuestaIncorrecta);
-        PreguntaVF pregunta = new PreguntaVF(respuestasPregunta);
+        OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
+        OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
+        ArrayList<Opcion> opciones = new ArrayList<>();
+        opciones.add(opcionCorrecta);
+        opciones.add(opcionCorrecta);
+        PreguntaVF pregunta = new PreguntaVF(opciones);
 
         Jugador jugador = new Jugador();
-        ArrayList<IRespuesta> respuestasJugador = new ArrayList<IRespuesta>();
-        respuestasJugador.add(respuestaCorrecta);
-        jugador.establecerRespuestas(respuestasJugador);
+        RespuestaVF respuesta=new RespuestaVF();
+        respuesta.agregarOpcion(opcionCorrecta);
+        jugador.establecerRespuestas(respuesta);
         ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
         jugadores.add(jugador);
 
@@ -34,24 +34,25 @@ public class PreguntaVFTest {
     @Test
     public void test02CreoUnaPreguntaClasicaYEvaluo2Jugadores() {
 
-        RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("true");
-        RespuestaIncorrecta respuestaIncorrecta = new RespuestaIncorrecta("false");
-        ArrayList<IRespuesta> respuestasPregunta = new ArrayList<IRespuesta>();
-        respuestasPregunta.add(respuestaCorrecta);
-        respuestasPregunta.add(respuestaIncorrecta);
-        PreguntaVF pregunta = new PreguntaVF(respuestasPregunta);
-
+        OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
+        OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
+        ArrayList<Opcion> opciones = new ArrayList<>();
+        opciones.add(opcionCorrecta);
+        opciones.add(opcionCorrecta);
+        PreguntaVF pregunta = new PreguntaVF(opciones);
+        
         Jugador jugador1 = new Jugador();
-        ArrayList<IRespuesta> respuestasJugador1 = new ArrayList<IRespuesta>();
-        respuestasJugador1.add(respuestaCorrecta);
-        jugador1.establecerRespuestas(respuestasJugador1);
+        RespuestaVF respuesta1=new RespuestaVF();
+        respuesta1.agregarOpcion(opcionCorrecta);
+        jugador1.establecerRespuestas(respuesta1);
+        
 
         Jugador jugador2 = new Jugador();
-        ArrayList<IRespuesta> respuestasJugador2 = new ArrayList<IRespuesta>();
-        respuestasJugador2.add(respuestaIncorrecta);
-        jugador2.establecerRespuestas(respuestasJugador2);
+        RespuestaVF respuesta2=new RespuestaVF();
+        respuesta2.agregarOpcion(opcionIncorrecta);
+        jugador2.establecerRespuestas(respuesta2);
 
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+        ArrayList<Jugador> jugadores = new ArrayList<>();
         jugadores.add(jugador1);
         jugadores.add(jugador2);
 
@@ -67,16 +68,16 @@ public class PreguntaVFTest {
         int puntajeEsperado = 1;
         Jugador primerJugador = new Jugador();
 
-        RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("true");
-        RespuestaIncorrecta respuestaIncorrecta = new RespuestaIncorrecta("false");
-        ArrayList<IRespuesta> respuestasPregunta = new ArrayList<>();
-        respuestasPregunta.add(respuestaCorrecta);
-        respuestasPregunta.add(respuestaIncorrecta);
-        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad(respuestasPregunta);
-
-        ArrayList<IRespuesta> respuestasPrimerJugador = new ArrayList<>();
-        respuestasPrimerJugador.add(respuestaCorrecta);
-        primerJugador.establecerRespuestas(respuestasPrimerJugador);
+        OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
+        OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
+        ArrayList<Opcion> opciones = new ArrayList<>();
+        opciones.add(opcionCorrecta);
+        opciones.add(opcionCorrecta);
+        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad(opciones);
+        
+        RespuestaVF respuesta1=new RespuestaVF();
+        respuesta1.agregarOpcion(opcionCorrecta);
+        primerJugador.establecerRespuestas(respuesta1);
 
 
         ArrayList<Jugador> jugadores = new ArrayList<>();
@@ -96,20 +97,20 @@ public class PreguntaVFTest {
         segundoJugador.actualizarPuntaje(puntosGanados);
         
         
-        RespuestaCorrecta respuestaCorrecta = new RespuestaCorrecta("true");
-        RespuestaIncorrecta respuestaIncorrecta = new RespuestaIncorrecta("false");
-        ArrayList<IRespuesta> respuestasPregunta = new ArrayList<>();
-        respuestasPregunta.add(respuestaCorrecta);
-        respuestasPregunta.add(respuestaIncorrecta);
-        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad(respuestasPregunta);
+        OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
+        OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
+        ArrayList<Opcion> opciones = new ArrayList<>();
+        opciones.add(opcionCorrecta);
+        opciones.add(opcionCorrecta);
+        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad(opciones);
 
-        ArrayList<IRespuesta> respuestasPrimerJugador = new ArrayList<>();
-        respuestasPrimerJugador.add(respuestaCorrecta);
-        primerJugador.establecerRespuestas(respuestasPrimerJugador);
+        RespuestaVF respuesta1=new RespuestaVF();
+        respuesta1.agregarOpcion(opcionCorrecta);
+        primerJugador.establecerRespuestas(respuesta1);
 
-        ArrayList<IRespuesta> respuestasSegundoJugador = new ArrayList<>();
-        respuestasSegundoJugador.add(respuestaIncorrecta);
-        segundoJugador.establecerRespuestas(respuestasSegundoJugador);
+        RespuestaVF respuesta2=new RespuestaVF();
+        respuesta2.agregarOpcion(opcionIncorrecta);
+        segundoJugador.establecerRespuestas(respuesta2);
 
         ArrayList<Jugador> jugadores = new ArrayList<>();
         jugadores.add(primerJugador);

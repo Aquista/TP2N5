@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class PreguntaVFConPenalidad implements IPregunta {
 
-    private ArrayList<IRespuesta> respuestas;
+    private ArrayList<Opcion> opciones;
     private int puntos;
-    public PreguntaVFConPenalidad(ArrayList<IRespuesta> respuestas) {
-        this.respuestas = respuestas;
+    public PreguntaVFConPenalidad(ArrayList<Opcion> unasOpciones) {
+        this.opciones = unasOpciones;
     }
 
     @Override
