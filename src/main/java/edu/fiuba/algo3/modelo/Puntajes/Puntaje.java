@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo.Puntajes;
 
 import edu.fiuba.algo3.modelo.Jugador;
 
-public abstract class IPuntaje {
+public abstract class Puntaje {
     protected int puntos = 0;
     protected int cantidadCorrectas = 0;
     protected int cantidadIncorrectas = 0;

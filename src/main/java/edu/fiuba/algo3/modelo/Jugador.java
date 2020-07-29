@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Puntajes.IPuntaje;
+import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Respuestas.IRespuesta;
 
 public class Jugador {
@@ -17,7 +17,7 @@ public class Jugador {
         return puntaje;
     }
 
-    public void evaluarRespuestas(IPuntaje unPuntaje) {
+    public void evaluarRespuestas(Puntaje unPuntaje) {
         this.respuesta.evaluar(unPuntaje);
     }
     

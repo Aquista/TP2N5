@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.Opciones;
 
-import edu.fiuba.algo3.modelo.Puntajes.IPuntaje;
+import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 public class OpcionCorrecta implements Opcion{
     private String texto;
@@ -10,7 +10,7 @@ public class OpcionCorrecta implements Opcion{
     }
     
     @Override
-    public void evaluar(IPuntaje unPuntaje ) {
+    public void evaluar(Puntaje unPuntaje ) {
         unPuntaje.sumarCorrecta();
     }
 }

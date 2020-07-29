@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.Respuestas;
 
-import edu.fiuba.algo3.modelo.Puntajes.IPuntaje;
+import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 public interface IRespuesta {
 
-    void evaluar(IPuntaje unPuntaje);
+    void evaluar(Puntaje unPuntaje);
 }

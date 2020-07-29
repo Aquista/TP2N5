@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.Respuestas;
 
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
-import edu.fiuba.algo3.modelo.Puntajes.IPuntaje;
+import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 public class RespuestaVF implements IRespuesta{
     private Opcion opcion;
@@ -11,7 +11,7 @@ public class RespuestaVF implements IRespuesta{
         this.opcion=unaOpcion;
     }
     
-    public void evaluar(IPuntaje unPuntaje){
+    public void evaluar(Puntaje unPuntaje){
         this.opcion.evaluar(unPuntaje);
     }
 }
