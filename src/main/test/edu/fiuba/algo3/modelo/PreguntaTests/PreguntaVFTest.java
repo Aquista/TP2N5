@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.Opciones.Opcion;
+import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
+import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVFConPenalidad;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
@@ -18,10 +21,10 @@ public class PreguntaVFTest {
 
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
-        ArrayList<Opcion> opciones = new ArrayList<>();
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionCorrecta);
-        PreguntaVF pregunta = new PreguntaVF(opciones);
+
+        PreguntaVF pregunta = new PreguntaVF();
+        pregunta.agregarOpcionCorrecta(opcionCorrecta);
+        pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
         Jugador jugador = new Jugador();
         RespuestaVF respuesta=new RespuestaVF();
@@ -40,10 +43,10 @@ public class PreguntaVFTest {
 
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
-        ArrayList<Opcion> opciones = new ArrayList<>();
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionCorrecta);
-        PreguntaVF pregunta = new PreguntaVF(opciones);
+
+        PreguntaVF pregunta = new PreguntaVF();
+        pregunta.agregarOpcionCorrecta(opcionCorrecta);
+        pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
         
         Jugador jugador1 = new Jugador();
         RespuestaVF respuesta1=new RespuestaVF();
@@ -65,7 +68,8 @@ public class PreguntaVFTest {
         assertEquals(1,jugador1.getPuntaje());
         assertEquals(0,jugador2.getPuntaje());
     }
-    
+
+    /* Esto va en PreguntaVFConPenalidadTest
     @Test
     public void test03CreoUnaPreguntaConPenalidadYEvaluo1JugadorCon1RespuestaCorrecta() {
 
@@ -74,10 +78,10 @@ public class PreguntaVFTest {
 
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
-        ArrayList<Opcion> opciones = new ArrayList<>();
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionCorrecta);
-        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad(opciones);
+
+        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad();
+        pregunta.agregarOpcionCorrecta(opcionCorrecta);
+        pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
         
         RespuestaVF respuesta1=new RespuestaVF();
         respuesta1.agregarOpcion(opcionCorrecta);
@@ -103,10 +107,10 @@ public class PreguntaVFTest {
         
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
-        ArrayList<Opcion> opciones = new ArrayList<>();
-        opciones.add(opcionCorrecta);
-        opciones.add(opcionCorrecta);
-        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad(opciones);
+
+        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad();
+        pregunta.agregarOpcionCorrecta(opcionCorrecta);
+        pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
         RespuestaVF respuesta1=new RespuestaVF();
         respuesta1.agregarOpcion(opcionCorrecta);
@@ -125,4 +129,6 @@ public class PreguntaVFTest {
         assertEquals(puntosGanados+1,primerJugador.getPuntaje());
         assertEquals(puntosGanados-1,segundoJugador.getPuntaje());
     }
+
+     */
 }
