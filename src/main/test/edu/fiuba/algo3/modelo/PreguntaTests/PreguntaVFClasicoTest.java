@@ -3,7 +3,7 @@ package edu.fiuba.algo3.modelo.PreguntaTests;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaVFClasico;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PreguntaVFTest {
+public class PreguntaVFClasicoTest {
 
     @Test
     public void test01CreoUnaPreguntaClasicaYEvaluo1JugadorCon1RespuestaCorrecta() {
@@ -20,7 +20,7 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta");
+        PreguntaVFClasico pregunta = new PreguntaVFClasico("Soy una pregunta");
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
@@ -42,7 +42,7 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta");
+        PreguntaVFClasico pregunta = new PreguntaVFClasico("Soy una pregunta");
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
         
