@@ -25,7 +25,7 @@ public class PreguntaVFClasicoTest {
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
         Jugador jugador = new Jugador();
-        RespuestaVF respuesta=new RespuestaVF();
+        RespuestaVF respuesta = new RespuestaVF();
         respuesta.agregarOpcion(opcionCorrecta);
         jugador.establecerRespuesta(respuesta);
         ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
