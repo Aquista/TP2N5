@@ -13,11 +13,4 @@ public abstract class Puntaje {
         cantidadIncorrectas += 1;
     }
 
-    public int getRespuestasCorrectas() {
-        return cantidadCorrectas;
-    }
-
-    public int getRespuestasIncorrectas() {
-        return cantidadIncorrectas;
-    }
 }
