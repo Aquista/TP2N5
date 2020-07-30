@@ -46,34 +46,4 @@ public class JugadorTest {
         assertEquals(puntosEsperados, primerJugador.getPuntaje());
     }
 
-    @Test
-    public void test05CreoUnJugadorCon1RespuestaCorrectaYSeEvalua() {
-        int cantidadRespuestasCorrectas = 1;
-        Jugador jugador = new Jugador();
-        PuntajeClasico unPuntaje = new PuntajeClasico();
-        
-        OpcionCorrecta opcion = new OpcionCorrecta("true");
-        RespuestaVF respuesta = new RespuestaVF();
-        respuesta.agregarOpcion(opcion);
-        jugador.establecerRespuesta(respuesta);
-        jugador.evaluarRespuestas(unPuntaje);
-
-        assertEquals(unPuntaje.getRespuestasCorrectas(), cantidadRespuestasCorrectas);
-    }
-    @Test
-    public void test06CreoUnJugadorCon1RespuestaIncorrectaYSeEvalua() {
-        int cantidadRespuestasIncorrectas = 1;
-        Jugador jugador = new Jugador();
-        PuntajeClasico unPuntaje = new PuntajeClasico();
-        OpcionIncorrecta opcion = new OpcionIncorrecta("true");
-        RespuestaVF respuesta = new RespuestaVF();
-        respuesta.agregarOpcion(opcion);
-        jugador.establecerRespuesta(respuesta);
-
-        jugador.evaluarRespuestas(unPuntaje);
-
-        assertEquals(unPuntaje.getRespuestasIncorrectas(), cantidadRespuestasIncorrectas);
-    }
-
-
 }

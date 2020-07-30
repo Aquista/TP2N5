@@ -45,5 +45,5 @@ public class JugadorTest {
 
         assertEquals(puntosEsperados, primerJugador.getPuntaje());
     }
-    
+
 }

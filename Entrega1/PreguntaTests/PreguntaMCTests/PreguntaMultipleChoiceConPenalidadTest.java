@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.PreguntaTests;
+package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaMCTests;
 
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
