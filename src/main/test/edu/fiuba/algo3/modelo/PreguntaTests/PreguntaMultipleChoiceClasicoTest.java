@@ -3,13 +3,13 @@ package edu.fiuba.algo3.modelo.PreguntaTests;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoiceClasico;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-public class PreguntaMultipleChoiceTest {
+public class PreguntaMultipleChoiceClasicoTest {
     
     @Test
     public void test01JugadorCon0PuntosResponde1SolaOpcionCorrectaDe2YSigueTeniendo0puntos(){
@@ -19,7 +19,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = new OpcionIncorrecta("texto opcion 3");
-        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto");
+        PreguntaMultipleChoiceClasico pregunta = new PreguntaMultipleChoiceClasico("texto");
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
@@ -45,7 +45,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionCorrecta op3 = new OpcionCorrecta("texto opcion 3");
         OpcionIncorrecta op4 = new OpcionIncorrecta("texto opcion 4");
-        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto");
+        PreguntaMultipleChoiceClasico pregunta = new PreguntaMultipleChoiceClasico("texto");
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
@@ -75,7 +75,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionCorrecta op3 = new OpcionCorrecta("texto opcion 3");
         OpcionIncorrecta op4 = new OpcionIncorrecta("texto opcion 4");
-        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto");
+        PreguntaMultipleChoiceClasico pregunta = new PreguntaMultipleChoiceClasico("texto");
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
@@ -106,7 +106,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionCorrecta op3 = new OpcionCorrecta("texto opcion 3");
         OpcionIncorrecta op4 = new OpcionIncorrecta("texto opcion 4");
-        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto");
+        PreguntaMultipleChoiceClasico pregunta = new PreguntaMultipleChoiceClasico("texto");
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
