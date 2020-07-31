@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVFClasico;
+import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
@@ -31,7 +32,7 @@ public class PreguntaVFClasicoTest {
         ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
         jugadores.add(jugador);
 
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugadores, new PuntajeClasico());
 
         assertEquals(puntajeEsperado,jugador.getPuntaje());
     }

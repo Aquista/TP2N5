@@ -10,10 +10,17 @@ public class PreguntaVFClasico extends Pregunta {
     public PreguntaVFClasico(String texto){
         super(texto);
     }
+
     @Override
     public void evaluarJugadores(ArrayList<Jugador> jugadores) {
         for(Jugador jugador : jugadores) {
             PuntajeClasico puntajeJugador = new PuntajeClasico();
+            puntajeJugador.calcularPuntaje(jugador, this.totalCorrectas);
+        }
+    }
+    public void evaluarJugadores(ArrayList<Jugador> jugadores, PuntajeClasico puntaje) {
+        for(Jugador jugador : jugadores) {
+            PuntajeClasico puntajeJugador = puntaje.duplicar();
             puntajeJugador.calcularPuntaje(jugador, this.totalCorrectas);
         }
     }

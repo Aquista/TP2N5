@@ -11,4 +11,8 @@ public class PuntajeClasico extends Puntaje {
         if(cantidadCorrectas == cantidadRespCorrectasPregunta && cantidadIncorrectas == 0)
             unJugador.actualizarPuntaje(puntos);
     }
+
+    public PuntajeClasico duplicar() {
+        return new PuntajeClasico();
+    }
 }
