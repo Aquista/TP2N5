@@ -3,11 +3,9 @@ package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaVFTEsts;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaVFConPenalidad;
-import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
+import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -21,20 +19,13 @@ public class PreguntaVFConPenalidadTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad("Soy una pregunta");
+        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta",new PuntajeConPenalidad());
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
-        RespuestaVF respuesta1=new RespuestaVF();
-        respuesta1.agregarOpcion(opcionCorrecta);
-        primerJugador.establecerRespuesta(respuesta1);
+        primerJugador.responderCon(opcionCorrecta, pregunta);
 
-
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(primerJugador);
-        pregunta.evaluarJugadores(jugadores);
-
-        assertEquals(puntajeEsperado, primerJugador.getPuntaje());
+        assertEquals(puntajeEsperado, primerJugador.puntos());
     }
 
     @Test
@@ -50,25 +41,15 @@ public class PreguntaVFConPenalidadTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        PreguntaVFConPenalidad pregunta = new PreguntaVFConPenalidad("Soy una pregunta");
+        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta",new PuntajeConPenalidad());
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
+        
+        
+        primerJugador.responderCon(opcionCorrecta, pregunta);
+        segundoJugador.responderCon(opcionIncorrecta, pregunta);
 
-        RespuestaVF respuesta1=new RespuestaVF();
-        respuesta1.agregarOpcion(opcionCorrecta);
-        primerJugador.establecerRespuesta(respuesta1);
-
-        RespuestaVF respuesta2=new RespuestaVF();
-        respuesta2.agregarOpcion(opcionIncorrecta);
-        segundoJugador.establecerRespuesta(respuesta2);
-
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(primerJugador);
-        jugadores.add(segundoJugador);
-
-        pregunta.evaluarJugadores(jugadores);
-
-        assertEquals(puntosGanados + 1, primerJugador.getPuntaje());
-        assertEquals(puntosGanados - 1, segundoJugador.getPuntaje());
+        assertEquals(puntosGanados + 1, primerJugador.puntos());
+        assertEquals(puntosGanados - 1, segundoJugador.puntos());
     }
 }

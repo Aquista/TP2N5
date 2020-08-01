@@ -5,9 +5,14 @@ import edu.fiuba.algo3.modelo.Jugador;
 
 public class PuntajeConPenalidad extends Puntaje {
 
-    public void calcularPuntaje(Jugador unJugador) {
-        unJugador.evaluarRespuestas(this);
+    @Override
+    public void calcularPuntaje(Jugador unJugador, int respuestasCorrectas) {
         unJugador.actualizarPuntaje(this.cantidadCorrectas-this.cantidadIncorrectas);
+    }
+
+    @Override
+    public Puntaje nuevoPuntaje() {
+        return new PuntajeConPenalidad();
     }
  
 }

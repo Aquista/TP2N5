@@ -13,4 +13,10 @@ public class OpcionCorrecta implements Opcion{
     public void evaluar(Puntaje unPuntaje ) {
         unPuntaje.sumarCorrecta();
     }
+
+    @Override
+    public boolean meEligio(String unTexto) {
+        return unTexto.compareTo(this.texto)==0;
+    }
+    
 }

@@ -1,10 +1,11 @@
 package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaMCTests;
 
 import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoiceClasico;
-import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
+import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
@@ -19,21 +20,16 @@ public class PreguntaMultipleChoiceClasicoTest {
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = new OpcionIncorrecta("texto opcion 3");
-        PreguntaMultipleChoiceClasico pregunta = new PreguntaMultipleChoiceClasico("texto");
+        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto",new PuntajeClasico());
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
+        
+        ArrayList<Opcion> elegidas=new ArrayList<>();
+        elegidas.add(op1);
+        jugador.responderCon(elegidas, pregunta);
 
-        RespuestaMultipleChoice resp = new RespuestaMultipleChoice();
-        resp.agregarOpcion(op1);
-        jugador.establecerRespuesta(resp);
-
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(jugador);
-
-        pregunta.evaluarJugadores(jugadores);
-
-        assertEquals(puntajeEsperado, jugador.getPuntaje());
+        assertEquals(puntajeEsperado, jugador.puntos());
     }
 
     @Test
@@ -45,24 +41,19 @@ public class PreguntaMultipleChoiceClasicoTest {
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionCorrecta op3 = new OpcionCorrecta("texto opcion 3");
         OpcionIncorrecta op4 = new OpcionIncorrecta("texto opcion 4");
-        PreguntaMultipleChoiceClasico pregunta = new PreguntaMultipleChoiceClasico("texto");
+        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto",new PuntajeClasico());
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
 
-        RespuestaMultipleChoice resp = new RespuestaMultipleChoice();
-        resp.agregarOpcion(op1);
-        resp.agregarOpcion(op2);
-        resp.agregarOpcion(op3);
-        jugador.establecerRespuesta(resp);
+        ArrayList<Opcion> elegidas=new ArrayList<>();
+        elegidas.add(op1);
+        elegidas.add(op2);
+        elegidas.add(op3);
+        jugador.responderCon(elegidas, pregunta);
 
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(jugador);
-
-        pregunta.evaluarJugadores(jugadores);
-
-        assertEquals(puntajeEsperado, jugador.getPuntaje());
+        assertEquals(puntajeEsperado, jugador.puntos());
     }
     
     @Test
@@ -75,22 +66,17 @@ public class PreguntaMultipleChoiceClasicoTest {
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionCorrecta op3 = new OpcionCorrecta("texto opcion 3");
         OpcionIncorrecta op4 = new OpcionIncorrecta("texto opcion 4");
-        PreguntaMultipleChoiceClasico pregunta = new PreguntaMultipleChoiceClasico("texto");
+        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto",new PuntajeClasico());
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
+        
+        ArrayList<Opcion> elegidas=new ArrayList<>();
+        elegidas.add(op4);
+        jugador.responderCon(elegidas, pregunta);
 
-        RespuestaMultipleChoice resp = new RespuestaMultipleChoice();
-        resp.agregarOpcion(op4);
-        jugador.establecerRespuesta(resp);
-
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(jugador);
-
-        pregunta.evaluarJugadores(jugadores);
-
-        assertEquals(puntosGanados, jugador.getPuntaje());
+        assertEquals(puntosGanados, jugador.puntos());
     }
     
     @Test
@@ -106,30 +92,23 @@ public class PreguntaMultipleChoiceClasicoTest {
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionCorrecta op3 = new OpcionCorrecta("texto opcion 3");
         OpcionIncorrecta op4 = new OpcionIncorrecta("texto opcion 4");
-        PreguntaMultipleChoiceClasico pregunta = new PreguntaMultipleChoiceClasico("texto");
+        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto",new PuntajeClasico());
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
-
-        RespuestaMultipleChoice resp1 = new RespuestaMultipleChoice();
-        resp1.agregarOpcion(op1);
-        resp1.agregarOpcion(op2);
-        resp1.agregarOpcion(op3);
-        primerJugador.establecerRespuesta(resp1);
-
-        RespuestaMultipleChoice resp2 = new RespuestaMultipleChoice();
-        resp2.agregarOpcion(op4);
-        segundoJugador.establecerRespuesta(resp2);
         
+        ArrayList<Opcion> primerElegidas=new ArrayList<>();
+        primerElegidas.add(op1);
+        primerElegidas.add(op2);
+        primerElegidas.add(op3);
+        primerJugador.responderCon(primerElegidas, pregunta);
         
-        ArrayList<Jugador> jugadores = new ArrayList<>();
-        jugadores.add(primerJugador);
-        jugadores.add(segundoJugador);
+        ArrayList<Opcion> segundoElegidas=new ArrayList<>();
+        segundoElegidas.add(op4);
+        segundoJugador.responderCon(segundoElegidas, pregunta);
 
-        pregunta.evaluarJugadores(jugadores);
-
-        assertEquals(puntosGanados+1, primerJugador.getPuntaje());
-        assertEquals(puntosGanados, segundoJugador.getPuntaje());
+        assertEquals(puntosGanados+1, primerJugador.puntos());
+        assertEquals(puntosGanados, segundoJugador.puntos());
     }
 }

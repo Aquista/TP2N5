@@ -1,7 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.Opciones.Opcion;
+import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Respuestas.IRespuesta;
+import java.util.ArrayList;
 
 public class Jugador {
     private int puntaje = 0;
@@ -13,7 +16,7 @@ public class Jugador {
             puntaje = 0;
         }
     }
-    public int getPuntaje() {
+    public int puntos() {
         return puntaje;
     }
 
@@ -23,5 +26,13 @@ public class Jugador {
     
     public void establecerRespuesta(IRespuesta unaRespuesta) {
         this.respuesta = unaRespuesta;
+    }
+    
+    public void responderCon(Opcion unaOpcion ,Pregunta unaPregunta){
+        unaPregunta.evaluarJugador(this,unaOpcion);
+    }
+    
+    public void responderCon(ArrayList<Opcion> elegidas ,Pregunta unaPregunta){
+        unaPregunta.evaluarJugador(this,elegidas);
     }
 }
