@@ -25,10 +25,7 @@ public abstract class Pregunta {
     public void agregarOpcionIncorrecta(OpcionIncorrecta opcionIncorrecta){
         opciones.add(opcionIncorrecta);
     }
-    
-    public void evaluarJugador(Jugador unJugador ,Opcion opcion){
-    }
-    
-    public void evaluarJugador(Jugador unJugador ,ArrayList<Opcion> opciones){
-    }
+
+
+    public abstract void evaluarJugador(Jugador unJugador ,Opcion ... opciones);
 }

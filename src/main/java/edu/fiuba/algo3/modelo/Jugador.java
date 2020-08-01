@@ -28,11 +28,11 @@ public class Jugador {
         this.respuesta = unaRespuesta;
     }
     
-    public void responderCon(Opcion unaOpcion ,Pregunta unaPregunta){
-        unaPregunta.evaluarJugador(this,unaOpcion);
+    public void responderPreguntaCon(Pregunta pregunta, Opcion elegida){
+        pregunta.evaluarJugador(this,elegida);
     }
     
-    public void responderCon(ArrayList<Opcion> elegidas ,Pregunta unaPregunta){
-        unaPregunta.evaluarJugador(this,elegidas);
+    public void responderPreguntaCon(Pregunta pregunta, Opcion ... elegidas){
+        pregunta.evaluarJugador(this,elegidas);
     }
 }

@@ -1,14 +1,11 @@
 package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaMCTests;
 
 import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeParcial;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,11 +22,8 @@ public class PreguntaMultipleChoiceParcialTest {
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
-        
-        ArrayList<Opcion> elegidas = new ArrayList<>();
-        elegidas.add(op1);
-        elegidas.add(op3);
-        jugador.responderCon(elegidas, pregunta);
+
+        jugador.responderPreguntaCon(pregunta, op1, op3);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -49,10 +43,7 @@ public class PreguntaMultipleChoiceParcialTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        ArrayList<Opcion> elegidas = new ArrayList<>();
-        elegidas.add(op1);
-        elegidas.add(op2);
-        jugador.responderCon(elegidas, pregunta);
+        jugador.responderPreguntaCon(pregunta, op1, op2);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -72,10 +63,7 @@ public class PreguntaMultipleChoiceParcialTest {
         pregunta.agregarOpcionIncorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        ArrayList<Opcion> elegidas = new ArrayList<>();
-        elegidas.add(op1);
-        elegidas.add(op2);
-        jugador.responderCon(elegidas, pregunta);
+        jugador.responderPreguntaCon(pregunta, op1, op2);
       
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -94,10 +82,8 @@ public class PreguntaMultipleChoiceParcialTest {
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
-        
-        ArrayList<Opcion> elegidas = new ArrayList<>();
-        elegidas.add(op1);
-        jugador.responderCon(elegidas, pregunta);
+
+        jugador.responderPreguntaCon(pregunta, op1);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }

@@ -23,7 +23,7 @@ public class PreguntaVFClasicoTest {
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
         Jugador jugador = new Jugador();
-        jugador.responderCon(opcionCorrecta,pregunta);
+        jugador.responderPreguntaCon(pregunta, opcionCorrecta);
 
         assertEquals(puntajeEsperado,jugador.puntos());
     }
@@ -39,9 +39,9 @@ public class PreguntaVFClasicoTest {
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
         
         Jugador jugador1 = new Jugador();
-        jugador1.responderCon(opcionCorrecta,pregunta);
+        jugador1.responderPreguntaCon(pregunta, opcionCorrecta);
         Jugador jugador2 = new Jugador();
-        jugador2.responderCon(opcionIncorrecta,pregunta);
+        jugador2.responderPreguntaCon(pregunta, opcionIncorrecta);
 
         assertEquals(1,jugador1.puntos());
         assertEquals(0,jugador2.puntos());

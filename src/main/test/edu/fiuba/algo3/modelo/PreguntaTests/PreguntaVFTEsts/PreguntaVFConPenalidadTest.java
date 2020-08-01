@@ -23,7 +23,7 @@ public class PreguntaVFConPenalidadTest {
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
-        primerJugador.responderCon(opcionCorrecta, pregunta);
+        primerJugador.responderPreguntaCon(pregunta, opcionCorrecta);
 
         assertEquals(puntajeEsperado, primerJugador.puntos());
     }
@@ -46,8 +46,8 @@ public class PreguntaVFConPenalidadTest {
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
         
         
-        primerJugador.responderCon(opcionCorrecta, pregunta);
-        segundoJugador.responderCon(opcionIncorrecta, pregunta);
+        primerJugador.responderPreguntaCon(pregunta, opcionCorrecta);
+        segundoJugador.responderPreguntaCon(pregunta, opcionIncorrecta);
 
         assertEquals(puntosGanados + 1, primerJugador.puntos());
         assertEquals(puntosGanados - 1, segundoJugador.puntos());
