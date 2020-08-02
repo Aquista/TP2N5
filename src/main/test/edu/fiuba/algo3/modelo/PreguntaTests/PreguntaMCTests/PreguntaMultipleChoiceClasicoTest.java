@@ -24,7 +24,7 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.responderPreguntaCon(pregunta, op1);
+        jugador.responderPreguntaCon(pregunta,1, op1);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -44,7 +44,7 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
 
-        jugador.responderPreguntaCon(pregunta, op1, op2, op3);
+        jugador.responderPreguntaCon(pregunta,1, op1, op2, op3);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -65,7 +65,7 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
 
-        jugador.responderPreguntaCon(pregunta, op4);
+        jugador.responderPreguntaCon(pregunta,1, op4);
 
         assertEquals(puntosGanados, jugador.puntos());
     }
@@ -89,9 +89,9 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
 
-        primerJugador.responderPreguntaCon(pregunta, op1, op2, op3);
+        primerJugador.responderPreguntaCon(pregunta,1, op1, op2, op3);
 
-        segundoJugador.responderPreguntaCon(pregunta, op4);
+        segundoJugador.responderPreguntaCon(pregunta,1, op4);
 
         assertEquals(puntosGanados+1, primerJugador.puntos());
         assertEquals(puntosGanados, segundoJugador.puntos());

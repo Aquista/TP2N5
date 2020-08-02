@@ -30,4 +30,14 @@ public class PuntajeConPenalidadTest {
         unPuntaje.calcularPuntaje(unJugador,0);
         assertEquals(puntosGanados-1,unJugador.puntos());
     }
+    @Test
+    public void test05PuntajeConPenalidadYMultiplicadorx2Agrega2PuntosSiUnJugadorRespondeCorrectamente(){
+        Jugador unJugador = new Jugador();
+        PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad(2);
+        OpcionCorrecta opcion = new OpcionCorrecta("true");
+        opcion.evaluar(unPuntaje);
+   
+        unPuntaje.calcularPuntaje(unJugador,0);
+        assertEquals(2,unJugador.puntos());
+    }
 }

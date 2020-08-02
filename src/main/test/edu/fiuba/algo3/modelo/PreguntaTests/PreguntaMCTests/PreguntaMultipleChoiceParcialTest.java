@@ -23,7 +23,7 @@ public class PreguntaMultipleChoiceParcialTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.responderPreguntaCon(pregunta, op1, op3);
+        jugador.responderPreguntaCon(pregunta,0, op1, op3);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -43,7 +43,7 @@ public class PreguntaMultipleChoiceParcialTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.responderPreguntaCon(pregunta, op1, op2);
+        jugador.responderPreguntaCon(pregunta,0, op1, op2);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -63,7 +63,7 @@ public class PreguntaMultipleChoiceParcialTest {
         pregunta.agregarOpcionIncorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.responderPreguntaCon(pregunta, op1, op2);
+        jugador.responderPreguntaCon(pregunta,0, op1, op2);
       
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -83,7 +83,7 @@ public class PreguntaMultipleChoiceParcialTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.responderPreguntaCon(pregunta, op1);
+        jugador.responderPreguntaCon(pregunta,0, op1);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }

@@ -24,7 +24,7 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.responderPreguntaCon(pregunta, op1, op3);
+        jugador.responderPreguntaCon(pregunta,1, op1, op3);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -44,7 +44,7 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.responderPreguntaCon(pregunta, op1, op2);
+        jugador.responderPreguntaCon(pregunta,1, op1, op2);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }

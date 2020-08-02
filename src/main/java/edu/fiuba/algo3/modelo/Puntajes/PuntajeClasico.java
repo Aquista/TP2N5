@@ -13,7 +13,7 @@ public class PuntajeClasico extends Puntaje {
     }
 
     @Override
-    public Puntaje nuevoPuntaje() {
+    public Puntaje nuevoPuntaje(int unMulti) {
         return new PuntajeClasico();
     }
 }

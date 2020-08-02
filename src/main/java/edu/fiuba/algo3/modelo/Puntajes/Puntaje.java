@@ -14,7 +14,7 @@ public abstract class Puntaje {
     public void sumarIncorrecta() {
         cantidadIncorrectas += 1;
     }
-    public abstract Puntaje nuevoPuntaje();
+    public abstract Puntaje nuevoPuntaje(int unMulti);
     
     public abstract void calcularPuntaje(Jugador unJugador,int respuestasCorrectas);
 }

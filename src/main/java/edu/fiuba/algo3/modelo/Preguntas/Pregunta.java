@@ -6,8 +6,8 @@ import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import java.util.ArrayList;
 
 public abstract class Pregunta {
-    protected ArrayList<Opcion> opciones = new ArrayList<Opcion>();
-    private String texto;
+    protected ArrayList<Opcion> opciones = new ArrayList<>();
+    private final String texto;
     protected int totalCorrectas ;
     protected Puntaje puntaje;
 
@@ -27,5 +27,5 @@ public abstract class Pregunta {
     }
 
 
-    public abstract void evaluarJugador(Jugador unJugador ,Opcion ... opciones);
+    public abstract void evaluarJugador(Jugador unJugador, int unMulti, Opcion... opciones);
 }

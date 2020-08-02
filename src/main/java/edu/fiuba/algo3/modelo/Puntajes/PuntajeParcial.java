@@ -11,7 +11,7 @@ public class PuntajeParcial extends Puntaje{
     }
 
     @Override
-    public Puntaje nuevoPuntaje() {
+    public Puntaje nuevoPuntaje(int  unMulti) {
         return new PuntajeParcial();
     }
 }
