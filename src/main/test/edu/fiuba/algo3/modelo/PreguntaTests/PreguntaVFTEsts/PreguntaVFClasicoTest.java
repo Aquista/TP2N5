@@ -43,6 +43,7 @@ public class PreguntaVFClasicoTest {
         Jugador jugador2 = new Jugador();
         jugador2.responderPreguntaCon(pregunta, 0, opcionIncorrecta);
 
+
         assertEquals(1,jugador1.puntos());
         assertEquals(0,jugador2.puntos());
     }

@@ -20,5 +20,9 @@ public class PuntajeConPenalidad extends Puntaje {
     public Puntaje nuevoPuntaje(int unMulti) {
         return new PuntajeConPenalidad(unMulti);
     }
+    @Override
+    public void setMultiplicador(int unMultiplicador) {
+        this.multiplicador = unMultiplicador;
+    }
  
 }

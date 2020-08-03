@@ -16,4 +16,9 @@ public class PuntajeClasico extends Puntaje {
     public Puntaje nuevoPuntaje(int unMulti) {
         return new PuntajeClasico();
     }
+
+    @Override
+    public void setMultiplicador(int multiplicador) {
+
+    }
 }

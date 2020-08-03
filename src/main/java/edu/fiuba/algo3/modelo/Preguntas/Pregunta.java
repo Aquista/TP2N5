@@ -28,4 +28,6 @@ public abstract class Pregunta {
 
 
     public abstract void evaluarJugador(Jugador unJugador, int unMulti, Opcion... opciones);
+
+    public abstract void evaluarJugadores(Jugador primerJugador, Jugador segundoJugador);
 }

@@ -14,4 +14,9 @@ public class PuntajeParcial extends Puntaje{
     public Puntaje nuevoPuntaje(int  unMulti) {
         return new PuntajeParcial();
     }
+
+    @Override
+    public void setMultiplicador(int multiplicador) {
+
+    }
 }

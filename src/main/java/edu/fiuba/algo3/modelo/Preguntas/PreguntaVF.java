@@ -15,5 +15,9 @@ public class PreguntaVF extends Pregunta{
         elegida.evaluar(puntajeJugador);
         puntajeJugador.calcularPuntaje(jugador, this.totalCorrectas);
     }
-    
+
+    @Override
+    public void evaluarJugadores(Jugador primerJugador, Jugador segundoJugador) {
+
+    }
 }

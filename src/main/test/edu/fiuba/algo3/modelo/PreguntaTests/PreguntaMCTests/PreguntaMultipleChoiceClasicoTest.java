@@ -7,6 +7,8 @@ import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
 import org.junit.jupiter.api.Test;
 
 public class PreguntaMultipleChoiceClasicoTest {
@@ -88,10 +90,12 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
+        primerJugador.establecerRespuesta(new RespuestaMultipleChoice());
+        primerJugador.responderCon(1, op1, op2, op3);
+        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
+        segundoJugador.responderCon(1, op4);
 
-        primerJugador.responderPreguntaCon(pregunta,1, op1, op2, op3);
-
-        segundoJugador.responderPreguntaCon(pregunta,1, op4);
+        pregunta.evaluarJugadores(primerJugador,segundoJugador);
 
         assertEquals(puntosGanados+1, primerJugador.puntos());
         assertEquals(puntosGanados, segundoJugador.puntos());

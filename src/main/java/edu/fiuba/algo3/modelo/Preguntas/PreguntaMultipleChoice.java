@@ -18,5 +18,15 @@ public class PreguntaMultipleChoice extends Pregunta {
         }
         puntajeJugador.calcularPuntaje(jugador,this.totalCorrectas);
     }
+
+    private void evaluarJugador(Jugador unJugador){
+        unJugador.evaluarRespuestas(this.puntaje.nuevoPuntaje(1), this.totalCorrectas);
+    }
+
+    @Override
+    public void evaluarJugadores(Jugador primerJugador, Jugador segundoJugador){
+        evaluarJugador(primerJugador);
+        evaluarJugador(segundoJugador);
+    }
     
 }
