@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/Aquista/TP2N5.svg?branch=master)](https://travis-ci.com/Aquista/TP2N5)
-[![codecov](https://codecov.io/gh/Aquista/TP2N5/branch/Version4.20/graph/badge.svg)](https://codecov.io/gh/Aquista/TP2N5)
+[![codecov](https://codecov.io/gh/Aquista/TP2N5/branch/Version4.20/graph/badge.svg)](https://codecov.io/gh/Aquista/TP2N5/branch/Version4.20)
 
 
 
