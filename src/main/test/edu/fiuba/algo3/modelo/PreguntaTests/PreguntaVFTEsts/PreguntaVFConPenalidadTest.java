@@ -21,10 +21,8 @@ public class PreguntaVFConPenalidadTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        primerJugador.establecerRespuesta(new RespuestaVF());
-        primerJugador.responderCon(1, opcionCorrecta);
-        segundoJugador.establecerRespuesta(new RespuestaVF());
-        segundoJugador.responderCon(1, opcionCorrecta);
+        primerJugador.responderConRespuesta(1, new RespuestaVF(opcionCorrecta));
+        segundoJugador.responderConRespuesta(1, new RespuestaVF(opcionCorrecta));
 
         PreguntaVF pregunta = new PreguntaVF("Soy una pregunta",new PuntajeConPenalidad());
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
@@ -48,10 +46,8 @@ public class PreguntaVFConPenalidadTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        primerJugador.establecerRespuesta(new RespuestaVF());
-        primerJugador.responderCon(1, opcionCorrecta);
-        segundoJugador.establecerRespuesta(new RespuestaVF());
-        segundoJugador.responderCon(1, opcionIncorrecta);
+        primerJugador.responderConRespuesta(1, new RespuestaVF(opcionCorrecta));
+        segundoJugador.responderConRespuesta(1, new RespuestaVF(opcionIncorrecta));
 
         PreguntaVF pregunta = new PreguntaVF("Soy una pregunta",new PuntajeConPenalidad());
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
@@ -73,10 +69,8 @@ public class PreguntaVFConPenalidadTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        primerJugador.establecerRespuesta(new RespuestaVF());
-        primerJugador.responderCon(2, opcionCorrecta);
-        segundoJugador.establecerRespuesta(new RespuestaVF());
-        segundoJugador.responderCon(2, opcionCorrecta);
+        primerJugador.responderConRespuesta(2, new RespuestaVF(opcionCorrecta));
+        segundoJugador.responderConRespuesta(2, new RespuestaVF(opcionCorrecta));
 
         PreguntaVF pregunta = new PreguntaVF("Soy una pregunta",new PuntajeConPenalidad());
         pregunta.agregarOpcionCorrecta(opcionCorrecta);

@@ -27,9 +27,8 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.establecerRespuesta(new RespuestaMultipleChoice());
-        jugador.responderCon(1, op1, op3);
-        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
+        jugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1, op3));
+        segundoJugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1, op2, op3));
 
         pregunta.evaluarJugadores(jugador, segundoJugador);
 
@@ -51,9 +50,9 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
-        jugador.establecerRespuesta(new RespuestaMultipleChoice());
-        jugador.responderCon(1, op1, op2);
-        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
+
+        jugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1, op2));
+        segundoJugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1, op2, op3));
 
         pregunta.evaluarJugadores(jugador, segundoJugador);
 

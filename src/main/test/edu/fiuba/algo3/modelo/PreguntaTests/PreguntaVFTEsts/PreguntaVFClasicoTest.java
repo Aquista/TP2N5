@@ -22,10 +22,8 @@ public class PreguntaVFClasicoTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        jugador.establecerRespuesta(new RespuestaVF());
-        jugador.responderCon(1, opcionCorrecta);
-        segundoJugador.establecerRespuesta(new RespuestaVF());
-        segundoJugador.responderCon(1, opcionCorrecta);
+        jugador.responderConRespuesta(1, new RespuestaVF(opcionCorrecta));
+        segundoJugador.responderConRespuesta(1, new RespuestaVF(opcionCorrecta));
 
         PreguntaVF pregunta = new PreguntaVF("Soy una pregunta",new PuntajeClasico());
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
@@ -46,10 +44,8 @@ public class PreguntaVFClasicoTest {
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
 
-        jugador.establecerRespuesta(new RespuestaVF());
-        jugador.responderCon(1, opcionCorrecta);
-        segundoJugador.establecerRespuesta(new RespuestaVF());
-        segundoJugador.responderCon(1, opcionIncorrecta);
+        jugador.responderConRespuesta(1, new RespuestaVF(opcionCorrecta));
+        segundoJugador.responderConRespuesta(1, new RespuestaVF(opcionIncorrecta));
 
         PreguntaVF pregunta = new PreguntaVF("Soy una pregunta",new PuntajeClasico());
         pregunta.agregarOpcionCorrecta(opcionCorrecta);

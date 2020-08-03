@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 
 public class Jugador {
     private int puntaje = 0;
@@ -25,20 +26,10 @@ public class Jugador {
         unPuntaje.calcularPuntaje(totalCorrectas);
 
     }
-    
-    public void establecerRespuesta(Respuesta unaRespuesta) {
-        this.respuesta = unaRespuesta;
-    }
-    
-    public void responderPreguntaCon(Pregunta pregunta, int unMulti, Opcion ... elegidas){
-        pregunta.evaluarJugador(this,unMulti,elegidas);
-    }
 
-    public void responderCon(int multiplicador,Opcion ... elegidas) {
-        
-        for(Opcion unaOpcion : elegidas){
-            respuesta.agregarOpcion(unaOpcion);
-        }
+    public void responderConRespuesta(int multiplicador, Respuesta unaRespuesta) {
+
+        respuesta = unaRespuesta;
         respuesta.setMultiplicador(multiplicador);
     }
 }

@@ -26,9 +26,9 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
-        jugador.establecerRespuesta(new RespuestaMultipleChoice());
-        jugador.responderCon(1, op1);
-        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
+
+        jugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1));
+        segundoJugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1));
 
         pregunta.evaluarJugadores(jugador,segundoJugador);
 
@@ -51,9 +51,8 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
 
-        jugador.establecerRespuesta(new RespuestaMultipleChoice());
-        jugador.responderCon(1, op1, op2, op3);
-        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
+        jugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1, op2, op3));
+        segundoJugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1, op2, op3));
 
         pregunta.evaluarJugadores(jugador, segundoJugador);
 
@@ -76,9 +75,9 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
-        jugador.establecerRespuesta(new RespuestaMultipleChoice() );
-        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
-        jugador.responderCon(1, op4);
+
+        jugador.responderConRespuesta(1, new RespuestaMultipleChoice(op4));
+        segundoJugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1, op2, op3));
 
         pregunta.evaluarJugadores(jugador,segundoJugador);
 
@@ -103,10 +102,9 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
-        primerJugador.establecerRespuesta(new RespuestaMultipleChoice());
-        primerJugador.responderCon(1, op1, op2, op3);
-        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
-        segundoJugador.responderCon(1, op4);
+
+        primerJugador.responderConRespuesta(1, new RespuestaMultipleChoice(op1, op2, op3));
+        segundoJugador.responderConRespuesta(1, new RespuestaMultipleChoice(op4));
 
         pregunta.evaluarJugadores(primerJugador,segundoJugador);
 

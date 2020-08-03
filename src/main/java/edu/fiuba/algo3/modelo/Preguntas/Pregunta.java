@@ -26,8 +26,5 @@ public abstract class Pregunta {
         opciones.add(opcionIncorrecta);
     }
 
-
-    public abstract void evaluarJugador(Jugador unJugador, int unMulti, Opcion... opciones);
-
     public abstract void evaluarJugadores(Jugador primerJugador, Jugador segundoJugador);
 }
