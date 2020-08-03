@@ -5,6 +5,8 @@ import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
+import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,6 +18,7 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         int puntajeEsperado = 0;
 
         Jugador jugador = new Jugador();
+        Jugador segundoJugador = new Jugador();
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = new OpcionIncorrecta("texto opcion 3");
@@ -24,7 +27,11 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
 
-        jugador.responderPreguntaCon(pregunta,1, op1, op3);
+        jugador.establecerRespuesta(new RespuestaMultipleChoice());
+        jugador.responderCon(1, op1, op3);
+        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
+
+        pregunta.evaluarJugadores(jugador, segundoJugador);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -35,6 +42,7 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         int puntajeEsperado = 12;
 
         Jugador jugador = new Jugador();
+        Jugador segundoJugador = new Jugador();
         jugador.actualizarPuntaje(puntajeInicial);
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
@@ -43,8 +51,11 @@ public class PreguntaMultipleChoiceConPenalidadTest {
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
+        jugador.establecerRespuesta(new RespuestaMultipleChoice());
+        jugador.responderCon(1, op1, op2);
+        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
 
-        jugador.responderPreguntaCon(pregunta,1, op1, op2);
+        pregunta.evaluarJugadores(jugador, segundoJugador);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }

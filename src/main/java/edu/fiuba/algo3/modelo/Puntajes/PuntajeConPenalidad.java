@@ -19,6 +19,11 @@ public class PuntajeConPenalidad extends Puntaje {
     }
 
     @Override
+    public int getPuntos() {
+        return puntos;
+    }
+
+    @Override
     public Puntaje nuevoPuntaje(int unMulti) {
         return new PuntajeConPenalidad(unMulti);
     }
