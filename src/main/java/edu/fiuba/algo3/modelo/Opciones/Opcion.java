@@ -4,5 +4,4 @@ import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 public interface Opcion {
     public void evaluar(Puntaje unPuntaje );
-    public boolean meEligio(String texto);
 }
