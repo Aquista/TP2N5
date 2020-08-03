@@ -1,11 +1,9 @@
 package edu.fiuba.algo3.modelo.Puntajes;
 
-import edu.fiuba.algo3.modelo.Jugador;
-
 public class PuntajeClasico extends Puntaje {
     
     @Override
-    public void calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta) {
+    public void calcularPuntaje(int cantidadRespCorrectasPregunta) {
         if(cantidadCorrectas == cantidadRespCorrectasPregunta && cantidadIncorrectas == 0) {
             puntos = 1;
         } else puntos = 0;

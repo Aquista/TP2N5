@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo.Puntajes;
 
-import edu.fiuba.algo3.modelo.Jugador;
-
 public abstract class Puntaje {
     protected int puntos = 0;
     protected int cantidadCorrectas = 0;
@@ -20,7 +18,7 @@ public abstract class Puntaje {
         return puntos;
     }
     
-    public abstract void calcularPuntaje(Jugador unJugador,int respuestasCorrectas);
+    public abstract void calcularPuntaje(int respuestasCorrectas);
 
     public abstract void setMultiplicador(int multiplicador);
 }

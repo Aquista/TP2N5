@@ -10,32 +10,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PuntajeClasicoTest {
     @Test
-    public void test01PuntajeClasicoAgrega1PuntoSiUnJugadorRespondeCorrectamente(){
+    public void test01PuntajeClasicoAgrega1PuntoSiLaOpcionEsCorrecta(){
         
         PuntajeClasico unPuntaje = new PuntajeClasico();
-        Jugador unJugador = new Jugador();
         OpcionCorrecta opcion = new OpcionCorrecta("true");
         opcion.evaluar(unPuntaje);
-        unPuntaje.calcularPuntaje(unJugador, 1);
+        unPuntaje.calcularPuntaje(1);
         
-        assertEquals(1,unJugador.puntos());
+        assertEquals(1,unPuntaje.getPuntos() );
     }
     @Test
-    public void test02PuntajeClasicoNoSumaPuntoNiRestaSiUnJugadorRespondeIncorrectamente(){
-        int puntosGanados = 5;
-        Jugador unJugador = new Jugador();
+    public void test02PuntajeClasicoNoSumaPuntoNiRestaSiLaOpcionEsIncorrecta(){
+
+        int puntosesperados = 0;
+
         PuntajeClasico unPuntaje = new PuntajeClasico();
-        unJugador.actualizarPuntaje(puntosGanados);
+
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
         opcion.evaluar(unPuntaje);
-        unPuntaje.calcularPuntaje(unJugador, 1);
-        
-        assertEquals(puntosGanados,unJugador.puntos());
+        unPuntaje.calcularPuntaje(1);
+
+        assertEquals(puntosesperados,unPuntaje.getPuntos() );
     }
 
     @Test
-    public void test03PuntajeClasicoSuma1PuntoSiUnJugadorRespondeTodasCorrectamente(){
-        Jugador unJugador = new Jugador();
+    public void test03PuntajeClasicoSuma1PuntoSiTodasLasOpcionesSonCorrectas(){
         PuntajeClasico unPuntaje = new PuntajeClasico();
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
@@ -45,13 +44,12 @@ public class PuntajeClasicoTest {
         opcion2.evaluar(unPuntaje);
         opcion3.evaluar(unPuntaje);
         
-        unPuntaje.calcularPuntaje(unJugador, 3);
-        assertEquals(1,unJugador.puntos());
+        unPuntaje.calcularPuntaje(3);
+        assertEquals(1,unPuntaje.getPuntos() );
     }
 
     @Test
-    public void test04PuntajeClasicoSuma0PuntosSiUnJugadorResponde3CorrectasDe3Y1Incorrecta(){
-        Jugador unJugador = new Jugador();
+    public void test04PuntajeClasicoSuma0PuntosSiSon3OpcionesCorrectasde3Y1Incorrecta(){
         PuntajeClasico unPuntaje = new PuntajeClasico();
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
@@ -63,13 +61,12 @@ public class PuntajeClasicoTest {
         opcion3.evaluar(unPuntaje);
         opcion4.evaluar(unPuntaje);
         
-        unPuntaje.calcularPuntaje(unJugador, 3);
-        assertEquals(0,unJugador.puntos());
+        unPuntaje.calcularPuntaje(3);
+        assertEquals(0,unPuntaje.getPuntos());
     }
 
     @Test
-    public void test05PuntajeClasicoSuma0PuntosSiUnJugadorResponde2CorrectasDe3Y1Incorrecta(){
-        Jugador unJugador = new Jugador();
+    public void test05PuntajeClasicoSuma0PuntosSiSon2OpcionesCorrectasde3Y1Incorrecta(){
         PuntajeClasico unPuntaje = new PuntajeClasico();
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
@@ -79,20 +76,18 @@ public class PuntajeClasicoTest {
         opcion2.evaluar(unPuntaje);
         opcion3.evaluar(unPuntaje);
 
-        unPuntaje.calcularPuntaje(unJugador, 2);
-        assertEquals(0,unJugador.puntos());
+        unPuntaje.calcularPuntaje(3);
+        assertEquals(0,unPuntaje.getPuntos() );
     }
 
     @Test
-    public void test06PuntajeClasicoSuma0PuntosSiUnJugadorResponde1CorrectasDe2YNingunaIncorrecta(){
-        Jugador unJugador = new Jugador();
+    public void test06PuntajeClasicoSuma0PuntosSiEs1OpcionCorrectaDe2(){
         PuntajeClasico unPuntaje = new PuntajeClasico();
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
-        OpcionCorrecta opcion2 = new OpcionCorrecta("");
 
         opcion1.evaluar(unPuntaje);
         
-        unPuntaje.calcularPuntaje(unJugador, 2);
-        assertEquals(0,unJugador.puntos());
+        unPuntaje.calcularPuntaje(2);
+        assertEquals(0,unPuntaje.getPuntos() );
     }
 }

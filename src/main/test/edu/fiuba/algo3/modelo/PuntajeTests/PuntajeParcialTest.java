@@ -11,23 +11,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PuntajeParcialTest {
 
     @Test
-    public void test01PuntajeParcialAgrega1PuntoSiUnJugadorContestaBien1Respuesta(){
-        Jugador unJugador = new Jugador();
+    public void test01PuntajeParcialAgrega1PuntoSiHay1OpcionCorrecta(){
+
         PuntajeParcial puntaje = new PuntajeParcial();
         OpcionCorrecta opcion = new OpcionCorrecta("false");
         opcion.evaluar(puntaje);
-        puntaje.calcularPuntaje(unJugador,0);
-        assertEquals(1, unJugador.puntos());
+        puntaje.calcularPuntaje(0);
+        assertEquals(1, puntaje.getPuntos());
     }
 
     @Test
-    public void test02PuntajeParcialNoModificaLosPuntoSiUnJugadorCon0PuntosContestaMal(){
-        Jugador unJugador = new Jugador();
+    public void test02PuntajeParcialNoModificaLosPuntoSiLasOpcionesSonIncorrectas(){
+
         PuntajeParcial puntaje = new PuntajeParcial();
         OpcionIncorrecta opcion = new OpcionIncorrecta("false");
         opcion.evaluar(puntaje);
 
-        puntaje.calcularPuntaje(unJugador,0);
-        assertEquals(0, unJugador.puntos());
+        puntaje.calcularPuntaje(0);
+        assertEquals(0, puntaje.getPuntos());
     }
 }

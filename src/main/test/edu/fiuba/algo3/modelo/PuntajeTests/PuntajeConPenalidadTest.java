@@ -10,34 +10,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PuntajeConPenalidadTest {
     @Test
-    public void test03PuntajeConPenalidadAgrega1PuntoSiUnJugadorRespondeCorrectamente(){
-        Jugador unJugador = new Jugador();
+    public void test01PuntajeConPenalidadAgrega1PuntoSiLasOpcionesSonCorrectas(){
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
         OpcionCorrecta opcion = new OpcionCorrecta("true");
         opcion.evaluar(unPuntaje);
         
-        unPuntaje.calcularPuntaje(unJugador,0);
-        assertEquals(1,unJugador.puntos());
+        unPuntaje.calcularPuntaje(0);
+        assertEquals(1, unPuntaje.getPuntos());
     }
     @Test
-    public void test04PuntajeConPenalidadSaca1PuntoSiUnJugadorRespondeIncorrectamente(){
-        int puntosGanados=5;
-        Jugador unJugador = new Jugador();
-        unJugador.actualizarPuntaje(puntosGanados);
+    public void test02PuntajeConPenalidadSaca1PuntoSiHay1OpcionIncorrecta(){
+
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
         opcion.evaluar(unPuntaje);
-        unPuntaje.calcularPuntaje(unJugador,0);
-        assertEquals(puntosGanados-1,unJugador.puntos());
+
+        unPuntaje.calcularPuntaje(0);
+        assertEquals(-1, unPuntaje.getPuntos());
     }
     @Test
-    public void test05PuntajeConPenalidadYMultiplicadorx2Agrega2PuntosSiUnJugadorRespondeCorrectamente(){
-        Jugador unJugador = new Jugador();
+    public void test03PuntajeConPenalidadYMultiplicadorx2Agrega2PuntosSiHay1OpcionCorrecta(){
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad(2);
         OpcionCorrecta opcion = new OpcionCorrecta("true");
         opcion.evaluar(unPuntaje);
    
-        unPuntaje.calcularPuntaje(unJugador,0);
-        assertEquals(2,unJugador.puntos());
+        unPuntaje.calcularPuntaje(0);
+        assertEquals(2, unPuntaje.getPuntos());
     }
 }
