@@ -8,8 +8,14 @@ public class PuntajeClasico extends Puntaje {
     
     @Override
     public void calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta) {
-        if(cantidadCorrectas == cantidadRespCorrectasPregunta && cantidadIncorrectas == 0)
-            unJugador.actualizarPuntaje(puntos);
+        if(cantidadCorrectas == cantidadRespCorrectasPregunta && cantidadIncorrectas == 0) {
+            //unJugador.actualizarPuntaje(puntos);
+        } else puntos = 0;
+    }
+
+    @Override
+    public int getPuntos() {
+        return puntos;
     }
 
     @Override

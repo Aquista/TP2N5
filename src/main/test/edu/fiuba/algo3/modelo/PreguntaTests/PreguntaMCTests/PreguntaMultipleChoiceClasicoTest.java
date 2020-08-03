@@ -18,6 +18,7 @@ public class PreguntaMultipleChoiceClasicoTest {
         int puntajeEsperado = 0;
 
         Jugador jugador = new Jugador();
+        Jugador segundoJugador =  new Jugador();
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = new OpcionIncorrecta("texto opcion 3");
@@ -25,8 +26,11 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op1);
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionIncorrecta(op3);
+        jugador.establecerRespuesta(new RespuestaMultipleChoice());
+        jugador.responderCon(1, op1);
+        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
 
-        jugador.responderPreguntaCon(pregunta,1, op1);
+        pregunta.evaluarJugadores(jugador,segundoJugador);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -36,6 +40,7 @@ public class PreguntaMultipleChoiceClasicoTest {
         int puntajeEsperado = 1;
 
         Jugador jugador = new Jugador();
+        Jugador segundoJugador = new Jugador();
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
         OpcionCorrecta op3 = new OpcionCorrecta("texto opcion 3");
@@ -46,7 +51,11 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
 
-        jugador.responderPreguntaCon(pregunta,1, op1, op2, op3);
+        jugador.establecerRespuesta(new RespuestaMultipleChoice());
+        jugador.responderCon(1, op1, op2, op3);
+        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
+
+        pregunta.evaluarJugadores(jugador, segundoJugador);
 
         assertEquals(puntajeEsperado, jugador.puntos());
     }
@@ -56,6 +65,7 @@ public class PreguntaMultipleChoiceClasicoTest {
         int puntosGanados = 5;
 
         Jugador jugador = new Jugador();
+        Jugador segundoJugador = new Jugador();
         jugador.actualizarPuntaje(puntosGanados);
         OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
         OpcionCorrecta op2 = new OpcionCorrecta("texto opcion 2");
@@ -66,8 +76,11 @@ public class PreguntaMultipleChoiceClasicoTest {
         pregunta.agregarOpcionCorrecta(op2);
         pregunta.agregarOpcionCorrecta(op3);
         pregunta.agregarOpcionIncorrecta(op4);
+        jugador.establecerRespuesta(new RespuestaMultipleChoice() );
+        segundoJugador.establecerRespuesta(new RespuestaMultipleChoice());
+        jugador.responderCon(1, op4);
 
-        jugador.responderPreguntaCon(pregunta,1, op4);
+        pregunta.evaluarJugadores(jugador,segundoJugador);
 
         assertEquals(puntosGanados, jugador.puntos());
     }

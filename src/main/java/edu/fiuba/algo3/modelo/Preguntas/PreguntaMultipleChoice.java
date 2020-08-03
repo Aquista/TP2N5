@@ -17,16 +17,25 @@ public class PreguntaMultipleChoice extends Pregunta {
             unaOpcion.evaluar(puntajeJugador);
         }
         puntajeJugador.calcularPuntaje(jugador,this.totalCorrectas);
+
     }
 
-    private void evaluarJugador(Jugador unJugador){
-        unJugador.evaluarRespuestas(this.puntaje.nuevoPuntaje(1), this.totalCorrectas);
+    private Puntaje evaluarJugador(Jugador unJugador){
+        Puntaje unPuntaje = this.puntaje.nuevoPuntaje(1);
+        unJugador.evaluarRespuestas(unPuntaje, this.totalCorrectas);
+        return unPuntaje;
+
     }
 
     @Override
     public void evaluarJugadores(Jugador primerJugador, Jugador segundoJugador){
-        evaluarJugador(primerJugador);
-        evaluarJugador(segundoJugador);
+        Puntaje puntaje1 = evaluarJugador(primerJugador);
+        Puntaje puntaje2 = evaluarJugador(segundoJugador);
+        primerJugador.actualizarPuntaje(puntaje1.getPuntos());
+        segundoJugador.actualizarPuntaje(puntaje2.getPuntos());
     }
+
+
+
     
 }
