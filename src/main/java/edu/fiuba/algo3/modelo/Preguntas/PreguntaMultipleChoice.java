@@ -11,7 +11,7 @@ public class PreguntaMultipleChoice extends Pregunta {
     }
     
     @Override
-    public void evaluarJugador(Jugador jugador,int unMulti ,Opcion ... elegidas) {
+    public void evaluarJugador(Jugador jugador,int unMulti ,Opcion ... elegidas) {// no se usa la dejo para que no se rompa todo
         Puntaje puntajeJugador = this.puntaje.nuevoPuntaje(unMulti);
         for (Opcion unaOpcion:elegidas){
             unaOpcion.evaluar(puntajeJugador);

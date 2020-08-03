@@ -3,7 +3,7 @@ package edu.fiuba.algo3.modelo.Puntajes;
 import edu.fiuba.algo3.modelo.Jugador;
 
 public abstract class Puntaje {
-
+    protected int puntos = 0;
     protected int cantidadCorrectas = 0;
     protected int cantidadIncorrectas = 0;
     
@@ -16,9 +16,8 @@ public abstract class Puntaje {
     }
     public abstract Puntaje nuevoPuntaje(int unMulti);
 
-    public int getPuntos(){
-        return 0;
-
+    public  int getPuntos(){
+        return puntos;
     }
     
     public abstract void calcularPuntaje(Jugador unJugador,int respuestasCorrectas);

@@ -35,6 +35,7 @@ public class Jugador {
     }
 
     public void responderCon(int multiplicador,Opcion ... elegidas) {
+        
         for(Opcion unaOpcion : elegidas){
             respuesta.agregarOpcion(unaOpcion);
         }

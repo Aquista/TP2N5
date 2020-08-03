@@ -7,7 +7,7 @@ public class PuntajeParcial extends Puntaje{
     @Override
     public void calcularPuntaje(Jugador unJugador, int respuestasCorrectas) {
         if(cantidadIncorrectas == 0)
-            unJugador.actualizarPuntaje(cantidadCorrectas);
+            puntos = cantidadCorrectas;
     }
 
     @Override
