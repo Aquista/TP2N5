@@ -1,9 +1,9 @@
-package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaVFTEsts;
+package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaVFTests;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaVFClasico;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PreguntaVFClasicoTest {
+public class PreguntaVFTest {
 
     @Test
     public void test01CreoUnaPreguntaClasicaYEvaluo1JugadorCon1RespuestaCorrecta() {
@@ -20,8 +20,9 @@ public class PreguntaVFClasicoTest {
 
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
+        PuntajeClasico puntaje = new PuntajeClasico();
 
-        PreguntaVFClasico pregunta = new PreguntaVFClasico("Soy una pregunta");
+        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta", puntaje);
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
 
@@ -32,7 +33,7 @@ public class PreguntaVFClasicoTest {
         ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
         jugadores.add(jugador);
 
-        pregunta.evaluarJugadores(jugadores, new PuntajeClasico());
+        pregunta.evaluarJugadores(jugadores);
 
         assertEquals(puntajeEsperado,jugador.getPuntaje());
     }
@@ -42,8 +43,9 @@ public class PreguntaVFClasicoTest {
 
         OpcionCorrecta opcionCorrecta = new OpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = new OpcionIncorrecta("false");
+        PuntajeClasico puntaje = new PuntajeClasico();
 
-        PreguntaVFClasico pregunta = new PreguntaVFClasico("Soy una pregunta");
+        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta", puntaje);
         pregunta.agregarOpcionCorrecta(opcionCorrecta);
         pregunta.agregarOpcionIncorrecta(opcionIncorrecta);
         

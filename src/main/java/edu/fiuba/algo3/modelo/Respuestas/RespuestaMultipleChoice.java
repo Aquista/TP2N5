@@ -5,7 +5,7 @@ import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 import java.util.ArrayList;
 
-public class RespuestaMultipleChoice implements IRespuesta {
+public class RespuestaMultipleChoice implements Respuesta {
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
 
     public void agregarOpcion(Opcion unaOpcion){

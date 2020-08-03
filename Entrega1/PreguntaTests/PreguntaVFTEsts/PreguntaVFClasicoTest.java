@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaVFTEsts;
+package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaVFTests;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;

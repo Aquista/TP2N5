@@ -19,12 +19,12 @@ public class PuntajeConPenalidadTest {
         unJugador.establecerRespuesta(respuesta);
 
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
-        unPuntaje.calcularPuntaje(unJugador);
+        unPuntaje.calcularPuntaje(unJugador, 1);
         assertEquals(1,unJugador.getPuntaje());
     }
     @Test
     public void test04PuntajeConPenalidadSaca1PuntoSiUnJugadorRespondeIncorrectamente(){
-        int puntosGanados=5;
+        int puntosGanados = 5;
         Jugador unJugador = new Jugador();
         unJugador.actualizarPuntaje(puntosGanados);
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
@@ -33,7 +33,7 @@ public class PuntajeConPenalidadTest {
         unJugador.establecerRespuesta(respuesta);
 
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
-        unPuntaje.calcularPuntaje(unJugador);
+        unPuntaje.calcularPuntaje(unJugador, 1);
         assertEquals(puntosGanados-1,unJugador.getPuntaje());
     }
 }

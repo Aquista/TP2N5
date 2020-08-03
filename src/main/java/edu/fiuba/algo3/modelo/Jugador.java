@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
-import edu.fiuba.algo3.modelo.Respuestas.IRespuesta;
+import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
 
 public class Jugador {
     private int puntaje = 0;
-    private IRespuesta respuesta;
+    private Respuesta respuesta;
 
     public void actualizarPuntaje(int puntos) {
         puntaje += puntos;
@@ -21,7 +21,7 @@ public class Jugador {
         this.respuesta.evaluar(unPuntaje);
     }
     
-    public void establecerRespuesta(IRespuesta unaRespuesta) {
+    public void establecerRespuesta(Respuesta unaRespuesta) {
         this.respuesta = unaRespuesta;
     }
 }
