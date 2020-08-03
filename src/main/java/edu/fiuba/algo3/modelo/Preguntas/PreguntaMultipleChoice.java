@@ -16,7 +16,7 @@ public class PreguntaMultipleChoice extends Pregunta {
         for (Opcion unaOpcion:elegidas){
             unaOpcion.evaluar(puntajeJugador);
         }
-        puntajeJugador.calcularPuntaje(jugador,this.totalCorrectas);
+        puntajeJugador.calcularPuntaje(this.totalCorrectas);
 
     }
 

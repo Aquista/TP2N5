@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.modelo.Puntajes;
 
 
-import edu.fiuba.algo3.modelo.Jugador;
-
 public class PuntajeConPenalidad extends Puntaje {
     private int multiplicador;
     public PuntajeConPenalidad(){
@@ -13,7 +11,7 @@ public class PuntajeConPenalidad extends Puntaje {
     }
 
     @Override
-    public void calcularPuntaje(Jugador unJugador, int respuestasCorrectas) {
+    public void calcularPuntaje(int respuestasCorrectas) {
         puntos = ((this.cantidadCorrectas - this.cantidadIncorrectas) * multiplicador);
     }
 

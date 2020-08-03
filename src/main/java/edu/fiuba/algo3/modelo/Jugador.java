@@ -22,7 +22,7 @@ public class Jugador {
     public void evaluarRespuestas(Puntaje unPuntaje, int totalCorrectas) {
         respuesta.agregarMultiplicador(unPuntaje);
         this.respuesta.evaluar(unPuntaje);
-        unPuntaje.calcularPuntaje(this, totalCorrectas);
+        unPuntaje.calcularPuntaje(totalCorrectas);
 
     }
     
