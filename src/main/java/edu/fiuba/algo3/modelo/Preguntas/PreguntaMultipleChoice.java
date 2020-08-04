@@ -25,7 +25,5 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
 
         puntaje1.asignarPuntaje(jugador1);
         puntaje2.asignarPuntaje(jugador2);
-
-
     }
 }

@@ -20,6 +20,9 @@ public class PreguntaOrderedChoice extends Pregunta {
         PuntajeClasico puntaje2 = new PuntajeClasico();
         puntaje2.calcularPuntaje(jugador2, opciones.size());
 
+        jugador1.aplicarExclusividad(puntaje1, puntaje2);
+        jugador2.aplicarExclusividad(puntaje2, puntaje1);
+
         puntaje1.asignarPuntaje(jugador1);
         puntaje2.asignarPuntaje(jugador2);
     }

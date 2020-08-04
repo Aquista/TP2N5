@@ -3,9 +3,11 @@ package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaVFTests;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
@@ -114,4 +116,100 @@ public class PreguntaVFTest {
 
         assertEquals(puntajeEsperado,jugador.getPuntaje());
     }
+
+    @Test
+    public void test05UnJugadorRespondeBienYElOtroMalConExclusividadYSuma2PuntosYElOtro0EnPuntajeClasico(){
+        int puntajeJugador1Esperado = 2;
+        int puntajeJugador2Esperado = 0;
+
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
+
+        OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
+        OpcionIncorrecta op2 = new OpcionIncorrecta("texto opcion 2");
+        PuntajeClasico puntaje = new PuntajeClasico();
+
+        PreguntaVF pregunta = new PreguntaVF("texto", puntaje);
+        pregunta.agregarOpcionCorrecta(op1);
+        pregunta.agregarOpcionIncorrecta(op2);
+
+        RespuestaVF resp1 = new RespuestaVF();
+        resp1.agregarOpcion(op1);
+        jugador1.establecerRespuesta(resp1);
+        jugador1.seleccionarExclusividad(0);
+
+        RespuestaVF resp2 = new RespuestaVF();
+        resp2.agregarOpcion(op2);
+        jugador2.establecerRespuesta(resp2);
+
+        pregunta.evaluarJugadores(jugador1, jugador2);
+
+        assertEquals(puntajeJugador1Esperado, jugador1.getPuntaje());
+        assertEquals(puntajeJugador2Esperado, jugador2.getPuntaje());
+    }
+
+    @Test
+    public void test06UnJugadorRespondeBienYElOtroMalCon2ExclusividadYSuma4PuntosYElOtro0EnPuntajeClasico(){
+        int puntajeJugador1Esperado = 4;
+        int puntajeJugador2Esperado = 0;
+
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
+
+        OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
+        OpcionIncorrecta op2 = new OpcionIncorrecta("texto opcion 2");
+        PuntajeClasico puntaje = new PuntajeClasico();
+
+        PreguntaVF pregunta = new PreguntaVF("texto", puntaje);
+        pregunta.agregarOpcionCorrecta(op1);
+        pregunta.agregarOpcionIncorrecta(op2);
+
+        RespuestaVF resp1 = new RespuestaVF();
+        resp1.agregarOpcion(op1);
+        jugador1.establecerRespuesta(resp1);
+        jugador1.seleccionarExclusividad(0);
+
+        RespuestaVF resp2 = new RespuestaVF();
+        resp2.agregarOpcion(op2);
+        jugador2.establecerRespuesta(resp2);
+        jugador2.seleccionarExclusividad(0);
+
+        pregunta.evaluarJugadores(jugador1, jugador2);
+
+        assertEquals(puntajeJugador1Esperado, jugador1.getPuntaje());
+        assertEquals(puntajeJugador2Esperado, jugador2.getPuntaje());
+    }
+
+    @Test
+    public void test07UnJugadorRespondeBienYElOtroBienCon2ExclusividadYSuma1PuntoCadaUnoEnPuntajeClasico(){
+        int puntajeJugador1Esperado = 1;
+        int puntajeJugador2Esperado = 1;
+
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
+
+        OpcionCorrecta op1 = new OpcionCorrecta("texto opcion 1");
+        OpcionIncorrecta op2 = new OpcionIncorrecta("texto opcion 2");
+        PuntajeClasico puntaje = new PuntajeClasico();
+
+        PreguntaVF pregunta = new PreguntaVF("texto", puntaje);
+        pregunta.agregarOpcionCorrecta(op1);
+        pregunta.agregarOpcionIncorrecta(op2);
+
+        RespuestaVF resp1 = new RespuestaVF();
+        resp1.agregarOpcion(op1);
+        jugador1.establecerRespuesta(resp1);
+        jugador1.seleccionarExclusividad(0);
+
+        RespuestaVF resp2 = new RespuestaVF();
+        resp2.agregarOpcion(op1);
+        jugador2.establecerRespuesta(resp2);
+        jugador2.seleccionarExclusividad(0);
+
+        pregunta.evaluarJugadores(jugador1, jugador2);
+
+        assertEquals(puntajeJugador1Esperado, jugador1.getPuntaje());
+        assertEquals(puntajeJugador2Esperado, jugador2.getPuntaje());
+    }
+    
 }

@@ -18,6 +18,9 @@ public class PreguntaVF extends PreguntaClasica {
         Puntaje puntaje2 = puntaje.duplicar();
         puntaje2.calcularPuntaje(jugador2, this.totalCorrectas);
 
+        jugador1.aplicarExclusividad(puntaje1, puntaje2);
+        jugador2.aplicarExclusividad(puntaje2, puntaje1);
+
         puntaje1.asignarPuntaje(jugador1);
         puntaje2.asignarPuntaje(jugador2);
     }
