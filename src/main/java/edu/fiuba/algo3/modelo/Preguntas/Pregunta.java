@@ -16,7 +16,12 @@ public abstract class Pregunta {
         this.texto = texto;
         this.puntaje = puntaje;
     }
-
+    public String texto(){
+        return this.texto;
+    }
+    public ArrayList<Opcion> opciones(){
+        return this.opciones;
+    }
     public abstract void evaluarJugadores(Jugador jugador1, Jugador jugador2);
 
 }
