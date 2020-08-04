@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.vista;
-
+import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import javafx.scene.layout.BorderPane;
 
 public class VistaPanel extends BorderPane {
