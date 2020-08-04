@@ -17,6 +17,6 @@ public abstract class Pregunta {
         this.puntaje = puntaje;
     }
 
-    public abstract void evaluarJugadores(ArrayList<Jugador> jugadores);
+    public abstract void evaluarJugadores(Jugador jugador1, Jugador jugador2);
 
 }

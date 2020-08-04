@@ -19,7 +19,7 @@ public class PreguntaGroupChoiceTest {
 
     public void test01JugadorCon0PuntosRespondeBienYSuma1Punto(){
         Jugador jugador = new Jugador();
-
+        Jugador contrincante = new Jugador();
         OpcionConGrupo opcion1 = new OpcionConGrupo("Soy del grupo 1", 1);
         OpcionConGrupo opcion2 = new OpcionConGrupo("Soy del grupo 2", 2);
         OpcionConGrupo opcion3 = new OpcionConGrupo("Soy del grupo 1", 1);
@@ -36,10 +36,8 @@ public class PreguntaGroupChoiceTest {
         respuesta.agregarOpcion(opcion3, 1);
 
         jugador.establecerRespuesta(respuesta);
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador);
 
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(1, jugador.getPuntaje());
 
@@ -47,6 +45,7 @@ public class PreguntaGroupChoiceTest {
     @Test
     public void test02JugadorCon0PuntosRespondeMalYSuma0Puntos(){
         Jugador jugador = new Jugador();
+        Jugador contrincante = new Jugador();
 
         OpcionConGrupo opcion1 = new OpcionConGrupo("Soy del grupo 1", 1);
         OpcionConGrupo opcion2 = new OpcionConGrupo("Soy del grupo 2", 2);
@@ -63,11 +62,7 @@ public class PreguntaGroupChoiceTest {
         respuesta.agregarOpcion(opcion2, 2);
         respuesta.agregarOpcion(opcion3, 1);
 
-        jugador.establecerRespuesta(respuesta);
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador);
-
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(0, jugador.getPuntaje());
     }
@@ -98,11 +93,7 @@ public class PreguntaGroupChoiceTest {
         respuesta2.agregarOpcion(opcion3, 2);
         jugador2.establecerRespuesta(respuesta2);
 
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
-
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador1, jugador2);
 
         assertEquals(1, jugador1.getPuntaje());
         assertEquals(0, jugador2.getPuntaje());
@@ -134,11 +125,7 @@ public class PreguntaGroupChoiceTest {
         respuesta2.agregarOpcion(opcion3, 1);
         jugador2.establecerRespuesta(respuesta2);
 
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
-
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador1, jugador2);
 
         assertEquals(1, jugador1.getPuntaje());
         assertEquals(1, jugador2.getPuntaje());
@@ -170,11 +157,7 @@ public class PreguntaGroupChoiceTest {
         respuesta2.agregarOpcion(opcion3, 1);
         jugador2.establecerRespuesta(respuesta2);
 
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
-
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador1, jugador2);
 
         assertEquals(0, jugador1.getPuntaje());
         assertEquals(0, jugador2.getPuntaje());

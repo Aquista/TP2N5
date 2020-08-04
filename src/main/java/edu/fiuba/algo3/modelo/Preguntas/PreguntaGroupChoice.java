@@ -15,11 +15,15 @@ public class PreguntaGroupChoice extends Pregunta{
     }
 
     @Override
-    public void evaluarJugadores(ArrayList<Jugador> jugadores) {
-        for(Jugador jugador : jugadores) {
-            PuntajeClasico puntajeJugador = new PuntajeClasico();
-            puntajeJugador.calcularPuntaje(jugador, opciones.size());
-        }
+    public void evaluarJugadores(Jugador jugador1, Jugador jugador2) {
+        PuntajeClasico puntaje1 = new PuntajeClasico();
+        puntaje1.calcularPuntaje(jugador1, opciones.size());
+
+        PuntajeClasico puntaje2 = new PuntajeClasico();
+        puntaje2.calcularPuntaje(jugador2, opciones.size());
+
+        puntaje1.asignarPuntaje(jugador1);
+        puntaje2.asignarPuntaje(jugador2);
     }
 
     public void agregarOpcion(OpcionConGrupo opcionConGrupo){

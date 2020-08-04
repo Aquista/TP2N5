@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PuntajeConPenalidadTest {
     @Test
-    public void test03PuntajeConPenalidadAgrega1PuntoSiUnJugadorRespondeCorrectamente(){
+    public void test01PuntajeConPenalidadAgrega1PuntoSiUnJugadorRespondeCorrectamente(){
         Jugador unJugador = new Jugador();
         OpcionCorrecta opcion = new OpcionCorrecta("true");
         RespuestaVF respuesta = new RespuestaVF();
@@ -20,10 +20,11 @@ public class PuntajeConPenalidadTest {
 
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
         unPuntaje.calcularPuntaje(unJugador, 1);
+        unPuntaje.asignarPuntaje(unJugador);
         assertEquals(1,unJugador.getPuntaje());
     }
     @Test
-    public void test04PuntajeConPenalidadSaca1PuntoSiUnJugadorRespondeIncorrectamente(){
+    public void test02PuntajeConPenalidadSaca1PuntoSiUnJugadorRespondeIncorrectamente(){
         int puntosGanados = 5;
         Jugador unJugador = new Jugador();
         unJugador.actualizarPuntaje(puntosGanados);
@@ -34,6 +35,7 @@ public class PuntajeConPenalidadTest {
 
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
         unPuntaje.calcularPuntaje(unJugador, 1);
+        unPuntaje.asignarPuntaje(unJugador);
         assertEquals(puntosGanados-1,unJugador.getPuntaje());
     }
 }

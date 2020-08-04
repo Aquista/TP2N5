@@ -21,6 +21,7 @@ public class PuntajeClasicoTest {
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.calcularPuntaje(unJugador, 1);
+        unPuntaje.asignarPuntaje(unJugador);
         assertEquals(1,unJugador.getPuntaje());
     }
     @Test
@@ -35,6 +36,7 @@ public class PuntajeClasicoTest {
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.calcularPuntaje(unJugador, 1);
+        unPuntaje.asignarPuntaje(unJugador);
         assertEquals(puntosGanados,unJugador.getPuntaje());
     }
 
@@ -53,6 +55,7 @@ public class PuntajeClasicoTest {
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.calcularPuntaje(unJugador, 3);
+        unPuntaje.asignarPuntaje(unJugador);
         assertEquals(1,unJugador.getPuntaje());
     }
 
@@ -73,6 +76,7 @@ public class PuntajeClasicoTest {
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.calcularPuntaje(unJugador, 3);
+        unPuntaje.asignarPuntaje(unJugador);
         assertEquals(0,unJugador.getPuntaje());
     }
 
@@ -91,6 +95,7 @@ public class PuntajeClasicoTest {
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.calcularPuntaje(unJugador, 3);
+        unPuntaje.asignarPuntaje(unJugador);
         assertEquals(0,unJugador.getPuntaje());
     }
 
@@ -106,6 +111,7 @@ public class PuntajeClasicoTest {
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.calcularPuntaje(unJugador, 3);
+        unPuntaje.asignarPuntaje(unJugador);
         assertEquals(0,unJugador.getPuntaje());
     }
 }

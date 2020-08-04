@@ -17,7 +17,7 @@ public class PreguntaOrderedChoiceTest {
 
     public void test01JugadorCon0PuntosRespondeConOrdenCorrectoYSuma1Punto(){
         Jugador jugador = new Jugador();
-
+        Jugador contrincante = new Jugador();
         OpcionConOrden opcion1 = new OpcionConOrden("Voy primero", 1);
         OpcionConOrden opcion2 = new OpcionConOrden("Voy segundo", 2);
         OpcionConOrden opcion3 = new OpcionConOrden("Voy tercero", 3);
@@ -33,10 +33,8 @@ public class PreguntaOrderedChoiceTest {
         respuesta.agregarOpcion(opcion3);
 
         jugador.establecerRespuesta(respuesta);
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador);
 
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(1, jugador.getPuntaje());
 
@@ -44,6 +42,7 @@ public class PreguntaOrderedChoiceTest {
     @Test
     public void test02JugadorCon0PuntosRespondeConOrdenIncorrectoYSuma0Puntos(){
         Jugador jugador = new Jugador();
+        Jugador contrincante = new Jugador();
 
         OpcionConOrden opcion1 = new OpcionConOrden("Voy primero", 1);
         OpcionConOrden opcion2 = new OpcionConOrden("Voy segundo", 2);
@@ -60,10 +59,8 @@ public class PreguntaOrderedChoiceTest {
         respuesta.agregarOpcion(opcion2);
 
         jugador.establecerRespuesta(respuesta);
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador);
 
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(0, jugador.getPuntaje());
     }
@@ -95,12 +92,7 @@ public class PreguntaOrderedChoiceTest {
         respuesta2.agregarOpcion(opcion3);
         jugador2.establecerRespuesta(respuesta2);
 
-
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
-
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador1, jugador2);
 
         assertEquals(0, jugador1.getPuntaje());
         assertEquals(1, jugador2.getPuntaje());
@@ -133,12 +125,7 @@ public class PreguntaOrderedChoiceTest {
         respuesta2.agregarOpcion(opcion3);
         jugador2.establecerRespuesta(respuesta2);
 
-
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
-
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador1, jugador2);
 
         assertEquals(1, jugador1.getPuntaje());
         assertEquals(1, jugador2.getPuntaje());
@@ -171,12 +158,7 @@ public class PreguntaOrderedChoiceTest {
         respuesta2.agregarOpcion(opcion1);
         jugador2.establecerRespuesta(respuesta2);
 
-
-        ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
-
-        pregunta.evaluarJugadores(jugadores);
+        pregunta.evaluarJugadores(jugador1, jugador2);
 
         assertEquals(0, jugador1.getPuntaje());
         assertEquals(0, jugador2.getPuntaje());

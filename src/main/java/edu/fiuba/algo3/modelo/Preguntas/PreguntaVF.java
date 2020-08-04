@@ -11,10 +11,14 @@ public class PreguntaVF extends PreguntaClasica {
     }
 
     @Override
-    public void evaluarJugadores(ArrayList<Jugador> jugadores) {
-        for(Jugador jugador : jugadores) {
-            Puntaje puntajeJugador = puntaje.duplicar();
-            puntajeJugador.calcularPuntaje(jugador, this.totalCorrectas);
-        }
+    public void evaluarJugadores(Jugador jugador1, Jugador jugador2) {
+        Puntaje puntaje1 = puntaje.duplicar();
+        puntaje1.calcularPuntaje(jugador1, this.totalCorrectas);
+
+        Puntaje puntaje2 = puntaje.duplicar();
+        puntaje2.calcularPuntaje(jugador2, this.totalCorrectas);
+
+        puntaje1.asignarPuntaje(jugador1);
+        puntaje2.asignarPuntaje(jugador2);
     }
 }

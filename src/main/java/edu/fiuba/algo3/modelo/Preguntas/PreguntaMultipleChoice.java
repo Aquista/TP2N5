@@ -12,10 +12,20 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
     }
 
     @Override
-    public void evaluarJugadores(ArrayList<Jugador> jugadores) {
-        for(Jugador jugador : jugadores) {
-            Puntaje puntajeJugador = puntaje.duplicar();
-            puntajeJugador.calcularPuntaje(jugador, totalCorrectas);
-        }
+    public void evaluarJugadores(Jugador jugador1, Jugador jugador2) {
+
+        Puntaje puntaje1 = puntaje.duplicar();
+        Puntaje puntaje2 = puntaje.duplicar();
+
+        puntaje1.calcularPuntaje(jugador1, totalCorrectas);
+        puntaje2.calcularPuntaje(jugador2, totalCorrectas);
+
+        jugador1.aplicarExclusividad(puntaje1, puntaje2);
+        jugador2.aplicarExclusividad(puntaje2, puntaje1);
+
+        puntaje1.asignarPuntaje(jugador1);
+        puntaje2.asignarPuntaje(jugador2);
+
+
     }
 }

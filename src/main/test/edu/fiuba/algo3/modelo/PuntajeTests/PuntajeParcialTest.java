@@ -22,7 +22,7 @@ public class PuntajeParcialTest {
         PuntajeParcial puntaje = new PuntajeParcial();
 
         puntaje.calcularPuntaje(unJugador, 1);
-
+        puntaje.asignarPuntaje(unJugador);
         assertEquals(1, unJugador.getPuntaje());
     }
 
@@ -37,7 +37,7 @@ public class PuntajeParcialTest {
         PuntajeParcial puntaje = new PuntajeParcial();
 
         puntaje.calcularPuntaje(unJugador, 1);
-
+        puntaje.asignarPuntaje(unJugador);
         assertEquals(0, unJugador.getPuntaje());
     }
 }

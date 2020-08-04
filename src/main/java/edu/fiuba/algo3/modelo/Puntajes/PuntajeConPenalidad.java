@@ -8,7 +8,13 @@ public class PuntajeConPenalidad extends Puntaje {
     @Override
     public void calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta) {
         unJugador.evaluarRespuestas(this);
-        unJugador.actualizarPuntaje(this.cantidadCorrectas-this.cantidadIncorrectas);
+        puntos = cantidadCorrectas - cantidadIncorrectas;
+        unJugador.aplicarMultiplicador(this);
+    }
+
+    @Override
+    public void asignarPuntaje(Jugador unJugador) {
+        unJugador.actualizarPuntaje(puntos);
     }
 
     @Override
