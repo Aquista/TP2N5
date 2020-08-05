@@ -23,11 +23,11 @@ Corrector: **Diego Sanchez**
 
 ### Diagramas
 
-## Diagrama de clases
+#### Diagrama de clases
 
 ![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20de%20Clases.PNG)
 
-## Diagrama de secuencia
+#### Diagrama de secuencia
 
 ![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Pregunta%20evalua%20a%20todos%20los%20jugadores.PNG)
 
