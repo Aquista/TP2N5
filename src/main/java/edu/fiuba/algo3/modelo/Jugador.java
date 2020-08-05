@@ -42,9 +42,11 @@ public class Jugador {
 
     public void aplicarMultiplicador(Puntaje puntaje) {
         multiplicadorActivo.multiplicar(puntaje);
+        multiplicadorActivo = new MultiplicadorX1();
     }
     public void aplicarExclusividad(Puntaje puntaje1, Puntaje puntaje2) {
         exclusividadActiva.aplicar(puntaje1, puntaje2);
+        exclusividadActiva = new ExclusividadNula();
     }
     public void seleccionarMultiplicador(int codigoMultiplicador) {
         if(multiplicadores.get(codigoMultiplicador) != null) {
