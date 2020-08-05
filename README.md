@@ -23,9 +23,21 @@ Corrector: **Diego Sanchez**
 
 ### Diagramas
 
-#### Diagrama de clases
+#### Diagrama de clases general
 
 ![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20de%20Clases.PNG)
+
+#### Preguntas
+
+![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20Preguntas.png)
+
+#### Puntajes
+
+![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20clases%20auxiliar.png)
+
+#### Modificadores
+
+![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20Modificadores.png)
 
 #### Diagrama de secuencia
 
