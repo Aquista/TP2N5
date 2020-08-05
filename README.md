@@ -21,6 +21,10 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 
 Corrector: **Diego Sanchez**
 
+### Diagramas
+
+![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20de%20Clases.PNG)
+
 ### Pre-requisitos
 
 Listado de software/herramientas necesarias para el proyecto
