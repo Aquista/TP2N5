@@ -1,9 +1,8 @@
-package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaVFTEsts;
+package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaVFTests;
 
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaVFConPenalidad;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 

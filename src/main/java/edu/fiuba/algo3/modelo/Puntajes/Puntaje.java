@@ -1,10 +1,23 @@
 package edu.fiuba.algo3.modelo.Puntajes;
 
+import edu.fiuba.algo3.modelo.Jugador;
+
+import java.util.ArrayList;
+
 public abstract class Puntaje {
+
     protected int puntos = 0;
     protected int cantidadCorrectas = 0;
     protected int cantidadIncorrectas = 0;
-    
+
+    public abstract void calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta);
+
+    public void asignarPuntaje(Jugador unJugador) {
+        unJugador.actualizarPuntaje(puntos);
+    }
+
+    public abstract Puntaje duplicar();
+
     public void sumarCorrecta() {
         cantidadCorrectas += 1;
     }
@@ -12,13 +25,13 @@ public abstract class Puntaje {
     public void sumarIncorrecta() {
         cantidadIncorrectas += 1;
     }
-    public abstract Puntaje nuevoPuntaje(int unMulti);
-
-    public  int getPuntos(){
-        return puntos;
-    }
     
-    public abstract void calcularPuntaje(int respuestasCorrectas);
+    public void multiplicar(int multiplicador) {
+        puntos = puntos * multiplicador;
+    }
 
-    public abstract void setMultiplicador(int multiplicador);
+    public void esExclusivo(ArrayList<Puntaje> correctos) {
+        if(puntos > 0)
+            correctos.add(this);
+    }
 }

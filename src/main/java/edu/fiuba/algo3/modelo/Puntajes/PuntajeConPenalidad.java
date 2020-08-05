@@ -1,30 +1,24 @@
 package edu.fiuba.algo3.modelo.Puntajes;
 
 
+import edu.fiuba.algo3.modelo.Jugador;
+
 public class PuntajeConPenalidad extends Puntaje {
-    private int multiplicador;
-    public PuntajeConPenalidad(){
-        this.multiplicador=1;
-    }
-    public PuntajeConPenalidad(int nuevoMulti){
-        this.multiplicador=nuevoMulti;
+
+    @Override
+    public void calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta) {
+        unJugador.evaluarRespuestas(this);
+        puntos = cantidadCorrectas - cantidadIncorrectas;
+        unJugador.aplicarMultiplicador(this);
     }
 
     @Override
-    public void calcularPuntaje(int respuestasCorrectas) {
-        puntos = ((this.cantidadCorrectas - this.cantidadIncorrectas) * multiplicador);
+    public void asignarPuntaje(Jugador unJugador) {
+        unJugador.actualizarPuntaje(puntos);
     }
-
 
     @Override
-    public Puntaje nuevoPuntaje(int unMulti) {
-        return new PuntajeConPenalidad(unMulti);
+    public PuntajeConPenalidad duplicar() {
+        return new PuntajeConPenalidad();
     }
-    @Override
-    public void setMultiplicador(int unMultiplicador) {
-        this.multiplicador = unMultiplicador;
-    }
-
-
- 
 }

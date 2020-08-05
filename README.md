@@ -28,7 +28,7 @@ Listado de software/herramientas necesarias para el proyecto
 ```
 java 11
 maven 3.6.0
-...
+javafx 11
 ```
 
 ## Ejecutando las pruebas
@@ -45,7 +45,9 @@ Este comando crea el reporte de cobertura para CI y el reporte HTML que pueden a
 
 ## Ejecutando la aplicación
 
-Explicación de como ejecutar la aplicación
+```bash
+    mvn javafx:run
+```
 
 ## Licencia
 

@@ -1,30 +1,27 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.Opciones.*;
+import edu.fiuba.algo3.modelo.Opciones.Opcion;
+import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
+
 import java.util.ArrayList;
 
 public abstract class Pregunta {
-    protected ArrayList<Opcion> opciones = new ArrayList<>();
-    private final String texto;
-    protected int totalCorrectas ;
+    protected ArrayList<Opcion> opciones = new ArrayList<Opcion>();
+    protected String texto;
     protected Puntaje puntaje;
 
-    public Pregunta(String texto, Puntaje unPuntaje){
+    public Pregunta(String texto, Puntaje puntaje){
         this.texto = texto;
-        this.totalCorrectas=0;
-        this.puntaje=unPuntaje;
+        this.puntaje = puntaje;
     }
-
-    public void agregarOpcionCorrecta(OpcionCorrecta opcionCorrecta){
-        opciones.add(opcionCorrecta);
-        totalCorrectas++;
+    public String texto(){
+        return this.texto;
     }
-
-    public void agregarOpcionIncorrecta(OpcionIncorrecta opcionIncorrecta){
-        opciones.add(opcionIncorrecta);
+    public ArrayList<Opcion> opciones(){
+        return this.opciones;
     }
+    public abstract void evaluarJugadores(Jugador jugador1, Jugador jugador2);
 
-    public abstract void evaluarJugadores(Jugador primerJugador, Jugador segundoJugador);
 }

@@ -2,11 +2,10 @@ package edu.fiuba.algo3.modelo.Opciones;
 
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
-public class OpcionIncorrecta implements Opcion {
-    private String texto;
+public class OpcionIncorrecta extends Opcion {
 
     public OpcionIncorrecta(String unTexto) {
-        this.texto = unTexto;
+        super(unTexto);
     }
 
     @Override

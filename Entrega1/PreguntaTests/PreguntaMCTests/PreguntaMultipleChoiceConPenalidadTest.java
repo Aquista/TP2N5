@@ -3,7 +3,6 @@ package edu.fiuba.algo3.modelo.PreguntaTests.PreguntaMCTests;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoiceConPenalidad;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
 import org.junit.jupiter.api.Test;
 

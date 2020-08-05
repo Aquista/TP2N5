@@ -1,31 +1,29 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
+import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
+import java.util.ArrayList;
 
-public class PreguntaMultipleChoice extends Pregunta {
-    
-    public PreguntaMultipleChoice(String texto, Puntaje unPuntaje) {
-        super(texto,unPuntaje);
-    }
+public class PreguntaMultipleChoice extends PreguntaClasica {
 
-    private Puntaje evaluarJugador(Jugador unJugador){
-        Puntaje unPuntaje = this.puntaje.nuevoPuntaje(1);
-        unJugador.evaluarRespuestas(unPuntaje, this.totalCorrectas);
-        return unPuntaje;
-
+    public PreguntaMultipleChoice(String texto, Puntaje puntaje) {
+        super(texto, puntaje);
     }
 
     @Override
-    public void evaluarJugadores(Jugador primerJugador, Jugador segundoJugador){
-        Puntaje puntaje1 = evaluarJugador(primerJugador);
-        Puntaje puntaje2 = evaluarJugador(segundoJugador);
-        primerJugador.actualizarPuntaje(puntaje1.getPuntos());
-        segundoJugador.actualizarPuntaje(puntaje2.getPuntos());
+    public void evaluarJugadores(Jugador jugador1, Jugador jugador2) {
+
+        Puntaje puntaje1 = puntaje.duplicar();
+        Puntaje puntaje2 = puntaje.duplicar();
+
+        puntaje1.calcularPuntaje(jugador1, totalCorrectas);
+        puntaje2.calcularPuntaje(jugador2, totalCorrectas);
+
+        jugador1.aplicarExclusividad(puntaje1, puntaje2);
+        jugador2.aplicarExclusividad(puntaje2, puntaje1);
+
+        puntaje1.asignarPuntaje(jugador1);
+        puntaje2.asignarPuntaje(jugador2);
     }
-
-
-
-    
 }
