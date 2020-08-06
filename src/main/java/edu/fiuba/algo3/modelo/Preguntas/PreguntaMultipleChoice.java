@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Opciones.Opcion;
+import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
+import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import java.util.ArrayList;
@@ -25,5 +28,21 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
 
         puntaje1.asignarPuntaje(jugador1);
         puntaje2.asignarPuntaje(jugador2);
+    }
+
+    public OpcionCorrecta agregarOpcionCorrecta(String texto) {
+        OpcionCorrecta opcion = new OpcionCorrecta(texto);
+        agregarOpcionCorrecta(opcion);
+        return opcion;
+    }
+
+    public OpcionIncorrecta agregarOpcionIncorrecta(String texto) {
+        OpcionIncorrecta opcion = new OpcionIncorrecta("texto opcion 3");
+        agregarOpcionIncorrecta(opcion);
+        return opcion;
+    }
+
+    public ArrayList<Opcion> getOpciones(String[] opciones) {
+        return null;
     }
 }

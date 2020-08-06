@@ -359,6 +359,35 @@ public class PreguntaMultipleChoiceTest {
         assertEquals(puntajeEsperado, jugador1.getPuntaje());
         assertEquals(puntajeEsperado, jugador2.getPuntaje());
     }
+    /*@Test
+    public void test11AmbosJugadoresRespondenBienConExclusividadYSuman1PuntoEnPuntajeClasico2(){
+        int puntajeEsperado = 1;
+
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
+
+        PuntajeClasico puntaje = new PuntajeClasico();
+
+        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("cual es un numero", puntaje);
+        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("nueve");
+        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("ocho");
+        OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("calculadora");
+
+        //RespuestaMultipleChoice resp1 = new RespuestaMultipleChoice(op1,op2);
+        RespuestaMultipleChoice resp1 = new RespuestaMultipleChoice(pregunta,"nueve","ocho");
+        jugador1.establecerRespuesta(resp1);
+        jugador1.seleccionarExclusividad(0);
+
+        RespuestaMultipleChoice resp2 = new RespuestaMultipleChoice();
+        resp2.agregarOpcion(op1);
+        resp2.agregarOpcion(op2);
+        jugador2.establecerRespuesta(resp2);
+
+        pregunta.evaluarJugadores(jugador1, jugador2);
+
+        assertEquals(puntajeEsperado, jugador1.getPuntaje());
+        assertEquals(puntajeEsperado, jugador2.getPuntaje());
+    }*/
     @Test
     public void test12UnJugadorRespondeBienYElOtroMalConExclusividadYSuma2PuntosEnPuntajeClasico(){
         int puntajeJugador1Esperado = 2;
