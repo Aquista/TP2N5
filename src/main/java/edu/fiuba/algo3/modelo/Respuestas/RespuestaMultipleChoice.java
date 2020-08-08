@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.Respuestas;
 
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
@@ -15,12 +16,6 @@ public class RespuestaMultipleChoice implements Respuesta {
             this.opciones.add(op);
         }
     }
-
-    public RespuestaMultipleChoice(PreguntaMultipleChoice pregunta, String ... opciones) {
-        ArrayList<Opcion> arrayOpcines = pregunta.getOpciones(opciones);
-
-    }
-
     public void agregarOpcion(Opcion unaOpcion){
         opciones.add(unaOpcion);
     }

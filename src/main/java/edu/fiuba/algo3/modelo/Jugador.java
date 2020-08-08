@@ -1,8 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.Modificadores.*;
+import edu.fiuba.algo3.modelo.Opciones.Opcion;
+import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
-import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
+import edu.fiuba.algo3.modelo.Respuestas.*;
 
 import java.util.ArrayList;
 
@@ -36,8 +38,9 @@ public class Jugador {
             this.respuesta.evaluar(unPuntaje);
     }
     
-    public void establecerRespuesta(Respuesta unaRespuesta) {
+    public Respuesta establecerRespuesta(Respuesta unaRespuesta) {
         this.respuesta = unaRespuesta;
+        return unaRespuesta;
     }
 
     public void aplicarMultiplicador(Puntaje puntaje) {
@@ -59,5 +62,29 @@ public class Jugador {
             exclusividadActiva = exclusividades.get(codigoExclusividad);
             exclusividades.remove(codigoExclusividad);
         }
+    }
+
+    public Respuesta responderMultipleChoice(Opcion ... opciones) {
+
+        RespuestaMultipleChoice unaRespuesta = new RespuestaMultipleChoice(opciones);
+        return this.establecerRespuesta(unaRespuesta);
+    }
+
+    public Respuesta responderVF(Opcion opcion) {
+
+        RespuestaVF unaRespuesta = new RespuestaVF(opcion);
+        return this.establecerRespuesta(unaRespuesta);
+    }
+
+    public Respuesta responderPorGrupo (Opcion ... opciones) {
+
+        RespuestaGroupChoice unaRespuesta = new RespuestaGroupChoice(opciones);
+        return this.establecerRespuesta(unaRespuesta);
+    }
+
+    public Respuesta responderConOrden(OpcionConOrden ... opciones) {
+
+        RespuestaOrderChoice unaRespuesta = new RespuestaOrderChoice(opciones);
+        return this.establecerRespuesta(unaRespuesta);
     }
 }

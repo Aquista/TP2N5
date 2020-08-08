@@ -2,11 +2,7 @@ package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
-import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
-import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
-
-import java.util.ArrayList;
 
 public class PreguntaGroupChoice extends Pregunta{
 
@@ -31,5 +27,11 @@ public class PreguntaGroupChoice extends Pregunta{
 
     public void agregarOpcion(OpcionConGrupo opcionConGrupo){
         opciones.add(opcionConGrupo);
+    }
+
+    public OpcionConGrupo agregarOpcion(String unTexto, int grupoCorrecto) {
+        OpcionConGrupo unaOpcion = new OpcionConGrupo(unTexto, grupoCorrecto);
+        agregarOpcion(unaOpcion);
+        return unaOpcion;
     }
 }

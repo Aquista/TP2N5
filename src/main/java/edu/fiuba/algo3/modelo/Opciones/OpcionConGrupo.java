@@ -11,6 +11,12 @@ public class OpcionConGrupo extends Opcion{
         this.grupoCorrecto = grupoCorrecto;
     }
 
+    public OpcionConGrupo(String unTexto, int grupoCorrecto, int grupoSeleccionado) {
+        super(unTexto);
+        this.grupoCorrecto = grupoCorrecto;
+        this.grupoSeleccionado = grupoSeleccionado;
+    }
+
     public void evaluar(Puntaje unPuntaje) {
         if(grupoCorrecto == grupoSeleccionado)
             unPuntaje.sumarCorrecta();
@@ -23,5 +29,9 @@ public class OpcionConGrupo extends Opcion{
 
     public OpcionConGrupo duplicar() {
         return new OpcionConGrupo(texto, grupoCorrecto);
+    }
+
+    public OpcionConGrupo duplicar(int i) {
+        return new OpcionConGrupo(texto, grupoCorrecto, i);
     }
 }

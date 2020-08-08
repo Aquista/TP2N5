@@ -12,6 +12,13 @@ public class OpcionConOrden extends Opcion{
         this.ordenCorrecto = ordenCorrecto;
     }
 
+    public OpcionConOrden(String unTexto, int ordenCorrecto, int ordenSeleccionado) {
+        super(unTexto);
+        this.texto = unTexto;
+        this.ordenCorrecto = ordenCorrecto;
+        this.ordenSeleccionado = ordenSeleccionado;
+    }
+
     public void evaluar(Puntaje unPuntaje) {
         if(ordenCorrecto == ordenSeleccionado)
             unPuntaje.sumarCorrecta();

@@ -30,4 +30,10 @@ public class PreguntaOrderedChoice extends Pregunta {
     public void agregarOpcion(OpcionConOrden opcionConOrden){
         opciones.add(opcionConOrden);
     }
+
+    public OpcionConOrden agregarOpcion(String unTexto, int orden) {
+        OpcionConOrden opcion = new OpcionConOrden(unTexto, orden);
+        agregarOpcion(opcion);
+        return opcion;
+    }
 }

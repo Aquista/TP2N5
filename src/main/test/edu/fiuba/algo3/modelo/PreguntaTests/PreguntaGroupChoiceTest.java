@@ -18,51 +18,36 @@ public class PreguntaGroupChoiceTest {
     @Test
 
     public void test01JugadorCon0PuntosRespondeBienYSuma1Punto(){
+
         Jugador jugador = new Jugador();
         Jugador contrincante = new Jugador();
-        OpcionConGrupo opcion1 = new OpcionConGrupo("Soy del grupo 1", 1);
-        OpcionConGrupo opcion2 = new OpcionConGrupo("Soy del grupo 2", 2);
-        OpcionConGrupo opcion3 = new OpcionConGrupo("Soy del grupo 1", 1);
 
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+        OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+        OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-
-        RespuestaGroupChoice respuesta = new RespuestaGroupChoice();
-        respuesta.agregarOpcion(opcion1, 1);
-        respuesta.agregarOpcion(opcion2, 2);
-        respuesta.agregarOpcion(opcion3, 1);
-
-        jugador.establecerRespuesta(respuesta);
+        jugador.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(1, jugador.getPuntaje());
-
     }
+
     @Test
     public void test02JugadorCon0PuntosRespondeMalYSuma0Puntos(){
         Jugador jugador = new Jugador();
         Jugador contrincante = new Jugador();
 
-        OpcionConGrupo opcion1 = new OpcionConGrupo("Soy del grupo 1", 1);
-        OpcionConGrupo opcion2 = new OpcionConGrupo("Soy del grupo 2", 2);
-        OpcionConGrupo opcion3 = new OpcionConGrupo("Soy del grupo 1", 1);
-
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+        OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+        OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-
-        RespuestaGroupChoice respuesta = new RespuestaGroupChoice();
-        respuesta.agregarOpcion(opcion1, 2);
-        respuesta.agregarOpcion(opcion2, 2);
-        respuesta.agregarOpcion(opcion3, 1);
+        jugador.responderPorGrupo(opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(1));
 
         pregunta.evaluarJugadores(jugador, contrincante);
+
 
         assertEquals(0, jugador.getPuntaje());
     }
@@ -72,26 +57,13 @@ public class PreguntaGroupChoiceTest {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
-        OpcionConGrupo opcion1 = new OpcionConGrupo("Soy del grupo 1", 1);
-        OpcionConGrupo opcion2 = new OpcionConGrupo("Soy del grupo 2", 2);
-        OpcionConGrupo opcion3 = new OpcionConGrupo("Soy del grupo 1", 1);
-
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+        OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+        OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-        RespuestaGroupChoice respuesta1 = new RespuestaGroupChoice();
-        respuesta1.agregarOpcion(opcion1, 1);
-        respuesta1.agregarOpcion(opcion2, 2);
-        respuesta1.agregarOpcion(opcion3, 1);
-        jugador1.establecerRespuesta(respuesta1);
-
-        RespuestaGroupChoice respuesta2 = new RespuestaGroupChoice();
-        respuesta2.agregarOpcion(opcion1, 2);
-        respuesta2.agregarOpcion(opcion2, 2);
-        respuesta2.agregarOpcion(opcion3, 2);
-        jugador2.establecerRespuesta(respuesta2);
+        jugador1.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador2.responderPorGrupo(opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(2));
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -104,26 +76,13 @@ public class PreguntaGroupChoiceTest {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
-        OpcionConGrupo opcion1 = new OpcionConGrupo("Soy del grupo 1", 1);
-        OpcionConGrupo opcion2 = new OpcionConGrupo("Soy del grupo 2", 2);
-        OpcionConGrupo opcion3 = new OpcionConGrupo("Soy del grupo 1", 1);
-
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+        OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+        OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-        RespuestaGroupChoice respuesta1 = new RespuestaGroupChoice();
-        respuesta1.agregarOpcion(opcion1, 1);
-        respuesta1.agregarOpcion(opcion2, 2);
-        respuesta1.agregarOpcion(opcion3, 1);
-        jugador1.establecerRespuesta(respuesta1);
-
-        RespuestaGroupChoice respuesta2 = new RespuestaGroupChoice();
-        respuesta2.agregarOpcion(opcion1, 1);
-        respuesta2.agregarOpcion(opcion2, 2);
-        respuesta2.agregarOpcion(opcion3, 1);
-        jugador2.establecerRespuesta(respuesta2);
+        jugador1.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador2.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -136,26 +95,13 @@ public class PreguntaGroupChoiceTest {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
-        OpcionConGrupo opcion1 = new OpcionConGrupo("Soy del grupo 1", 1);
-        OpcionConGrupo opcion2 = new OpcionConGrupo("Soy del grupo 2", 2);
-        OpcionConGrupo opcion3 = new OpcionConGrupo("Soy del grupo 1", 1);
-
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+        OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+        OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-        RespuestaGroupChoice respuesta1 = new RespuestaGroupChoice();
-        respuesta1.agregarOpcion(opcion1, 2);
-        respuesta1.agregarOpcion(opcion2, 2);
-        respuesta1.agregarOpcion(opcion3, 1);
-        jugador1.establecerRespuesta(respuesta1);
-
-        RespuestaGroupChoice respuesta2 = new RespuestaGroupChoice();
-        respuesta2.agregarOpcion(opcion1, 1);
-        respuesta2.agregarOpcion(opcion2, 1);
-        respuesta2.agregarOpcion(opcion3, 1);
-        jugador2.establecerRespuesta(respuesta2);
+        jugador1.responderPorGrupo(opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador2.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(1), opcion3.duplicar(1));
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 

@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
+import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Puntajes.*;
 
 import java.util.ArrayList;
@@ -8,6 +10,18 @@ import java.util.ArrayList;
 public class PreguntaVF extends PreguntaClasica {
     public PreguntaVF(String texto, Puntaje puntaje){
         super(texto, puntaje);
+    }
+
+    public OpcionCorrecta agregarOpcionCorrecta(String texto) {
+        OpcionCorrecta opcion = new OpcionCorrecta(texto);
+        agregarOpcionCorrecta(opcion);
+        return opcion;
+    }
+
+    public OpcionIncorrecta agregarOpcionIncorrecta(String texto) {
+        OpcionIncorrecta opcion = new OpcionIncorrecta("texto opcion 3");
+        agregarOpcionIncorrecta(opcion);
+        return opcion;
     }
 
     @Override

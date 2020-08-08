@@ -18,21 +18,13 @@ public class PreguntaOrderedChoiceTest {
     public void test01JugadorCon0PuntosRespondeConOrdenCorrectoYSuma1Punto(){
         Jugador jugador = new Jugador();
         Jugador contrincante = new Jugador();
-        OpcionConOrden opcion1 = new OpcionConOrden("Voy primero", 1);
-        OpcionConOrden opcion2 = new OpcionConOrden("Voy segundo", 2);
-        OpcionConOrden opcion3 = new OpcionConOrden("Voy tercero", 3);
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        RespuestaOrderChoice respuesta = new RespuestaOrderChoice();
-        respuesta.agregarOpcion(opcion1);
-        respuesta.agregarOpcion(opcion2);
-        respuesta.agregarOpcion(opcion3);
-
-        jugador.establecerRespuesta(respuesta);
+        jugador.responderConOrden(opcion1.duplicar(), opcion2.duplicar(), opcion3.duplicar());
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -44,21 +36,12 @@ public class PreguntaOrderedChoiceTest {
         Jugador jugador = new Jugador();
         Jugador contrincante = new Jugador();
 
-        OpcionConOrden opcion1 = new OpcionConOrden("Voy primero", 1);
-        OpcionConOrden opcion2 = new OpcionConOrden("Voy segundo", 2);
-        OpcionConOrden opcion3 = new OpcionConOrden("Voy tercero", 3);
-
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        RespuestaOrderChoice respuesta = new RespuestaOrderChoice();
-        respuesta.agregarOpcion(opcion1);
-        respuesta.agregarOpcion(opcion3);
-        respuesta.agregarOpcion(opcion2);
-
-        jugador.establecerRespuesta(respuesta);
+        jugador.responderConOrden(opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -70,27 +53,13 @@ public class PreguntaOrderedChoiceTest {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
-        OpcionConOrden opcion1 = new OpcionConOrden("Voy primero", 1);
-        OpcionConOrden opcion2 = new OpcionConOrden("Voy segundo", 2);
-        OpcionConOrden opcion3 = new OpcionConOrden("Voy tercero", 3);
-
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        RespuestaOrderChoice respuesta1 = new RespuestaOrderChoice();
-        RespuestaOrderChoice respuesta2 = new RespuestaOrderChoice();
-
-        respuesta1.agregarOpcion(opcion1);
-        respuesta1.agregarOpcion(opcion3);
-        respuesta1.agregarOpcion(opcion2);
-        jugador1.establecerRespuesta(respuesta1);
-
-        respuesta2.agregarOpcion(opcion1);
-        respuesta2.agregarOpcion(opcion2);
-        respuesta2.agregarOpcion(opcion3);
-        jugador2.establecerRespuesta(respuesta2);
+        jugador1.responderConOrden(opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
+        jugador2.responderConOrden(opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -103,27 +72,13 @@ public class PreguntaOrderedChoiceTest {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
-        OpcionConOrden opcion1 = new OpcionConOrden("Voy primero", 1);
-        OpcionConOrden opcion2 = new OpcionConOrden("Voy segundo", 2);
-        OpcionConOrden opcion3 = new OpcionConOrden("Voy tercero", 3);
-
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        RespuestaOrderChoice respuesta1 = new RespuestaOrderChoice();
-        RespuestaOrderChoice respuesta2 = new RespuestaOrderChoice();
-
-        respuesta1.agregarOpcion(opcion1);
-        respuesta1.agregarOpcion(opcion2);
-        respuesta1.agregarOpcion(opcion3);
-        jugador1.establecerRespuesta(respuesta1);
-
-        respuesta2.agregarOpcion(opcion1);
-        respuesta2.agregarOpcion(opcion2);
-        respuesta2.agregarOpcion(opcion3);
-        jugador2.establecerRespuesta(respuesta2);
+        jugador1.responderConOrden(opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+        jugador2.responderConOrden(opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -136,27 +91,13 @@ public class PreguntaOrderedChoiceTest {
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
 
-        OpcionConOrden opcion1 = new OpcionConOrden("Voy primero", 1);
-        OpcionConOrden opcion2 = new OpcionConOrden("Voy segundo", 2);
-        OpcionConOrden opcion3 = new OpcionConOrden("Voy tercero", 3);
-
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        pregunta.agregarOpcion(opcion1);
-        pregunta.agregarOpcion(opcion2);
-        pregunta.agregarOpcion(opcion3);
+        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        RespuestaOrderChoice respuesta1 = new RespuestaOrderChoice();
-        RespuestaOrderChoice respuesta2 = new RespuestaOrderChoice();
-
-        respuesta1.agregarOpcion(opcion3);
-        respuesta1.agregarOpcion(opcion2);
-        respuesta1.agregarOpcion(opcion1);
-        jugador1.establecerRespuesta(respuesta1);
-
-        respuesta2.agregarOpcion(opcion2);
-        respuesta2.agregarOpcion(opcion3);
-        respuesta2.agregarOpcion(opcion1);
-        jugador2.establecerRespuesta(respuesta2);
+        jugador1.responderConOrden(opcion3.duplicar(), opcion2.duplicar(), opcion1.duplicar());
+        jugador1.responderConOrden(opcion2.duplicar(), opcion3.duplicar(), opcion1.duplicar());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 

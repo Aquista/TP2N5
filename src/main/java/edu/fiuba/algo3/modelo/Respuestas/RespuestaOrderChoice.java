@@ -5,9 +5,17 @@ import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class RespuestaOrderChoice implements Respuesta {
     private ArrayList<OpcionConOrden> opciones = new ArrayList<OpcionConOrden>();
+
+    public RespuestaOrderChoice(OpcionConOrden ... opciones) {
+        for (OpcionConOrden opcion : opciones){
+            opcion.seleccionarOrden(this.opciones.size()+1);
+            this.opciones.add(opcion);
+        }
+    }
 
     public void agregarOpcion(OpcionConOrden unaOpcion){
         OpcionConOrden opcion = unaOpcion.duplicar();
