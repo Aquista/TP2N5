@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class RespuestaOrderChoice implements Respuesta {
-    private ArrayList<OpcionConOrden> opciones = new ArrayList<OpcionConOrden>();
+    private ArrayList<Opcion> opciones = new ArrayList<>();
 
-    public RespuestaOrderChoice(OpcionConOrden ... opciones) {
-        for (OpcionConOrden opcion : opciones){
-            opcion.seleccionarOrden(this.opciones.size()+1);
+    public RespuestaOrderChoice(Opcion ... opciones) {
+        for (Opcion opcion : opciones){
+
+            ((OpcionConOrden) opcion).seleccionarOrden(this.opciones.size()+1);
             this.opciones.add(opcion);
         }
     }

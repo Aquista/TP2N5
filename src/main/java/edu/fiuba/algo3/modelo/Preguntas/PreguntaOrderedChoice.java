@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
+import edu.fiuba.algo3.modelo.Jugadores.JugadorDeOrderChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
-import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
-import java.util.ArrayList;
 
 public class PreguntaOrderedChoice extends Pregunta {
 
@@ -25,6 +25,11 @@ public class PreguntaOrderedChoice extends Pregunta {
 
         puntaje1.asignarPuntaje(jugador1);
         puntaje2.asignarPuntaje(jugador2);
+    }
+
+    @Override
+    public JugadorDeTipo tipo() {
+        return new JugadorDeOrderChoice();
     }
 
     public OpcionConOrden agregarOpcion(String unTexto, int orden) {

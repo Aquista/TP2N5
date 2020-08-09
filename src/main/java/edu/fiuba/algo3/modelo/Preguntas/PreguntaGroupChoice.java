@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
+import edu.fiuba.algo3.modelo.Jugadores.JugadorDeGroupChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 
@@ -23,6 +25,11 @@ public class PreguntaGroupChoice extends Pregunta{
 
         puntaje1.asignarPuntaje(jugador1);
         puntaje2.asignarPuntaje(jugador2);
+    }
+
+    @Override
+    public JugadorDeTipo tipo() {
+        return new JugadorDeGroupChoice();
     }
 
     public OpcionConGrupo agregarOpcion(String unTexto, int grupoCorrecto) {

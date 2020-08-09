@@ -1,12 +1,11 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
-import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.Opciones.Opcion;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
+import edu.fiuba.algo3.modelo.Jugadores.JugadorDeMultipleChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
-import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
-import java.util.ArrayList;
 
 public class PreguntaMultipleChoice extends PreguntaClasica {
 
@@ -42,4 +41,7 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
         return opcion;
     }
 
+    public JugadorDeTipo tipo() {
+        return new JugadorDeMultipleChoice();
+    }
 }

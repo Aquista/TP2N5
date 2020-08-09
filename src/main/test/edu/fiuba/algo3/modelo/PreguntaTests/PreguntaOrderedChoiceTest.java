@@ -2,14 +2,10 @@ package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaGroupChoice;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaOrderedChoice;
-import edu.fiuba.algo3.modelo.Respuestas.RespuestaOrderChoice;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 public class PreguntaOrderedChoiceTest {
 
@@ -24,7 +20,7 @@ public class PreguntaOrderedChoiceTest {
         OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
         OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador.responderConOrden(opcion1.duplicar(), opcion2.duplicar(), opcion3.duplicar());
+        jugador.responder(pregunta.tipo(), opcion1.duplicar(), opcion2.duplicar(), opcion3.duplicar());
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -41,7 +37,7 @@ public class PreguntaOrderedChoiceTest {
         OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
         OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador.responderConOrden(opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
+        jugador.responder(pregunta.tipo(), opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -58,8 +54,8 @@ public class PreguntaOrderedChoiceTest {
         OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
         OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador1.responderConOrden(opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
-        jugador2.responderConOrden(opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+        jugador1.responder(pregunta.tipo(), opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
+        jugador2.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -77,8 +73,8 @@ public class PreguntaOrderedChoiceTest {
         OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
         OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador1.responderConOrden(opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
-        jugador2.responderConOrden(opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+        jugador1.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+        jugador2.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -96,8 +92,8 @@ public class PreguntaOrderedChoiceTest {
         OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
         OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador1.responderConOrden(opcion3.duplicar(), opcion2.duplicar(), opcion1.duplicar());
-        jugador1.responderConOrden(opcion2.duplicar(), opcion3.duplicar(), opcion1.duplicar());
+        jugador1.responder(pregunta.tipo(), opcion3.duplicar(), opcion2.duplicar(), opcion1.duplicar());
+        jugador1.responder(pregunta.tipo(), opcion2.duplicar(), opcion3.duplicar(), opcion1.duplicar());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 

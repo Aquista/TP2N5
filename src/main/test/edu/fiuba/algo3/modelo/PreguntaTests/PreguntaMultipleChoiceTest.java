@@ -1,15 +1,13 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeParcial;
-import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
-import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
-import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +25,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
         OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
 
-        jugador.responderMultipleChoice(op1);
+        jugador.responder(pregunta.tipo(), op1);
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -48,7 +46,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
         OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
 
-        jugador.responderMultipleChoice(op1, op2, op3);
+        jugador.responder(pregunta.tipo(), op1, op2, op3);
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -69,7 +67,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
         OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
 
-        jugador.responderMultipleChoice(op4);
+        jugador.responder(pregunta.tipo(), op4);
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -91,8 +89,8 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
         OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
 
-        primerJugador.responderMultipleChoice(op1, op2, op3);
-        segundoJugador.responderMultipleChoice(op4);
+        primerJugador.responder(pregunta.tipo(), op1, op2, op3);
+        segundoJugador.responder(pregunta.tipo(), op4);
 
         pregunta.evaluarJugadores(primerJugador, segundoJugador);
 
@@ -112,7 +110,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
 
-        jugador.responderMultipleChoice(op1, op2, op3);
+        jugador.responder(pregunta.tipo(), op1, op2, op3);
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -132,7 +130,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op2 = pregunta.agregarOpcionIncorrecta("texto opcion 2");
         OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
 
-        jugador.responderMultipleChoice(op2, op3);
+        jugador.responder(pregunta.tipo(), op2, op3);
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -153,7 +151,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
         OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
-        jugador.responderMultipleChoice(op2, op3);
+        jugador.responder(pregunta.tipo(), op2, op3);
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -174,7 +172,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
         OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
-        jugador.responderMultipleChoice(op2, op3, op4);
+        jugador.responder(pregunta.tipo(), op2, op3, op4);
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -195,9 +193,9 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op4 =  pregunta.agregarOpcionIncorrecta("texto opcion 4");
         OpcionIncorrecta op5 =  pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
-        jugador1.responderMultipleChoice(op2, op3);
+        jugador1.responder(pregunta.tipo(), op2, op3);
         jugador1.seleccionarExclusividad(0);
-        jugador2.responderMultipleChoice(op4);
+        jugador2.responder(pregunta.tipo(), op4);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -217,9 +215,9 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
         OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
-        jugador1.responderMultipleChoice(op2, op3);
+        jugador1.responder(pregunta.tipo(), op2, op3);
         jugador1.seleccionarExclusividad(0);
-        jugador2.responderMultipleChoice(op4);
+        jugador2.responder(pregunta.tipo(), op4);
         jugador2.seleccionarExclusividad(0);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
@@ -238,9 +236,9 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
 
-        jugador1.responderMultipleChoice(op1, op2);
+        jugador1.responder(pregunta.tipo(), op1, op2);
         jugador1.seleccionarExclusividad(0);
-        jugador2.responderMultipleChoice(op1, op2);
+        jugador2.responder(pregunta.tipo(), op1, op2);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -262,10 +260,10 @@ public class PreguntaMultipleChoiceTest {
         OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
         OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
 
-        jugador1.responderMultipleChoice(op1, op2);
+        jugador1.responder(pregunta.tipo(), op1, op2);
         jugador1.seleccionarExclusividad(0);
 
-        jugador2.responderMultipleChoice(op1);
+        jugador2.responder(pregunta.tipo(), op1);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 

@@ -1,8 +1,7 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.Jugadores;
 
 import edu.fiuba.algo3.modelo.Modificadores.*;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
-import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Respuestas.*;
 
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 
 public class Jugador {
     private int puntaje = 0;
-    private Respuesta respuesta;
+    private JugadorDeTipo tipoDeJugador = null;
     private ArrayList<Multiplicador> multiplicadores = new ArrayList<Multiplicador>();
     private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
 
@@ -34,13 +33,9 @@ public class Jugador {
         return puntaje;
     }
     public void evaluarRespuestas(Puntaje unPuntaje) {
-        if(respuesta != null)
-            this.respuesta.evaluar(unPuntaje);
-    }
-    
-    public Respuesta establecerRespuesta(Respuesta unaRespuesta) {
-        this.respuesta = unaRespuesta;
-        return unaRespuesta;
+        if (tipoDeJugador != null){
+            this.tipoDeJugador.evaluar(unPuntaje);
+        }
     }
 
     public void aplicarMultiplicador(Puntaje puntaje) {
@@ -64,27 +59,9 @@ public class Jugador {
         }
     }
 
-    public Respuesta responderMultipleChoice(Opcion ... opciones) {
-
-        RespuestaMultipleChoice unaRespuesta = new RespuestaMultipleChoice(opciones);
-        return this.establecerRespuesta(unaRespuesta);
+    public Respuesta responder(JugadorDeTipo tipo, Opcion... opciones){
+        this.tipoDeJugador = tipo;
+        return tipoDeJugador.responder(opciones);
     }
 
-    public Respuesta responderVF(Opcion opcion) {
-
-        RespuestaVF unaRespuesta = new RespuestaVF(opcion);
-        return this.establecerRespuesta(unaRespuesta);
-    }
-
-    public Respuesta responderPorGrupo (Opcion ... opciones) {
-
-        RespuestaGroupChoice unaRespuesta = new RespuestaGroupChoice(opciones);
-        return this.establecerRespuesta(unaRespuesta);
-    }
-
-    public Respuesta responderConOrden(OpcionConOrden ... opciones) {
-
-        RespuestaOrderChoice unaRespuesta = new RespuestaOrderChoice(opciones);
-        return this.establecerRespuesta(unaRespuesta);
-    }
 }

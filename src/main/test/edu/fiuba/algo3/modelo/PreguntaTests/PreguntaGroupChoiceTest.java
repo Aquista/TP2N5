@@ -1,14 +1,9 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaGroupChoice;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaOrderedChoice;
-import edu.fiuba.algo3.modelo.Respuestas.RespuestaGroupChoice;
-import edu.fiuba.algo3.modelo.Respuestas.RespuestaOrderChoice;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -27,7 +22,7 @@ public class PreguntaGroupChoiceTest {
         OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
         OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-        jugador.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador.responder(pregunta.tipo(), opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -44,7 +39,7 @@ public class PreguntaGroupChoiceTest {
         OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
         OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-        jugador.responderPorGrupo(opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador.responder(pregunta.tipo(), opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(1));
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -62,8 +57,8 @@ public class PreguntaGroupChoiceTest {
         OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
         OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-        jugador1.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
-        jugador2.responderPorGrupo(opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(2));
+        jugador1.responder(pregunta.tipo(), opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador2.responder(pregunta.tipo(), opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(2));
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -81,8 +76,8 @@ public class PreguntaGroupChoiceTest {
         OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
         OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-        jugador1.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
-        jugador2.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador1.responder(pregunta.tipo(), opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador2.responder(pregunta.tipo(), opcion1.duplicar(1), opcion2.duplicar(2), opcion3.duplicar(1));
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -100,8 +95,8 @@ public class PreguntaGroupChoiceTest {
         OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
         OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
 
-        jugador1.responderPorGrupo(opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(1));
-        jugador2.responderPorGrupo(opcion1.duplicar(1), opcion2.duplicar(1), opcion3.duplicar(1));
+        jugador1.responder(pregunta.tipo(), opcion1.duplicar(2), opcion2.duplicar(2), opcion3.duplicar(1));
+        jugador2.responder(pregunta.tipo(), opcion1.duplicar(1), opcion2.duplicar(1), opcion3.duplicar(1));
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 

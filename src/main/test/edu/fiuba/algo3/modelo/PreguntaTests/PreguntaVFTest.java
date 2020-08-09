@@ -1,17 +1,12 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
-import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
-import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
-import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
-import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -28,7 +23,7 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
-        jugador.responderVF(opcionCorrecta);
+        jugador.responder(pregunta.tipo(), opcionCorrecta);
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -45,8 +40,8 @@ public class PreguntaVFTest {
 
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
-        jugador1.responderVF(opcionCorrecta);
-        jugador2.responderVF(opcionIncorrecta);
+        jugador1.responder(pregunta.tipo(), opcionCorrecta);
+        jugador2.responder(pregunta.tipo(), opcionIncorrecta);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -64,7 +59,7 @@ public class PreguntaVFTest {
         Jugador jugador = new Jugador();
         Jugador contrincante = new Jugador();
 
-        jugador.responderVF(opcionCorrecta);
+        jugador.responder(pregunta.tipo(), opcionCorrecta);
         jugador.seleccionarMultiplicador(1);
 
         pregunta.evaluarJugadores(jugador, contrincante);
@@ -83,7 +78,7 @@ public class PreguntaVFTest {
         Jugador jugador = new Jugador();
         Jugador contrincante = new Jugador();
 
-        jugador.responderVF(opcionCorrecta);
+        jugador.responder(pregunta.tipo(), opcionCorrecta);
         jugador.seleccionarMultiplicador(0);
 
         pregunta.evaluarJugadores(jugador, contrincante);
@@ -103,9 +98,9 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
-        jugador1.responderVF(opcionCorrecta);
+        jugador1.responder(pregunta.tipo(), opcionCorrecta);
         jugador1.seleccionarExclusividad(0);
-        jugador2.responderVF(opcionIncorrecta);
+        jugador2.responder(pregunta.tipo(), opcionIncorrecta);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -125,9 +120,9 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
-        jugador1.responderVF(opcionCorrecta);
+        jugador1.responder(pregunta.tipo(), opcionCorrecta);
         jugador1.seleccionarExclusividad(0);
-        jugador2.responderVF(opcionIncorrecta);
+        jugador2.responder(pregunta.tipo(), opcionIncorrecta);
         jugador2.seleccionarExclusividad(0);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
@@ -148,9 +143,9 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
-        jugador1.responderVF(opcionCorrecta);
+        jugador1.responder(pregunta.tipo(), opcionCorrecta);
         jugador1.seleccionarExclusividad(0);
-        jugador2.responderVF(opcionCorrecta);
+        jugador2.responder(pregunta.tipo(), opcionCorrecta);
         jugador2.seleccionarExclusividad(0);
 
         pregunta.evaluarJugadores(jugador1, jugador2);

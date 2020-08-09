@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
-import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 import java.util.ArrayList;
@@ -24,4 +24,5 @@ public abstract class Pregunta {
     }
     public abstract void evaluarJugadores(Jugador jugador1, Jugador jugador2);
 
+    public abstract JugadorDeTipo tipo();
 }

@@ -1,10 +1,7 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
-import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.*;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
-
-import java.util.ArrayList;
 
 public abstract class PreguntaClasica extends Pregunta {
 

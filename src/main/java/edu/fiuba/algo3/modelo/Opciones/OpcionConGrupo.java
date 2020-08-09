@@ -24,7 +24,7 @@ public class OpcionConGrupo extends Opcion{
             unPuntaje.sumarIncorrecta();
     }
 
-    public OpcionConGrupo duplicar(int i) {
-        return new OpcionConGrupo(texto, grupoCorrecto, i);
+    public OpcionConGrupo duplicar(int grupoSeleccionado) {
+        return new OpcionConGrupo(texto, grupoCorrecto, grupoSeleccionado);
     }
 }
