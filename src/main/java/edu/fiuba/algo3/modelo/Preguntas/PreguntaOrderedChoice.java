@@ -27,13 +27,9 @@ public class PreguntaOrderedChoice extends Pregunta {
         puntaje2.asignarPuntaje(jugador2);
     }
 
-    public void agregarOpcion(OpcionConOrden opcionConOrden){
-        opciones.add(opcionConOrden);
-    }
-
     public OpcionConOrden agregarOpcion(String unTexto, int orden) {
         OpcionConOrden opcion = new OpcionConOrden(unTexto, orden);
-        agregarOpcion(opcion);
+        opciones.add(opcion);
         return opcion;
     }
 }

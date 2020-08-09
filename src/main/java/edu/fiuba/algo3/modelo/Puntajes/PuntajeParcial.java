@@ -5,10 +5,11 @@ import edu.fiuba.algo3.modelo.Jugador;
 public class PuntajeParcial extends Puntaje{
 
     @Override
-    public void calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta) {
+    public int calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta) {
         unJugador.evaluarRespuestas(this);
         if(cantidadIncorrectas == 0)
             puntos = cantidadCorrectas;
+        return puntos;
     }
 
     @Override

@@ -16,9 +16,6 @@ public class RespuestaMultipleChoice implements Respuesta {
             this.opciones.add(op);
         }
     }
-    public void agregarOpcion(Opcion unaOpcion){
-        opciones.add(unaOpcion);
-    }
 
     public void evaluar(Puntaje unPuntaje){
         for(Opcion opcion : opciones){

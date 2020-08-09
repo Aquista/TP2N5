@@ -23,13 +23,6 @@ public class OpcionConGrupo extends Opcion{
         else
             unPuntaje.sumarIncorrecta();
     }
-    public void seleccionarGrupo(int grupoSeleccionado){
-        this.grupoSeleccionado = grupoSeleccionado;
-    }
-
-    public OpcionConGrupo duplicar() {
-        return new OpcionConGrupo(texto, grupoCorrecto);
-    }
 
     public OpcionConGrupo duplicar(int i) {
         return new OpcionConGrupo(texto, grupoCorrecto, i);

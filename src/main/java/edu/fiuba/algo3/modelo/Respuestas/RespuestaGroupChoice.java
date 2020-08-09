@@ -18,12 +18,6 @@ public class RespuestaGroupChoice implements Respuesta {
         }
     }
 
-    public void agregarOpcion(OpcionConGrupo unaOpcion, int grupo){
-        OpcionConGrupo opcion = unaOpcion.duplicar(/*grupo*/);
-        opcion.seleccionarGrupo(grupo);
-        opciones.add(opcion);
-    }
-
     public void evaluar(Puntaje unPuntaje){
         for(Opcion opcion : opciones){
             opcion.evaluar(unPuntaje);

@@ -10,7 +10,7 @@ public abstract class Puntaje {
     protected int cantidadCorrectas = 0;
     protected int cantidadIncorrectas = 0;
 
-    public abstract void calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta);
+    public abstract int calcularPuntaje(Jugador unJugador, int cantidadRespCorrectasPregunta);
 
     public void asignarPuntaje(Jugador unJugador) {
         unJugador.actualizarPuntaje(puntos);

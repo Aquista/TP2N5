@@ -25,13 +25,9 @@ public class PreguntaGroupChoice extends Pregunta{
         puntaje2.asignarPuntaje(jugador2);
     }
 
-    public void agregarOpcion(OpcionConGrupo opcionConGrupo){
-        opciones.add(opcionConGrupo);
-    }
-
     public OpcionConGrupo agregarOpcion(String unTexto, int grupoCorrecto) {
         OpcionConGrupo unaOpcion = new OpcionConGrupo(unTexto, grupoCorrecto);
-        agregarOpcion(unaOpcion);
+        opciones.add(unaOpcion);
         return unaOpcion;
     }
 }

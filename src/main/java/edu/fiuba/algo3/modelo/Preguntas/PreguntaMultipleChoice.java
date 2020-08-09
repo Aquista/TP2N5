@@ -42,7 +42,4 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
         return opcion;
     }
 
-    public ArrayList<Opcion> getOpciones(String[] opciones) {
-        return null;
-    }
 }

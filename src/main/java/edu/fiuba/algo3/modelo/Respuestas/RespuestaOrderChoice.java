@@ -17,12 +17,6 @@ public class RespuestaOrderChoice implements Respuesta {
         }
     }
 
-    public void agregarOpcion(OpcionConOrden unaOpcion){
-        OpcionConOrden opcion = unaOpcion.duplicar();
-        opcion.seleccionarOrden(opciones.size() + 1);
-        opciones.add(opcion);
-    }
-
     public void evaluar(Puntaje unPuntaje){
         for(Opcion opcion : opciones){
             opcion.evaluar(unPuntaje);

@@ -11,12 +11,8 @@ public class OpcionConOrden extends Opcion{
         this.texto = unTexto;
         this.ordenCorrecto = ordenCorrecto;
     }
-
-    public OpcionConOrden(String unTexto, int ordenCorrecto, int ordenSeleccionado) {
-        super(unTexto);
-        this.texto = unTexto;
-        this.ordenCorrecto = ordenCorrecto;
-        this.ordenSeleccionado = ordenSeleccionado;
+    public OpcionConOrden duplicar() {
+        return new OpcionConOrden(texto, ordenCorrecto);
     }
 
     public void evaluar(Puntaje unPuntaje) {
@@ -30,7 +26,4 @@ public class OpcionConOrden extends Opcion{
         this.ordenSeleccionado = ordenSeleccionado;
     }
 
-    public OpcionConOrden duplicar() {
-        return new OpcionConOrden(texto, ordenCorrecto);
-    }
 }

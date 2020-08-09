@@ -13,30 +13,25 @@ public class PuntajeParcialTest {
 
     @Test
     public void test01PuntajeParcialAgrega1PuntoSiUnJugadorContestaBien1Respuesta(){
+
         Jugador unJugador = new Jugador();
 
         OpcionCorrecta opcion = new OpcionCorrecta("false");
-        RespuestaVF respuesta = new RespuestaVF();
-        respuesta.agregarOpcion(opcion);
-        unJugador.establecerRespuesta(respuesta);
-        PuntajeParcial puntaje = new PuntajeParcial();
+        unJugador.responderVF(opcion);
 
-        puntaje.calcularPuntaje(unJugador, 1);
-        puntaje.asignarPuntaje(unJugador);
-        assertEquals(1, unJugador.getPuntaje());
+        PuntajeParcial puntaje = new PuntajeParcial();
+        assertEquals(1, puntaje.calcularPuntaje(unJugador, 1));
     }
 
     @Test
     public void test02PuntajeParcialNoModificaLosPuntoSiUnJugadorCon0PuntosContestaMal(){
+
         Jugador unJugador = new Jugador();
 
         OpcionIncorrecta opcion = new OpcionIncorrecta("false");
-        RespuestaVF respuesta = new RespuestaVF();
-        respuesta.agregarOpcion(opcion);
-        unJugador.establecerRespuesta(respuesta);
+        unJugador.responderVF(opcion);
+
         PuntajeParcial puntaje = new PuntajeParcial();
-        puntaje.calcularPuntaje(unJugador, 1);
-        puntaje.asignarPuntaje(unJugador);
-        assertEquals(0, unJugador.getPuntaje());
+        assertEquals(0, puntaje.calcularPuntaje(unJugador, 1));
     }
 }
