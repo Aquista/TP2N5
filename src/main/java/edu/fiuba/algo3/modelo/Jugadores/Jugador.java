@@ -64,4 +64,15 @@ public class Jugador {
         return tipoDeJugador.responder(opciones);
     }
 
+    public Jugador ganador(Jugador segundoJugador) {
+        if(segundoJugador.tengoMasPuntaje(this.puntaje)){
+            return segundoJugador;
+        }else{
+            return this;
+        }
+    }
+
+    private boolean tengoMasPuntaje(int unPuntaje) {
+        return this.puntaje>unPuntaje;
+    }
 }
