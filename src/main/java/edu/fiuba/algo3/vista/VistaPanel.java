@@ -1,11 +1,12 @@
 package edu.fiuba.algo3.vista;
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import javafx.scene.layout.BorderPane;
 
 public class VistaPanel extends BorderPane {
-    public VistaPanel(Pregunta unaPregunta){
+    public VistaPanel(Jugador jugador, Pregunta unaPregunta){
         this.setStyle("-fx-background-color: #a146f1;");
-        VistaPregunta vistaPre=new VistaPregunta(unaPregunta);
+        VistaPreguntaVF vistaPre=new VistaPreguntaVF(jugador, unaPregunta);
         this.setCenter(vistaPre);
     }
 }

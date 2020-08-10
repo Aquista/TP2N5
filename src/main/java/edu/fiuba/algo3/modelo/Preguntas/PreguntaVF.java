@@ -19,7 +19,7 @@ public class PreguntaVF extends PreguntaClasica {
     }
 
     public OpcionIncorrecta agregarOpcionIncorrecta(String texto) {
-        OpcionIncorrecta opcion = new OpcionIncorrecta("texto opcion 3");
+        OpcionIncorrecta opcion = new OpcionIncorrecta(texto);
         agregarOpcionIncorrecta(opcion);
         return opcion;
     }
