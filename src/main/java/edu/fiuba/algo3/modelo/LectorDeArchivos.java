@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 public class LectorDeArchivos {
     public static String leerArchivo(String nombreArchivo) {
-        Path base = Paths.get(".\\JSON\\").normalize().toAbsolutePath();
+        Path base = Paths.get(".").resolve("JSON").normalize().toAbsolutePath();
         Path rutaArchivo = base.resolve(nombreArchivo);
         String contenido;
 
