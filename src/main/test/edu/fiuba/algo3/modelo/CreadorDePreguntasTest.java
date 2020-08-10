@@ -25,5 +25,20 @@ public class CreadorDePreguntasTest {
 
         assertEquals(cantidadDePreguntasEsperada, preguntas.size());
     }
+    @Test
+    public void test03ArchivoVacioDevuelveUnaListaDePreguntasVacia() {
+        int cantidadDePreguntasEsperada = 0;
 
+        List<Pregunta> preguntas = CreadorDePreguntas.generarPreguntas("test03.json");
+
+        assertEquals(cantidadDePreguntasEsperada, preguntas.size());
+    }
+    @Test
+    public void test04IntentoCrearPreguntasAPartirDeUnArchivoInexistenteDevuelveNull() {
+        int cantidadDePreguntasEsperada = 0;
+
+        List<Pregunta> preguntas = CreadorDePreguntas.generarPreguntas("test04.json");
+
+        assertEquals(null, preguntas);
+    }
 }
