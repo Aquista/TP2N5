@@ -1,0 +1,9 @@
+[
+	{
+		"tipoPuntaje": "Clasico",
+		"tipoPregunta": "VF",
+		"pregunta": "Pablo Massuh es profesor de la materia Algoritmos 2?",
+		"opcionCorrecta": "false",
+		"tiempo": 30
+	},
+]
