@@ -2,6 +2,7 @@ package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.*;
+import edu.fiuba.algo3.modelo.Panel.Panel;
 import edu.fiuba.algo3.modelo.Preguntas.*;
 import edu.fiuba.algo3.vista.*;
 import edu.fiuba.algo3.vista.inicioScenes.VistaPrincipal;
@@ -27,10 +28,9 @@ public class App extends Application{
         Jugador jugador = new Jugador("JUGADOR");
         VistaPreguntaGroupChoice vistaPre = new VistaPreguntaGroupChoice(jugador, pregunta);
         Scene scene = new Scene(vistaPre,800,600);*/
-        //VistaPrincipal pantallaPrincipal=new VistaPrincipal(stage);
-        //Scene scene=new Scene(pantallaPrincipal,800,600);
-        VistaPanel pan=new VistaPanel(new Jugador("kev"));
-        Scene scene=new Scene(pan,800,600);
+        Panel panel = new Panel();
+        VistaPrincipal pantallaPrincipal=new VistaPrincipal(stage,panel);
+        Scene scene=new Scene(pantallaPrincipal,800,600);
         stage.setScene(scene);
         stage.show();
     }

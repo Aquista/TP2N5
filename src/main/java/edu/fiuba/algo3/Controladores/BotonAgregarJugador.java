@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.Controladores;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Panel.Panel;
+import edu.fiuba.algo3.vista.VistaPanel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -13,22 +15,25 @@ import java.util.ArrayList;
 public class BotonAgregarJugador implements EventHandler<ActionEvent> {
     private Stage stage;
     private TextField nombreJugador;
-    private ArrayList<Jugador> jugadores;
-    public BotonAgregarJugador(Stage primerStage, TextField unNombreJugador){
+    private Panel panel;
+    public BotonAgregarJugador(Stage primerStage, TextField unNombreJugador, Panel panel){
         this.stage = primerStage;
         this.nombreJugador = unNombreJugador;
-        this.jugadores = new ArrayList<>();
+        this.panel=panel;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         String jugador = this.nombreJugador.getText();
-        this.jugadores.add(new Jugador(jugador));
         System.out.println(jugador);
         this.nombreJugador.setText(null);
-        if(this.jugadores.size() == 2){
-            Scene prueba = new Scene(new StackPane(),800,600);
-            this.stage.setScene(prueba);
+        this.panel.agregarJugador(new Jugador(jugador));
+        if(this.panel.cantJugadores() == 2){
+            System.out.println("todoOk");
+            this.panel.iniciarJuego();
+            VistaPanel pan=new VistaPanel(this.panel);
+            Scene scene=new Scene(pan,800,600);
+            this.stage.setScene(scene);
         }
     }
 }
