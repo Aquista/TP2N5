@@ -32,9 +32,12 @@
 	},
 	{
 		"tipoPregunta": "GroupChoice",
-		"pregunta": "Ordenar ascendentemente por año de lanzamiento",
-		"opciones": [
+		"pregunta": "Grupo 1: Lenguajes estructurados. Grupo 2: Lenguajes de POO.",
+		"grupo1": [
 			"C",
+			"Assembler"
+		],
+		"grupo2": [
 			"Smalltalk",
 			"Java"
 		],
