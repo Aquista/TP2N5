@@ -77,4 +77,7 @@ public class Jugador {
     private boolean tengoMasPuntaje(int unPuntaje) {
         return this.puntaje>unPuntaje;
     }
+    public String nombre(){
+        return this.nombre;
+    }
 }

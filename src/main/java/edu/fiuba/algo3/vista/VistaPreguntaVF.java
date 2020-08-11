@@ -18,6 +18,7 @@ public class VistaPreguntaVF extends VBox{
     private Jugador jugador;
 
     public VistaPreguntaVF(Jugador jugador, PreguntaVF unaPregunta){
+        this.setStyle("-fx-background-color: #a146f1;");
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.pregunta = unaPregunta;
@@ -35,9 +36,6 @@ public class VistaPreguntaVF extends VBox{
         ArrayList<Opcion> opciones = this.pregunta.opciones();
 
         for (Opcion unaOpcion : opciones){
-            //Button opcionActual = new Button(unaOpcion.texto());
-            //eventoBoton = new AsignarRespuestaVFEventHandler(jugador, pregunta, unaOpcion);
-            //opcionActual.setOnAction(eventoBoton);
             VistaOpcion opcion = new VistaOpcion(unaOpcion,this.pregunta,this.jugador);
             botones.getChildren().add(opcion);
         }
