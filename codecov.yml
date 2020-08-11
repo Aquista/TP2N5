@@ -1,2 +1,4 @@
 ignore:
   - "src/main/java/edu/fiuba/algo3/vista"
+  - "src/main/java/edu/fiuba/algo3/Controladores"
+
