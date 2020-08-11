@@ -23,19 +23,16 @@ public class App extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        //PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("Que lenguajes de programación vimos en Algoritmos 3?", new PuntajeClasico());
-        //OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("Smalltalk");
-        //OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("Java");
-        //OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("Python");
-        //OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("C");
-
-        //Jugador jugador = new Jugador();
-
-        //VistaPanel panel = new VistaPanel(jugador, pregunta);
-        //VistaPreguntaMultipleChoice vistaPre = new VistaPreguntaMultipleChoice(jugador, pregunta);
-        //Scene scene = new Scene(vistaPre,800,600);
-        VistaPrincipal pantallaPrincipal=new VistaPrincipal(stage);
-        Scene scene=new Scene(pantallaPrincipal,800,600);
+        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("Que lenguajes de programación vimos en Algoritmos 3?", new PuntajeClasico());
+        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("Smalltalk");
+        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("Java");
+        OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("Python");
+        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("C");
+        Jugador jugador = new Jugador();
+        VistaPreguntaMultipleChoice vistaPre = new VistaPreguntaMultipleChoice(jugador, pregunta);
+        Scene scene = new Scene(vistaPre,800,600);
+        //VistaPrincipal pantallaPrincipal=new VistaPrincipal(stage);
+        //Scene scene=new Scene(pantallaPrincipal,800,600);
         stage.setScene(scene);
         stage.show();
     }

@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.Controladores.AsignarRespuestaMultipleChoiceEventHandler;
-import edu.fiuba.algo3.Controladores.AsignarRespuestaVFEventHandler;
+import edu.fiuba.algo3.controlador.AsignarRespuestaMultipleChoiceEventHandler;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
@@ -9,7 +8,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
