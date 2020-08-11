@@ -8,6 +8,7 @@ import edu.fiuba.algo3.modelo.Respuestas.*;
 import java.util.ArrayList;
 
 public class Jugador {
+    private String nombre;
     private int puntaje = 0;
     private JugadorDeTipo tipoDeJugador = null;
     private ArrayList<Multiplicador> multiplicadores = new ArrayList<Multiplicador>();
@@ -16,8 +17,16 @@ public class Jugador {
     private Multiplicador multiplicadorActivo = new MultiplicadorX1();
     private Exclusividad exclusividadActiva = new ExclusividadNula();
 
+    public Jugador(String unNombre) {
+        this.nombre=unNombre;
+        multiplicadores.add(new MultiplicadorX2());
+        multiplicadores.add(new MultiplicadorX3());
+        exclusividades.add(new ExclusividadSimple());
+        exclusividades.add(new ExclusividadSimple());
+    }
 
     public Jugador() {
+        this.nombre="";
         multiplicadores.add(new MultiplicadorX2());
         multiplicadores.add(new MultiplicadorX3());
         exclusividades.add(new ExclusividadSimple());
