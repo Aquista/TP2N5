@@ -6,7 +6,11 @@ import edu.fiuba.algo3.modelo.Jugadores.JugadorDeGroupChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 
+import java.util.ArrayList;
+
 public class PreguntaGroupChoice extends Pregunta{
+
+    private ArrayList<OpcionConGrupo> opciones = new ArrayList<OpcionConGrupo>();
 
     public PreguntaGroupChoice(String texto) {
         super(texto, new PuntajeClasico());
@@ -30,6 +34,10 @@ public class PreguntaGroupChoice extends Pregunta{
     @Override
     public JugadorDeTipo tipo() {
         return new JugadorDeGroupChoice();
+    }
+
+    public ArrayList<OpcionConGrupo> opciones(){
+        return opciones;
     }
 
     public OpcionConGrupo agregarOpcion(String unTexto, int grupoCorrecto) {

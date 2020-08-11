@@ -6,7 +6,11 @@ import edu.fiuba.algo3.modelo.Jugadores.JugadorDeOrderChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 
+import java.util.ArrayList;
+
 public class PreguntaOrderedChoice extends Pregunta {
+
+    private ArrayList<OpcionConOrden> opciones = new ArrayList<OpcionConOrden>();
 
     public PreguntaOrderedChoice(String texto) {
         super(texto, new PuntajeClasico());
@@ -30,6 +34,10 @@ public class PreguntaOrderedChoice extends Pregunta {
     @Override
     public JugadorDeTipo tipo() {
         return new JugadorDeOrderChoice();
+    }
+
+    public ArrayList<OpcionConOrden> opciones(){
+        return opciones;
     }
 
     public OpcionConOrden agregarOpcion(String unTexto, int orden) {

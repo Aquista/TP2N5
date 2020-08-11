@@ -1,13 +1,10 @@
-package edu.fiuba.algo3.controlador;
+package edu.fiuba.algo3.Controladores;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-
-import java.util.ArrayList;
 
 public class AsignarRespuestaVFEventHandler implements EventHandler<ActionEvent> {
     private Jugador jugador;

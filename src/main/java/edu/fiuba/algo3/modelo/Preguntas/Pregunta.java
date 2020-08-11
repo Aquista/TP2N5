@@ -8,7 +8,7 @@ import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import java.util.ArrayList;
 
 public abstract class Pregunta {
-    protected ArrayList<Opcion> opciones = new ArrayList<Opcion>();
+
     protected String texto;
     protected Puntaje puntaje;
 
@@ -19,9 +19,7 @@ public abstract class Pregunta {
     public String texto(){
         return this.texto;
     }
-    public ArrayList<Opcion> opciones(){
-        return this.opciones;
-    }
+
     public abstract void evaluarJugadores(Jugador jugador1, Jugador jugador2);
 
     public abstract JugadorDeTipo tipo();

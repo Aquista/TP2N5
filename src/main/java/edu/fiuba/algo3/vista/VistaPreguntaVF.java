@@ -1,9 +1,10 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.controlador.AsignarRespuestaVFEventHandler;
+import edu.fiuba.algo3.Controladores.AsignarRespuestaVFEventHandler;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,10 +14,10 @@ import javafx.scene.layout.VBox;
 import java.util.ArrayList;
 
 public class VistaPreguntaVF extends VBox{
-    private Pregunta pregunta;
+    private PreguntaVF pregunta;
     private Jugador jugador;
 
-    public VistaPreguntaVF(Jugador jugador, Pregunta unaPregunta){
+    public VistaPreguntaVF(Jugador jugador, PreguntaVF unaPregunta){
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.pregunta = unaPregunta;

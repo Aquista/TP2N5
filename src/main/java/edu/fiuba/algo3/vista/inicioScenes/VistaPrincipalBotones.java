@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vista.inicioScenes;
 
-import edu.fiuba.algo3.controlador.BotonAgregarJugador;
+import edu.fiuba.algo3.Controladores.BotonAgregarJugador;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

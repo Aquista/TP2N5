@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.controlador;
+package edu.fiuba.algo3.Controladores;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
@@ -7,7 +7,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.CheckBox;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class AsignarRespuestaMultipleChoiceEventHandler implements EventHandler<ActionEvent> {

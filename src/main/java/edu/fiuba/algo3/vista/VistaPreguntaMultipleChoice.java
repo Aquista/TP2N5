@@ -1,9 +1,10 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.controlador.AsignarRespuestaMultipleChoiceEventHandler;
+import edu.fiuba.algo3.Controladores.AsignarRespuestaMultipleChoiceEventHandler;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
+import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -13,10 +14,10 @@ import javafx.scene.layout.VBox;
 import java.util.ArrayList;
 
 public class VistaPreguntaMultipleChoice extends VBox {
-    private Pregunta pregunta;
+    private PreguntaMultipleChoice pregunta;
     private Jugador jugador;
 
-    public VistaPreguntaMultipleChoice(Jugador jugador, Pregunta unaPregunta){
+    public VistaPreguntaMultipleChoice(Jugador jugador, PreguntaMultipleChoice unaPregunta){
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.pregunta = unaPregunta;
