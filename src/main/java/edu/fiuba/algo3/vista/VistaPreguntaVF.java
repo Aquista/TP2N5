@@ -35,10 +35,11 @@ public class VistaPreguntaVF extends VBox{
         ArrayList<Opcion> opciones = this.pregunta.opciones();
 
         for (Opcion unaOpcion : opciones){
-            Button opcionActual = new Button(unaOpcion.texto());
-            AsignarRespuestaVFEventHandler eventoBoton = new AsignarRespuestaVFEventHandler(jugador, pregunta, unaOpcion);
-            opcionActual.setOnAction(eventoBoton);
-            botones.getChildren().add(opcionActual);
+            //Button opcionActual = new Button(unaOpcion.texto());
+            //eventoBoton = new AsignarRespuestaVFEventHandler(jugador, pregunta, unaOpcion);
+            //opcionActual.setOnAction(eventoBoton);
+            VistaOpcion opcion = new VistaOpcion(unaOpcion,this.pregunta,this.jugador);
+            botones.getChildren().add(opcion);
         }
 
         this.getChildren().addAll(textoPregunta,botones);

@@ -17,7 +17,7 @@ public class App extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        PreguntaGroupChoice pregunta = new PreguntaGroupChoice("1) Grandes de América 2) Hijos");
+        /*PreguntaGroupChoice pregunta = new PreguntaGroupChoice("1) Grandes de América 2) Hijos");
         OpcionConGrupo op1 = pregunta.agregarOpcion("Boca", 1);
         OpcionConGrupo op2 = pregunta.agregarOpcion("Racing", 2);
         OpcionConGrupo op3 = pregunta.agregarOpcion("San Lorenzo", 2);
@@ -26,9 +26,11 @@ public class App extends Application{
 
         Jugador jugador = new Jugador("JUGADOR");
         VistaPreguntaGroupChoice vistaPre = new VistaPreguntaGroupChoice(jugador, pregunta);
-        Scene scene = new Scene(vistaPre,800,600);
+        Scene scene = new Scene(vistaPre,800,600);*/
         //VistaPrincipal pantallaPrincipal=new VistaPrincipal(stage);
         //Scene scene=new Scene(pantallaPrincipal,800,600);
+        VistaPanel pan=new VistaPanel(new Jugador("kev"));
+        Scene scene=new Scene(pan,800,600);
         stage.setScene(scene);
         stage.show();
     }

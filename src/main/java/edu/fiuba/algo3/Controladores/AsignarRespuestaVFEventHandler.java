@@ -9,16 +9,16 @@ import javafx.event.EventHandler;
 public class AsignarRespuestaVFEventHandler implements EventHandler<ActionEvent> {
     private Jugador jugador;
     private Pregunta pregunta;
-    private Opcion seleccionada;
+    private Opcion opcionSeleccionada;
 
     public AsignarRespuestaVFEventHandler(Jugador jugador, Pregunta pregunta, Opcion seleccionada) {
         this.jugador = jugador;
         this.pregunta = pregunta;
-        this.seleccionada = seleccionada;
+        this.opcionSeleccionada = seleccionada;
     }
 
     @Override
     public void handle(ActionEvent event) {
-        jugador.responder(pregunta.tipo(), seleccionada);
+        jugador.responder(pregunta.tipo(), this.opcionSeleccionada);
     }
 }
