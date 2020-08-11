@@ -1,9 +1,7 @@
 package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
-import edu.fiuba.algo3.vista.otros.VistaJugador;
 import javafx.scene.layout.BorderPane;
 
 public class VistaPanel extends BorderPane {
