@@ -13,7 +13,7 @@ public class PuntajeConPenalidadTest {
     @Test
     public void test01PuntajeConPenalidadAgrega1PuntoSiUnJugadorRespondeCorrectamente(){
 
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("AAS");
         OpcionCorrecta opcion = new OpcionCorrecta("true");
 
         unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);
@@ -26,7 +26,7 @@ public class PuntajeConPenalidadTest {
     @Test
     public void test02PuntajeConPenalidadSaca1PuntoSiUnJugadorRespondeIncorrectamente(){
 
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("ASDF");
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
 
         unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);

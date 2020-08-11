@@ -32,7 +32,7 @@ public class App extends Application{
         OpcionConOrden op3 = pregunta.agregarOpcion("4", 4);
         OpcionConOrden op4 = pregunta.agregarOpcion("2", 2);
 
-        Jugador jugador = new Jugador();
+        Jugador jugador = new Jugador("JUGADOR");
         VistaPreguntaOrderedChoice vistaPre = new VistaPreguntaOrderedChoice(jugador, pregunta);
         Scene scene = new Scene(vistaPre,800,600);
         //VistaPrincipal pantallaPrincipal=new VistaPrincipal(stage);

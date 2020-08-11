@@ -14,8 +14,8 @@ public class PreguntaGroupChoiceTest {
 
     public void test01JugadorCon0PuntosRespondeBienYSuma1Punto(){
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
 
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
         OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
@@ -31,8 +31,8 @@ public class PreguntaGroupChoiceTest {
 
     @Test
     public void test02JugadorCon0PuntosRespondeMalYSuma0Puntos(){
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
 
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
         OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
@@ -49,8 +49,8 @@ public class PreguntaGroupChoiceTest {
 
     @Test
     public void test03JugadoresCon0PuntosRespondenBienYMal(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
         OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
@@ -68,8 +68,8 @@ public class PreguntaGroupChoiceTest {
 
     @Test
     public void test04JugadoresCon0PuntosRespondenBienAmbos(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
         OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
@@ -87,8 +87,8 @@ public class PreguntaGroupChoiceTest {
 
     @Test
     public void test05JugadoresCon0PuntosRespondenMalAmbos(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
         PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
         OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);

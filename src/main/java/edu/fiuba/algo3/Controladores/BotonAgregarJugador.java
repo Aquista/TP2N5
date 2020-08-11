@@ -15,19 +15,19 @@ public class BotonAgregarJugador implements EventHandler<ActionEvent> {
     private TextField nombreJugador;
     private ArrayList<Jugador> jugadores;
     public BotonAgregarJugador(Stage primerStage, TextField unNombreJugador){
-        this.stage=primerStage;
-        this.nombreJugador=unNombreJugador;
-        this.jugadores=new ArrayList<>();
+        this.stage = primerStage;
+        this.nombreJugador = unNombreJugador;
+        this.jugadores = new ArrayList<>();
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        String jugador= this.nombreJugador.getText();
+        String jugador = this.nombreJugador.getText();
         this.jugadores.add(new Jugador(jugador));
         System.out.println(jugador);
         this.nombreJugador.setText(null);
-        if(this.jugadores.size()==2){
-            Scene prueba=new Scene(new StackPane(),800,600);
+        if(this.jugadores.size() == 2){
+            Scene prueba = new Scene(new StackPane(),800,600);
             this.stage.setScene(prueba);
         }
     }

@@ -25,13 +25,6 @@ public class Jugador {
         exclusividades.add(new ExclusividadSimple());
     }
 
-    public Jugador() {
-        this.nombre="";
-        multiplicadores.add(new MultiplicadorX2());
-        multiplicadores.add(new MultiplicadorX3());
-        exclusividades.add(new ExclusividadSimple());
-        exclusividades.add(new ExclusividadSimple());
-    }
     public void actualizarPuntaje(int puntos) {
         puntaje += puntos;
         if(puntaje < 0) {

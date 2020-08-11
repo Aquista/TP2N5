@@ -13,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class PanelTest {
     @Test
     public void test01ElGanadorDelKahootEsElQueTieneMasPuntos(){
-        Jugador primerJugador = new Jugador();
-        Jugador segundoJugador = new Jugador();
-        Panel panel =new Panel(primerJugador,segundoJugador);
+        Jugador primerJugador = new Jugador("J1");
+        Jugador segundoJugador = new Jugador("J2");
+        Panel panel = new Panel(primerJugador,segundoJugador);
         PreguntaVF unaPregunta = new PreguntaVF("aprobamos?", new PuntajeClasico());
         OpcionCorrecta opcionCorrecta = unaPregunta.agregarOpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = unaPregunta.agregarOpcionIncorrecta("false");

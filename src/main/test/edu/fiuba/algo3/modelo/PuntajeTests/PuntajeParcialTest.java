@@ -14,7 +14,7 @@ public class PuntajeParcialTest {
     @Test
     public void test01PuntajeParcialAgrega1PuntoSiUnJugadorContestaBien1Respuesta(){
 
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("GAG");
 
         OpcionCorrecta opcion = new OpcionCorrecta("false");
         unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);
@@ -26,7 +26,7 @@ public class PuntajeParcialTest {
     @Test
     public void test02PuntajeParcialNoModificaLosPuntoSiUnJugadorCon0PuntosContestaMal(){
 
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("SDF");
 
         OpcionIncorrecta opcion = new OpcionIncorrecta("false");
         unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);

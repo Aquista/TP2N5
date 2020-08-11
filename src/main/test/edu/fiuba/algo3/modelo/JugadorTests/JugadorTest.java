@@ -9,12 +9,12 @@ public class JugadorTest {
 
     @Test
     public void test01JugadorNuevoTiene0Puntos() {
-        Jugador primerJugador = new Jugador();
+        Jugador primerJugador = new Jugador("DFASFAS");
         assertEquals(0,primerJugador.getPuntaje());
     }
     @Test
     public void test02CreoUnJugadorYLeSumo3Puntos() {
-        Jugador primerJugador = new Jugador();
+        Jugador primerJugador = new Jugador("ASGDF");
         int puntos = 3;
         primerJugador.actualizarPuntaje(puntos);
 
@@ -22,7 +22,7 @@ public class JugadorTest {
     }
     @Test
     public void test03AUnJugadorCon0PuntosLeResto1PuntoYSigueTeniendo0Puntos() {
-        Jugador primerJugador = new Jugador();
+        Jugador primerJugador = new Jugador("FDASG");
         int puntos = -1;
         int puntosEsperados = 0;
         primerJugador.actualizarPuntaje(puntos);
@@ -31,7 +31,7 @@ public class JugadorTest {
     }
     @Test
     public void test04AUnJugadorCon6PuntosLeResto4PuntosYTiene2Puntos() {
-        Jugador primerJugador = new Jugador();
+        Jugador primerJugador = new Jugador("FSDASG");
         int puntosIniciales = 6;
         int puntosARestar = -4;
         int puntosEsperados = 2;

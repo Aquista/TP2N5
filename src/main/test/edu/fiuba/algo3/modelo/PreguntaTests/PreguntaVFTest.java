@@ -16,8 +16,8 @@ public class PreguntaVFTest {
     public void test01CreoUnaPreguntaClasicaYEvaluo1JugadorCon1RespuestaCorrecta() {
         int puntajeEsperado = 1;
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("SAFKIH");
+        Jugador contrincante = new Jugador("HAMOOD");
 
         PreguntaVF pregunta = new PreguntaVF("Soy una pregunta", new PuntajeClasico());
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
@@ -38,8 +38,8 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("ASOD");
+        Jugador jugador2 = new Jugador("DGSA");
         jugador1.responder(pregunta.tipo(), opcionCorrecta);
         jugador2.responder(pregunta.tipo(), opcionIncorrecta);
 
@@ -56,8 +56,8 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("ASDASD");
+        Jugador contrincante = new Jugador("GFSS");
 
         jugador.responder(pregunta.tipo(), opcionCorrecta);
         jugador.seleccionarMultiplicador(1);
@@ -75,8 +75,8 @@ public class PreguntaVFTest {
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("DAFG");
+        Jugador contrincante = new Jugador("AGF");
 
         jugador.responder(pregunta.tipo(), opcionCorrecta);
         jugador.seleccionarMultiplicador(0);
@@ -91,8 +91,8 @@ public class PreguntaVFTest {
         int puntajeJugador1Esperado = 2;
         int puntajeJugador2Esperado = 0;
 
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("NO SE");
+        Jugador jugador2 = new Jugador("JR10");
 
         PreguntaVF pregunta = new PreguntaVF("texto", new PuntajeClasico());
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
@@ -113,8 +113,8 @@ public class PreguntaVFTest {
         int puntajeJugador1Esperado = 4;
         int puntajeJugador2Esperado = 0;
 
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("RASDFASFE");
+        Jugador jugador2 = new Jugador("SADAS");
 
         PreguntaVF pregunta = new PreguntaVF("texto", new PuntajeClasico());
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
@@ -136,8 +136,8 @@ public class PreguntaVFTest {
         int puntajeJugador1Esperado = 1;
         int puntajeJugador2Esperado = 1;
 
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("SDSAF");
+        Jugador jugador2 = new Jugador("HGSGFH");
 
         PreguntaVF pregunta = new PreguntaVF("texto", new PuntajeClasico());
         OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");

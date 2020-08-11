@@ -15,7 +15,7 @@ public class PuntajeClasicoTest {
     public void test01PuntajeClasicoAgrega1PuntoSiUnJugadorRespondeCorrectamente(){
         OpcionCorrecta opcion = new OpcionCorrecta("true");
 
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("ASD");
         unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
@@ -26,7 +26,7 @@ public class PuntajeClasicoTest {
     @Test
     public void test02PuntajeClasicoNoSumaPuntoNiRestaSiUnJugadorRespondeIncorrectamente(){
 
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("SFD");
 
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
         unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);
@@ -38,7 +38,7 @@ public class PuntajeClasicoTest {
 
     @Test
     public void test03PuntajeClasicoSuma1PuntoSiUnJugadorRespondeTodasCorrectamente(){
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("ASFD");
 
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
@@ -53,7 +53,7 @@ public class PuntajeClasicoTest {
 
     @Test
     public void test04PuntajeClasicoSuma0PuntosSiUnJugadorResponde3CorrectasDe3Y1Incorrecta(){
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("DFFA");
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
         OpcionCorrecta opcion3 = new OpcionCorrecta("");
@@ -67,7 +67,7 @@ public class PuntajeClasicoTest {
 
     @Test
     public void test05PuntajeClasicoSuma0PuntosSiUnJugadorResponde2CorrectasDe3Y1Incorrecta(){
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("AFG");
 
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
@@ -81,7 +81,7 @@ public class PuntajeClasicoTest {
 
     @Test
     public void test06PuntajeClasicoSuma0PuntosSiUnJugadorResponde2CorrectasDe3YNingunaIncorrecta(){
-        Jugador unJugador = new Jugador();
+        Jugador unJugador = new Jugador("FAGADHSADF");
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
 

@@ -12,8 +12,8 @@ public class PreguntaOrderedChoiceTest {
     @Test
 
     public void test01JugadorCon0PuntosRespondeConOrdenCorrectoYSuma1Punto(){
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
         OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
@@ -29,8 +29,8 @@ public class PreguntaOrderedChoiceTest {
     }
     @Test
     public void test02JugadorCon0PuntosRespondeConOrdenIncorrectoYSuma0Puntos(){
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("NOMBRE");
+        Jugador contrincante = new Jugador("ASOI");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
         OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
@@ -46,8 +46,8 @@ public class PreguntaOrderedChoiceTest {
 
     @Test
     public void test03JugadoresCon0PuntosRespondenConOrdenIncorrectoYConOrdenCorrecto(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("ASD");
+        Jugador jugador2 = new Jugador("ASDF");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
         OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
@@ -65,8 +65,8 @@ public class PreguntaOrderedChoiceTest {
 
     @Test
     public void test04JugadoresCon0PuntosRespondenConOrdenCorrectoYConOrdenCorrecto(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("FAS");
+        Jugador jugador2 = new Jugador("ASDF");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
         OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
@@ -84,8 +84,8 @@ public class PreguntaOrderedChoiceTest {
 
     @Test
     public void test05JugadoresCon0PuntosRespondenConOrdenIncorrectoYConOrdenIncorrecto(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("ASFA");
+        Jugador jugador2 = new Jugador("J2");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
         OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);

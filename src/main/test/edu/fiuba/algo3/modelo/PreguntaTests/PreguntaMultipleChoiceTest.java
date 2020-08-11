@@ -17,8 +17,8 @@ public class PreguntaMultipleChoiceTest {
     public void test01JugadorCon0PuntosResponde1SolaOpcionCorrectaDe2YSigueTeniendo0puntos(){
         int puntajeEsperado = 0;
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
@@ -37,8 +37,8 @@ public class PreguntaMultipleChoiceTest {
     public void test02JugadorCon0PuntosResponde3OpcionCorrectasDe3YSuma1punto(){
         int puntajeEsperado = 1;
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
@@ -57,8 +57,8 @@ public class PreguntaMultipleChoiceTest {
     public void test03JugadorCon5PuntosResponde1OpcionIncorrectasDe1YNoSumaPuntos(){
         int puntajeEsperado = 5;
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
         jugador.actualizarPuntaje(puntajeEsperado);
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
@@ -78,8 +78,8 @@ public class PreguntaMultipleChoiceTest {
     public void test04JugadoresCon5PuntosRespondenConOpcionesCorrectasCompletasYConOpcionIncorrectaGanan1Y0Puntos(){
         int puntajeEsperado = 5;
 
-        Jugador primerJugador = new Jugador();
-        Jugador segundoJugador = new Jugador();
+        Jugador primerJugador = new Jugador("J1");
+        Jugador segundoJugador = new Jugador("J2");
         primerJugador.actualizarPuntaje(puntajeEsperado);
         segundoJugador.actualizarPuntaje(puntajeEsperado);
 
@@ -102,8 +102,8 @@ public class PreguntaMultipleChoiceTest {
     public void test05JugadorCon0PuntosResponde2BienYUnaMalYGana1PuntoEnPreguntaConPenalidad(){
         int puntajeEsperado = 1;
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeConPenalidad());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
@@ -121,8 +121,8 @@ public class PreguntaMultipleChoiceTest {
     public void test06JugadorCon5PuntosResponde2MalYPierde2PuntosEnPreguntaConPenalidad(){
         int puntajeEsperado = 3;
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
         jugador.actualizarPuntaje(5);
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeConPenalidad());
@@ -141,8 +141,8 @@ public class PreguntaMultipleChoiceTest {
     public void test07JugadorCon0PuntosResponde2De3BienYNingunaMalYSuma2PuntosConPuntajeParcial(){
         int puntajeEsperado = 2;
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeParcial());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
@@ -162,8 +162,8 @@ public class PreguntaMultipleChoiceTest {
     public void test08JugadorCon0PuntosResponde2De3BienY1MalYSuma0PuntosConPuntajeParcial(){
         int puntajeEsperado = 0;
 
-        Jugador jugador = new Jugador();
-        Jugador contrincante = new Jugador();
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeParcial());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
@@ -183,8 +183,8 @@ public class PreguntaMultipleChoiceTest {
     public void test09UnJugadorResponde2BienConExclusividadYSuma4PuntosEnPuntajeParcial(){
         int puntajeEsperado = 4;
 
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeParcial());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
@@ -205,8 +205,8 @@ public class PreguntaMultipleChoiceTest {
     public void test10UnJugadorResponde2BienMientrasAmbosSeleccionanExclusividadYSuma8PuntosEnPuntajeParcial(){
         int puntajeEsperado = 8;
 
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("ASKDFASPOD");
+        Jugador jugador2 = new Jugador("ASOIDF");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeParcial());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
@@ -228,8 +228,8 @@ public class PreguntaMultipleChoiceTest {
     public void test11AmbosJugadoresRespondenBienConExclusividadYSuman1PuntoEnPuntajeClasico(){
         int puntajeEsperado = 1;
 
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
@@ -252,8 +252,8 @@ public class PreguntaMultipleChoiceTest {
         int puntajeJugador1Esperado = 2;
         int puntajeJugador2Esperado = 0;
 
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("J1");
+        Jugador jugador2 = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
         OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
