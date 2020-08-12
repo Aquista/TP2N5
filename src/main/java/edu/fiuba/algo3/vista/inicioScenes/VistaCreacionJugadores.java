@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista.inicioScenes;
 
 import edu.fiuba.algo3.Controladores.AgregarJugadoresEventHandler;
-import edu.fiuba.algo3.Kahoot;
+import edu.fiuba.algo3.modelo.Kahoot;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

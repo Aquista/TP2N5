@@ -1,13 +1,12 @@
 package edu.fiuba.algo3.Controladores;
 
-import edu.fiuba.algo3.Ronda;
+import edu.fiuba.algo3.modelo.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaGroupChoice;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 
 import java.util.ArrayList;

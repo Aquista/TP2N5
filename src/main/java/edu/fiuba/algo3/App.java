@@ -1,5 +1,6 @@
 package edu.fiuba.algo3;
 
+import edu.fiuba.algo3.modelo.Kahoot;
 import edu.fiuba.algo3.vista.inicioScenes.VistaCreacionJugadores;
 import javafx.application.Application;
 import javafx.scene.Scene;

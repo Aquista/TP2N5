@@ -1,10 +1,8 @@
 package edu.fiuba.algo3.Controladores;
 
-import edu.fiuba.algo3.Kahoot;
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Kahoot;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 
 
 public class AgregarJugadoresEventHandler implements EventHandler<ActionEvent> {

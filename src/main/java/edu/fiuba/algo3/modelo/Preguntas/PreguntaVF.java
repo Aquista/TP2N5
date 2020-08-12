@@ -1,13 +1,12 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
-import edu.fiuba.algo3.Ronda;
+import edu.fiuba.algo3.modelo.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
 import edu.fiuba.algo3.modelo.Jugadores.JugadorDeVerdadoroFalso;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Puntajes.*;
-import edu.fiuba.algo3.vista.VistaPreguntaMultipleChoice;
 import edu.fiuba.algo3.vista.VistaPreguntaVF;
 import javafx.scene.layout.VBox;
 

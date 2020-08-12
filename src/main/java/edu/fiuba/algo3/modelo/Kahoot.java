@@ -1,6 +1,5 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.CreadorDePreguntas;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import javafx.stage.Stage;

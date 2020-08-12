@@ -1,16 +1,11 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.Controladores.*;
-import edu.fiuba.algo3.Ronda;
+import edu.fiuba.algo3.modelo.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
-import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
-import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaGroupChoice;
 import javafx.collections.FXCollections;
-import javafx.collections.ModifiableObservableListBase;
-import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
