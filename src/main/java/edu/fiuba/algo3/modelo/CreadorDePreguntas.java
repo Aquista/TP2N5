@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreadorDePreguntas {
+
     public static List<Pregunta> generarPreguntas(String nombreArchivo) {
         String contenidoArchivo = LectorDeArchivos.leerArchivo(nombreArchivo);
         if(contenidoArchivo == null)
@@ -42,14 +43,26 @@ public class CreadorDePreguntas {
 
         Pregunta pregunta;
 
-        if(tipoPregunta.equals("VF"))
-            pregunta = new PreguntaVF(textoPregunta, puntajePregunta);
-        else if(tipoPregunta.equals("MultipleChoice"))
-            pregunta = new PreguntaMultipleChoice(textoPregunta, puntajePregunta);
-        else if(tipoPregunta.equals("OrderedChoice"))
-            pregunta = new PreguntaOrderedChoice(textoPregunta);
-        else if(tipoPregunta.equals("GroupChoice"))
-            pregunta = new PreguntaGroupChoice(textoPregunta);
+        if(tipoPregunta.equals("VF")) {
+            PreguntaVF preguntaVF = new PreguntaVF(textoPregunta, puntajePregunta);
+            generarOpcionesVF(preguntaVF, preguntaJSON);
+            pregunta = preguntaVF;
+        }
+        else if(tipoPregunta.equals("MultipleChoice")) {
+            PreguntaMultipleChoice preguntaMC = new PreguntaMultipleChoice(textoPregunta, puntajePregunta);
+            generarOpcionesMultipleChoice(preguntaMC, preguntaJSON);
+            pregunta = preguntaMC;
+        }
+        else if(tipoPregunta.equals("OrderedChoice")) {
+            PreguntaOrderedChoice preguntaOC = new PreguntaOrderedChoice(textoPregunta);
+            generarOpcionesOrderedChoice(preguntaOC, preguntaJSON);
+            pregunta = preguntaOC;
+        }
+        else if(tipoPregunta.equals("GroupChoice")) {
+            PreguntaGroupChoice preguntaGP = new PreguntaGroupChoice(textoPregunta);
+            generarOpcionesGroupChoice(preguntaGP, preguntaJSON);
+            pregunta = preguntaGP;
+        }
         else
             pregunta = null;
 
@@ -66,5 +79,37 @@ public class CreadorDePreguntas {
         else
             puntaje = null;
         return puntaje;
+    }
+    private static void generarOpcionesVF(PreguntaVF pregunta, JSONObject preguntaJSON) {
+        try {
+            pregunta.agregarOpcionCorrecta((String)preguntaJSON.get("opcionCorrecta"));
+            pregunta.agregarOpcionIncorrecta((String)preguntaJSON.get("opcionIncorreta"));
+        } catch (JSONException e) {}
+    }
+    private static void generarOpcionesMultipleChoice(PreguntaMultipleChoice pregunta, JSONObject preguntaJSON) {
+        try {
+            for(Object opcionCorrecta : preguntaJSON.getJSONArray("opcionesCorrectas"))
+                pregunta.agregarOpcionCorrecta((String)opcionCorrecta);
+
+            for(Object opcionIncorrecta : preguntaJSON.getJSONArray("opcionesIncorrectas"))
+                pregunta.agregarOpcionCorrecta((String)opcionIncorrecta);
+        } catch (JSONException e) {}
+    }
+    private static void generarOpcionesOrderedChoice(PreguntaOrderedChoice pregunta, JSONObject preguntaJSON) {
+        try {
+            JSONArray opciones = preguntaJSON.getJSONArray("opciones");
+            for(int i = 0; i < opciones.length(); i++)
+                pregunta.agregarOpcion((String)opciones.get(i), i + 1);
+
+        } catch (JSONException e) {}
+    }
+    private static void generarOpcionesGroupChoice(PreguntaGroupChoice pregunta, JSONObject preguntaJSON) {
+        try {
+            for(Object opcionG1 : preguntaJSON.getJSONArray("grupo1"))
+                pregunta.agregarOpcion((String)opcionG1, 1);
+
+            for(Object opcionG2 : preguntaJSON.getJSONArray("grupo2"))
+                pregunta.agregarOpcion((String)opcionG2, 2);
+        } catch (JSONException e) {}
     }
 }
