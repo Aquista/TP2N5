@@ -7,7 +7,7 @@ import edu.fiuba.algo3.modelo.Respuestas.*;
 
 import java.util.ArrayList;
 
-public class Jugador {
+public class Jugador implements Comparable<Jugador>{
     private String nombre;
     private int puntaje = 0;
     private JugadorDeTipo tipoDeJugador = null;
@@ -18,7 +18,7 @@ public class Jugador {
     private Exclusividad exclusividadActiva = new ExclusividadNula();
 
     public Jugador(String unNombre) {
-        this.nombre=unNombre;
+        this.nombre = unNombre;
         multiplicadores.add(new MultiplicadorX2());
         multiplicadores.add(new MultiplicadorX3());
         exclusividades.add(new ExclusividadSimple());
@@ -44,16 +44,19 @@ public class Jugador {
         multiplicadorActivo.multiplicar(puntaje);
         multiplicadorActivo = new MultiplicadorX1();
     }
+
     public void aplicarExclusividad(Puntaje puntaje1, Puntaje puntaje2) {
         exclusividadActiva.aplicar(puntaje1, puntaje2);
         exclusividadActiva = new ExclusividadNula();
     }
+
     public void seleccionarMultiplicador(int codigoMultiplicador) {
         if(multiplicadores.get(codigoMultiplicador) != null) {
             multiplicadorActivo = multiplicadores.get(codigoMultiplicador);
             multiplicadores.remove(codigoMultiplicador);
         }
     }
+
     public void seleccionarExclusividad(int codigoExclusividad) {
         if(exclusividades.get(codigoExclusividad) != null) {
             exclusividadActiva = exclusividades.get(codigoExclusividad);
@@ -62,22 +65,16 @@ public class Jugador {
     }
 
     public Respuesta responder(JugadorDeTipo tipo, Opcion... opciones){
-        this.tipoDeJugador = tipo;
+        tipoDeJugador = tipo;
         return tipoDeJugador.responder(opciones);
     }
 
-    public Jugador ganador(Jugador segundoJugador) {
-        if(segundoJugador.tengoMasPuntaje(this.puntaje)){
-            return segundoJugador;
-        }else{
-            return this;
-        }
-    }
-
-    private boolean tengoMasPuntaje(int unPuntaje) {
-        return this.puntaje>unPuntaje;
-    }
     public String nombre(){
         return this.nombre;
+    }
+
+    @Override
+    public int compareTo(Jugador otroJugador) {
+        return otroJugador.getPuntaje() - puntaje;
     }
 }

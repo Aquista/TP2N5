@@ -26,7 +26,7 @@ public class VistaCreacionJugadores extends VBox {
         nombreJugador2.setStyle("-fx-font-size: 16px");
 
         Button agregarJugadores = new Button();
-        agregarJugadores.setOnAction(new AgregarJugadoresEventHandler(nombreJugador1.getText(), nombreJugador2.getText(), kahoot));
+        agregarJugadores.setOnAction(new AgregarJugadoresEventHandler(nombreJugador1, nombreJugador2, kahoot));
         agregarJugadores.setText("Enter");
         agregarJugadores.setStyle("-fx-font-size: 16px;-fx-background-color: rgb(51, 51, 51);-fx-text-fill:white;-fx-font-family: 'Cooper Black'");
         agregarJugadores.setMaxWidth(220);

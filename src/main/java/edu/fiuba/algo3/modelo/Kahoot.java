@@ -2,9 +2,12 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
+import edu.fiuba.algo3.vista.finalScenes.VistaFinal;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -22,12 +25,17 @@ public class Kahoot {
     public void empezarPartida(){
         preguntas.addAll(CreadorDePreguntas.generarPreguntas("test02.json"));
         Panel panel = new Panel(stage);
+
         generarRondas(panel);
         avanzarRonda();
+
     }
 
     public void avanzarRonda() {
-        rondas.poll().avanzarTurno();
+        if(!rondas.isEmpty())
+            rondas.poll().avanzarTurno();
+        else
+            mostrarResultadosFinales();
     }
 
     public void generarRondas(Panel panel){
@@ -43,5 +51,12 @@ public class Kahoot {
 
         jugadores.add(jugador1);
         jugadores.add(jugador2);
+    }
+
+    private void mostrarResultadosFinales() {
+        Collections.sort(jugadores);
+        VistaFinal vistaFinal = new VistaFinal(jugadores.get(0), jugadores.get(1));
+        Scene escenaFinal = new Scene(vistaFinal);
+        stage.setScene(escenaFinal);
     }
 }
