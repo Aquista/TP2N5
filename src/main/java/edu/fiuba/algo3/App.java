@@ -18,6 +18,7 @@ public class App extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
+        stage.setTitle("TP2-Kahoot");
         Panel panel = new Panel();
         VistaPrincipal pantallaPrincipal=new VistaPrincipal(stage,panel);
         Scene scene=new Scene(pantallaPrincipal,800,600);

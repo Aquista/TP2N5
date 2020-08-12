@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
@@ -19,8 +20,9 @@ public class VistaPreguntaVF extends VBox{
     private Jugador jugador;
     private VistaPanel vPanel;
     private Panel panel;
+    private Stage stage;
 
-    public VistaPreguntaVF(Jugador jugador, PreguntaVF unaPregunta, VistaPanel vPanel,Panel panel){
+    public VistaPreguntaVF(Stage stage, Jugador jugador, PreguntaVF unaPregunta, VistaPanel vPanel, Panel panel){
         this.setStyle("-fx-background-color: #a146f1;");
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
@@ -28,6 +30,7 @@ public class VistaPreguntaVF extends VBox{
         this.pregunta = unaPregunta;
         this.jugador = jugador;
         this.panel=panel;
+        this.stage=stage;
         this.agregarInfo();
     }
 
@@ -41,7 +44,7 @@ public class VistaPreguntaVF extends VBox{
         ArrayList<Opcion> opciones = this.pregunta.opciones();
 
         for (Opcion unaOpcion : opciones){
-            VistaOpcion opcion = new VistaOpcion(unaOpcion,this.pregunta,this.jugador,this.vPanel,this.panel);
+            VistaOpcion opcion = new VistaOpcion(this.stage,unaOpcion,this.pregunta,this.jugador,this.vPanel,this.panel);
             botones.getChildren().add(opcion);
         }
 

@@ -39,9 +39,9 @@ public class Panel {
     public Jugador jugadorActual(){
         return this.turnos.jugadorActual();
     }
-    public void pasarTurno(){
+    public boolean pasarTurno(){
         this.turnos.cambiarTurno();
-        this.turnos.cambiarPregunta();
+        return this.turnos.cambiarPregunta();
     }
     public ArrayList<PreguntaVF> preguntas(){
         PreguntaVF pregunta1=new PreguntaVF("A",new PuntajeClasico());

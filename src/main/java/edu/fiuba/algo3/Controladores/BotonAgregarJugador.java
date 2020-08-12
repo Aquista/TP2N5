@@ -29,9 +29,8 @@ public class BotonAgregarJugador implements EventHandler<ActionEvent> {
         this.nombreJugador.setText(null);
         this.panel.agregarJugador(new Jugador(jugador));
         if(this.panel.cantJugadores() == 2){
-            System.out.println("todoOk");
             this.panel.iniciarJuego();
-            VistaPanel pan=new VistaPanel(this.panel);
+            VistaPanel pan=new VistaPanel(this.stage,this.panel);
             Scene scene=new Scene(pan,800,600);
             this.stage.setScene(scene);
         }

@@ -11,6 +11,7 @@ public class VistaJugador extends VBox {
         this.jugador=unJugador;
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
+        this.setPrefWidth(200);
         this.agregarInfo();
     }
     public void agregarInfo(){
