@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Controladores;
 
+import edu.fiuba.algo3.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
@@ -12,15 +13,17 @@ import javafx.scene.control.ChoiceBox;
 import java.util.ArrayList;
 
 public class AsignarRespuestaGroupChoiceEventHandler implements EventHandler<ActionEvent> {
-    Jugador jugador;
-    PreguntaGroupChoice pregunta;
-    ArrayList<ChoiceBox> choiceBoxes;
+    private Jugador jugador;
+    private PreguntaGroupChoice pregunta;
+    private ArrayList<ChoiceBox> choiceBoxes;
+    private Ronda ronda;
 
 
-    public AsignarRespuestaGroupChoiceEventHandler(Jugador jugador, PreguntaGroupChoice pregunta, ArrayList<ChoiceBox> choiceBoxes) {
+    public AsignarRespuestaGroupChoiceEventHandler(Jugador jugador, PreguntaGroupChoice pregunta, ArrayList<ChoiceBox> choiceBoxes, Ronda ronda) {
         this.jugador = jugador;
         this.pregunta = pregunta;
         this.choiceBoxes = choiceBoxes;
+        this.ronda = ronda;
     }
 
     @Override
@@ -34,5 +37,6 @@ public class AsignarRespuestaGroupChoiceEventHandler implements EventHandler<Act
             }
         }
         jugador.responder(pregunta.tipo(), seleccionadas.toArray(new Opcion[seleccionadas.size()]));
+        ronda.avanzarTurno();
     }
 }

@@ -30,6 +30,7 @@ public class CreadorDePreguntas {
         }
         return preguntas;
     }
+
     private static Pregunta generarPregunta(JSONObject preguntaJSON) {
         Puntaje puntajePregunta;
         try {
@@ -68,6 +69,7 @@ public class CreadorDePreguntas {
 
         return pregunta;
     }
+
     private static Puntaje generarPuntaje(String tipoPuntaje) {
         Puntaje puntaje;
         if(tipoPuntaje.equals("Clasico"))
@@ -80,12 +82,14 @@ public class CreadorDePreguntas {
             puntaje = null;
         return puntaje;
     }
+
     private static void generarOpcionesVF(PreguntaVF pregunta, JSONObject preguntaJSON) {
         try {
             pregunta.agregarOpcionCorrecta((String)preguntaJSON.get("opcionCorrecta"));
             pregunta.agregarOpcionIncorrecta((String)preguntaJSON.get("opcionIncorreta"));
         } catch (JSONException e) {}
     }
+
     private static void generarOpcionesMultipleChoice(PreguntaMultipleChoice pregunta, JSONObject preguntaJSON) {
         try {
             for(Object opcionCorrecta : preguntaJSON.getJSONArray("opcionesCorrectas"))
@@ -95,6 +99,7 @@ public class CreadorDePreguntas {
                 pregunta.agregarOpcionCorrecta((String)opcionIncorrecta);
         } catch (JSONException e) {}
     }
+
     private static void generarOpcionesOrderedChoice(PreguntaOrderedChoice pregunta, JSONObject preguntaJSON) {
         try {
             JSONArray opciones = preguntaJSON.getJSONArray("opciones");
@@ -103,6 +108,7 @@ public class CreadorDePreguntas {
 
         } catch (JSONException e) {}
     }
+
     private static void generarOpcionesGroupChoice(PreguntaGroupChoice pregunta, JSONObject preguntaJSON) {
         try {
             for(Object opcionG1 : preguntaJSON.getJSONArray("grupo1"))

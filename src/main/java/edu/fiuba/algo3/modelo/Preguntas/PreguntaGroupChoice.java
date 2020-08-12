@@ -1,10 +1,14 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
+import edu.fiuba.algo3.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
 import edu.fiuba.algo3.modelo.Jugadores.JugadorDeGroupChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
+import edu.fiuba.algo3.vista.VistaPreguntaGroupChoice;
+import edu.fiuba.algo3.vista.VistaPreguntaMultipleChoice;
+import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
@@ -44,5 +48,10 @@ public class PreguntaGroupChoice extends Pregunta{
         OpcionConGrupo unaOpcion = new OpcionConGrupo(unTexto, grupoCorrecto);
         opciones.add(unaOpcion);
         return unaOpcion;
+    }
+
+    @Override
+    public VBox crearVista(Jugador jugador, Ronda ronda){
+        return new VistaPreguntaGroupChoice(jugador, this, ronda);
     }
 }

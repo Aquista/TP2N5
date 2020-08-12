@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.Controladores.*;
+import edu.fiuba.algo3.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
@@ -20,12 +21,14 @@ import java.util.ArrayList;
 public class VistaPreguntaGroupChoice extends VBox {
     private PreguntaGroupChoice pregunta;
     private Jugador jugador;
+    private Ronda ronda;
 
-    public VistaPreguntaGroupChoice(Jugador jugador, PreguntaGroupChoice unaPregunta){
+    public VistaPreguntaGroupChoice(Jugador jugador, PreguntaGroupChoice unaPregunta, Ronda ronda){
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.pregunta = unaPregunta;
         this.jugador = jugador;
+        this.ronda = ronda;
         this.agregarInfo();
     }
 
@@ -53,7 +56,7 @@ public class VistaPreguntaGroupChoice extends VBox {
         }
 
         Button enviarRespuesta = new Button("Enviar");
-        enviarRespuesta.setOnAction(new AsignarRespuestaGroupChoiceEventHandler(jugador, pregunta, choiceBoxes));
+        enviarRespuesta.setOnAction(new AsignarRespuestaGroupChoiceEventHandler(jugador, pregunta, choiceBoxes, ronda));
         contenedorOpciones.getChildren().add(enviarRespuesta);
 
         this.getChildren().addAll(textoPregunta, contenedorOpciones);

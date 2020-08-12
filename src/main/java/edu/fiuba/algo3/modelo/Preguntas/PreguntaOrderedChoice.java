@@ -1,10 +1,13 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
+import edu.fiuba.algo3.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
 import edu.fiuba.algo3.modelo.Jugadores.JugadorDeOrderChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
+import edu.fiuba.algo3.vista.VistaPreguntaOrderedChoice;
+import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
@@ -44,5 +47,10 @@ public class PreguntaOrderedChoice extends Pregunta {
         OpcionConOrden opcion = new OpcionConOrden(unTexto, orden);
         opciones.add(opcion);
         return opcion;
+    }
+
+    @Override
+    public VBox crearVista(Jugador jugador, Ronda ronda){
+        return new VistaPreguntaOrderedChoice(jugador, this, ronda);
     }
 }

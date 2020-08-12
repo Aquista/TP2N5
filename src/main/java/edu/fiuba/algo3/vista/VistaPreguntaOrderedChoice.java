@@ -4,6 +4,7 @@ import edu.fiuba.algo3.Controladores.AsignarRespuestaMultipleChoiceEventHandler;
 import edu.fiuba.algo3.Controladores.AsignarRespuestaOrderedChoiceEventHandler;
 import edu.fiuba.algo3.Controladores.AsignarRespuestaVFEventHandler;
 import edu.fiuba.algo3.Controladores.SeleccionarOpcionConOrdenEventHandler;
+import edu.fiuba.algo3.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
@@ -25,12 +26,14 @@ import java.util.ArrayList;
 public class VistaPreguntaOrderedChoice extends VBox {
     private PreguntaOrderedChoice pregunta;
     private Jugador jugador;
+    private Ronda ronda;
 
-    public VistaPreguntaOrderedChoice(Jugador jugador, PreguntaOrderedChoice unaPregunta){
+    public VistaPreguntaOrderedChoice(Jugador jugador, PreguntaOrderedChoice unaPregunta, Ronda ronda){
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.pregunta = unaPregunta;
         this.jugador = jugador;
+        this.ronda = ronda;
         this.agregarInfo();
     }
 
@@ -52,7 +55,7 @@ public class VistaPreguntaOrderedChoice extends VBox {
         }
 
         Button enviarRespuesta = new Button("Enviar");
-        enviarRespuesta.setOnAction(new AsignarRespuestaOrderedChoiceEventHandler(jugador, pregunta, opcionesSeleccionadas));
+        enviarRespuesta.setOnAction(new AsignarRespuestaOrderedChoiceEventHandler(jugador, pregunta, opcionesSeleccionadas, ronda));
         contenedorOpciones.getChildren().add(enviarRespuesta);
 
         this.getChildren().addAll(textoPregunta, contenedorOpciones);

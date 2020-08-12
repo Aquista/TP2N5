@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.Controladores;
 
+import edu.fiuba.algo3.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
@@ -14,11 +15,13 @@ public class AsignarRespuestaMultipleChoiceEventHandler implements EventHandler<
     private Jugador jugador;
     private Pregunta pregunta;
     private ArrayList<CheckBox> checkBoxes;
+    private Ronda ronda;
 
-    public AsignarRespuestaMultipleChoiceEventHandler(Jugador jugador, Pregunta pregunta, ArrayList<CheckBox> checkBoxes) {
+    public AsignarRespuestaMultipleChoiceEventHandler(Jugador jugador, Pregunta pregunta, ArrayList<CheckBox> checkBoxes, Ronda ronda) {
         this.jugador = jugador;
         this.pregunta = pregunta;
         this.checkBoxes = checkBoxes;
+        this.ronda = ronda;
     }
 
     @Override
@@ -31,5 +34,6 @@ public class AsignarRespuestaMultipleChoiceEventHandler implements EventHandler<
             }
         }
         jugador.responder(pregunta.tipo(), seleccionadas.toArray(new Opcion[seleccionadas.size()]));
+        ronda.avanzarTurno();
     }
 }

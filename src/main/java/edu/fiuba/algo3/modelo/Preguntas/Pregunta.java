@@ -1,9 +1,11 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
+import edu.fiuba.algo3.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
+import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
@@ -23,4 +25,6 @@ public abstract class Pregunta {
     public abstract void evaluarJugadores(Jugador jugador1, Jugador jugador2);
 
     public abstract JugadorDeTipo tipo();
+
+    public abstract VBox crearVista(Jugador jugador, Ronda ronda);
 }

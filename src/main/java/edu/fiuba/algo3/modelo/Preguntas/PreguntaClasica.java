@@ -1,7 +1,9 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
+import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.*;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
+import javafx.scene.layout.VBox;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -27,4 +29,5 @@ public abstract class PreguntaClasica extends Pregunta {
     public void agregarOpcionIncorrecta(OpcionIncorrecta opcionIncorrecta){
         opciones.add(opcionIncorrecta);
     }
+
 }
