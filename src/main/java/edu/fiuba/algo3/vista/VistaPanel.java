@@ -11,11 +11,11 @@ public class VistaPanel extends BorderPane {
     private Panel panel;
     public VistaPanel(Panel panel){
         this.panel=panel;
-        PreguntaVF unaPregunta= new PreguntaVF("Aprobamos?",new PuntajeClasico());
-        unaPregunta.agregarOpcionCorrecta("True");
-        unaPregunta.agregarOpcionIncorrecta("False");
+        this.actulizarVistaPanel();
+    }
+    public void actulizarVistaPanel(){
         VistaJugador vistaJu=new VistaJugador(this.panel.jugadorActual());
-        VistaPreguntaVF vistaPre=new VistaPreguntaVF(this.panel.jugadorActual(), unaPregunta);
+        VistaPreguntaVF vistaPre=new VistaPreguntaVF(this.panel.jugadorActual(), this.panel.preguntaActual(),this,this.panel);
         this.setCenter(vistaPre);
         this.setLeft(vistaJu);
     }

@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.Controladores.AsignarRespuestaVFEventHandler;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
+import edu.fiuba.algo3.modelo.Panel.Panel;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
 import javafx.geometry.Pos;
@@ -16,13 +17,17 @@ import java.util.ArrayList;
 public class VistaPreguntaVF extends VBox{
     private PreguntaVF pregunta;
     private Jugador jugador;
+    private VistaPanel vPanel;
+    private Panel panel;
 
-    public VistaPreguntaVF(Jugador jugador, PreguntaVF unaPregunta){
+    public VistaPreguntaVF(Jugador jugador, PreguntaVF unaPregunta, VistaPanel vPanel,Panel panel){
         this.setStyle("-fx-background-color: #a146f1;");
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
+        this.vPanel=vPanel;
         this.pregunta = unaPregunta;
         this.jugador = jugador;
+        this.panel=panel;
         this.agregarInfo();
     }
 
@@ -36,7 +41,7 @@ public class VistaPreguntaVF extends VBox{
         ArrayList<Opcion> opciones = this.pregunta.opciones();
 
         for (Opcion unaOpcion : opciones){
-            VistaOpcion opcion = new VistaOpcion(unaOpcion,this.pregunta,this.jugador);
+            VistaOpcion opcion = new VistaOpcion(unaOpcion,this.pregunta,this.jugador,this.vPanel,this.panel);
             botones.getChildren().add(opcion);
         }
 
