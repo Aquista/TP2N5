@@ -27,6 +27,8 @@ Corrector: **Diego Sanchez**
 
 ![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20de%20Clases.PNG)
 
+![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20clases%20auxiliar%202.png)
+
 #### Preguntas
 
 ![alt text](https://github.com/Aquista/TP2N5/blob/master/docs/Diagrama%20Preguntas.png)
