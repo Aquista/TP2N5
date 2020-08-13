@@ -49,8 +49,4 @@ public class PreguntaGroupChoice extends Pregunta{
         return unaOpcion;
     }
 
-    @Override
-    public VBox crearVista(Jugador jugador, Ronda ronda){
-        return new VistaPreguntaGroupChoice(jugador, this, ronda);
-    }
 }

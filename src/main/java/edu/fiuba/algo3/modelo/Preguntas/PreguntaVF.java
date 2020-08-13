@@ -47,8 +47,4 @@ public class PreguntaVF extends PreguntaClasica {
         return new JugadorDeVerdadoroFalso();
     }
 
-    @Override
-    public VBox crearVista(Jugador jugador, Ronda ronda){
-        return new VistaPreguntaVF(jugador, this, ronda);
-    }
 }

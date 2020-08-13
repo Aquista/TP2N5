@@ -23,5 +23,4 @@ public abstract class Pregunta {
 
     public abstract JugadorDeTipo tipo();
 
-    public abstract VBox crearVista(Jugador jugador, Ronda ronda);
 }

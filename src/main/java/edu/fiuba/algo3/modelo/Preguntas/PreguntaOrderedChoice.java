@@ -49,8 +49,4 @@ public class PreguntaOrderedChoice extends Pregunta {
         return opcion;
     }
 
-    @Override
-    public VBox crearVista(Jugador jugador, Ronda ronda){
-        return new VistaPreguntaOrderedChoice(jugador, this, ronda);
-    }
 }

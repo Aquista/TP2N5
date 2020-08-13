@@ -48,8 +48,4 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
         return new JugadorDeMultipleChoice();
     }
 
-    @Override
-    public VBox crearVista(Jugador jugador, Ronda ronda){
-        return new VistaPreguntaMultipleChoice(jugador, this, ronda);
-    }
 }
