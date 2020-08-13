@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Respuestas.*;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Jugador implements Comparable<Jugador>{
     private String nombre;
@@ -20,6 +21,7 @@ public class Jugador implements Comparable<Jugador>{
     public Jugador(String unNombre) {
         this.nombre = unNombre;
         multiplicadores.add(new MultiplicadorX2());
+        multiplicadores.add(new MultiplicadorX3());
         multiplicadores.add(new MultiplicadorX3());
         exclusividades.add(new ExclusividadSimple());
         exclusividades.add(new ExclusividadSimple());
@@ -50,17 +52,26 @@ public class Jugador implements Comparable<Jugador>{
         exclusividadActiva = new ExclusividadNula();
     }
 
-    public void seleccionarMultiplicador(int codigoMultiplicador) {
-        if(multiplicadores.get(codigoMultiplicador) != null) {
-            multiplicadorActivo = multiplicadores.get(codigoMultiplicador);
-            multiplicadores.remove(codigoMultiplicador);
+    public void seleccionarMultiplicador(Multiplicador multiplicador) {
+        Multiplicador seleccionado = multiplicadores
+                .stream()
+                .filter(m -> m.getClass() == multiplicador.getClass())
+                .findFirst()
+                .get();
+        if(seleccionado != null) {
+            multiplicadorActivo = multiplicador;
+            multiplicadores.remove(seleccionado);
         }
     }
-
-    public void seleccionarExclusividad(int codigoExclusividad) {
-        if(exclusividades.get(codigoExclusividad) != null) {
-            exclusividadActiva = exclusividades.get(codigoExclusividad);
-            exclusividades.remove(codigoExclusividad);
+    
+    public void seleccionarExclusividad(Exclusividad exclusividad) {
+        Exclusividad seleccionado = exclusividades.stream()
+                .filter(e -> e.getClass() == exclusividad.getClass())
+                .findFirst()
+                .get();
+        if(seleccionado != null) {
+            exclusividadActiva = seleccionado;
+            exclusividades.remove(seleccionado);
         }
     }
 

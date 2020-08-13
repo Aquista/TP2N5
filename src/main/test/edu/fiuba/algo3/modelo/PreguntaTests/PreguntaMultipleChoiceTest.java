@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Modificadores.ExclusividadSimple;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
@@ -194,7 +195,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op5 =  pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
         jugador1.responder(pregunta.tipo(), op2, op3);
-        jugador1.seleccionarExclusividad(0);
+        jugador1.seleccionarExclusividad(new ExclusividadSimple());
         jugador2.responder(pregunta.tipo(), op4);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
@@ -216,9 +217,9 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
         jugador1.responder(pregunta.tipo(), op2, op3);
-        jugador1.seleccionarExclusividad(0);
+        jugador1.seleccionarExclusividad(new ExclusividadSimple());
         jugador2.responder(pregunta.tipo(), op4);
-        jugador2.seleccionarExclusividad(0);
+        jugador2.seleccionarExclusividad(new ExclusividadSimple());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -237,7 +238,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
 
         jugador1.responder(pregunta.tipo(), op1, op2);
-        jugador1.seleccionarExclusividad(0);
+        jugador1.seleccionarExclusividad(new ExclusividadSimple());
         jugador2.responder(pregunta.tipo(), op1, op2);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
@@ -261,7 +262,7 @@ public class PreguntaMultipleChoiceTest {
         OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
 
         jugador1.responder(pregunta.tipo(), op1, op2);
-        jugador1.seleccionarExclusividad(0);
+        jugador1.seleccionarExclusividad(new ExclusividadSimple());
 
         jugador2.responder(pregunta.tipo(), op1);
 

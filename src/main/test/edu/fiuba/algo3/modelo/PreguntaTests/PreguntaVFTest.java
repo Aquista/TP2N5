@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Modificadores.ExclusividadSimple;
+import edu.fiuba.algo3.modelo.Modificadores.MultiplicadorX2;
+import edu.fiuba.algo3.modelo.Modificadores.MultiplicadorX3;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
@@ -60,8 +63,7 @@ public class PreguntaVFTest {
         Jugador contrincante = new Jugador("GFSS");
 
         jugador.responder(pregunta.tipo(), opcionCorrecta);
-        jugador.seleccionarMultiplicador(1);
-
+        jugador.seleccionarMultiplicador(new MultiplicadorX3());
         pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(puntajeEsperado,jugador.getPuntaje());
@@ -79,7 +81,7 @@ public class PreguntaVFTest {
         Jugador contrincante = new Jugador("AGF");
 
         jugador.responder(pregunta.tipo(), opcionCorrecta);
-        jugador.seleccionarMultiplicador(0);
+        jugador.seleccionarMultiplicador(new MultiplicadorX2());
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -99,7 +101,7 @@ public class PreguntaVFTest {
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
         jugador1.responder(pregunta.tipo(), opcionCorrecta);
-        jugador1.seleccionarExclusividad(0);
+        jugador1.seleccionarExclusividad(new ExclusividadSimple());
         jugador2.responder(pregunta.tipo(), opcionIncorrecta);
 
         pregunta.evaluarJugadores(jugador1, jugador2);
@@ -121,9 +123,9 @@ public class PreguntaVFTest {
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
         jugador1.responder(pregunta.tipo(), opcionCorrecta);
-        jugador1.seleccionarExclusividad(0);
+        jugador1.seleccionarExclusividad(new ExclusividadSimple());
         jugador2.responder(pregunta.tipo(), opcionIncorrecta);
-        jugador2.seleccionarExclusividad(0);
+        jugador2.seleccionarExclusividad(new ExclusividadSimple());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -144,9 +146,9 @@ public class PreguntaVFTest {
         OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
 
         jugador1.responder(pregunta.tipo(), opcionCorrecta);
-        jugador1.seleccionarExclusividad(0);
+        jugador1.seleccionarExclusividad(new ExclusividadSimple());
         jugador2.responder(pregunta.tipo(), opcionCorrecta);
-        jugador2.seleccionarExclusividad(0);
+        jugador2.seleccionarExclusividad(new ExclusividadSimple());
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
