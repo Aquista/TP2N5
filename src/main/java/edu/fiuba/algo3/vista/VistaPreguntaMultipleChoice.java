@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class VistaPreguntaMultipleChoice extends VBox {
 
     public VistaPreguntaMultipleChoice(Jugador jugador, PreguntaMultipleChoice unaPregunta, Ronda ronda){
         this.setAlignment(Pos.CENTER);
+        this.setStyle("-fx-background-color: rgb(217, 208, 54)");
         this.setSpacing(20);
         this.pregunta = unaPregunta;
         this.jugador = jugador;
@@ -29,26 +31,32 @@ public class VistaPreguntaMultipleChoice extends VBox {
 
     public void agregarInfo(){
         Label textoPregunta = new Label(this.pregunta.texto());
-        textoPregunta.setStyle("-fx-font-size: 30px");
-
-        VBox contenedorOpciones = new VBox(10);
-
-
+        textoPregunta.setStyle("-fx-font-size:25px");
+        GridPane contenedorOpciones = new GridPane();
+        contenedorOpciones.setAlignment(Pos.CENTER);
+        contenedorOpciones.setHgap(40);
+        contenedorOpciones.setVgap(20);
+        int columna=0;
+        int fila=0;
         ArrayList<Opcion> opciones = this.pregunta.opciones();
         ArrayList<CheckBox> checkBoxes = new ArrayList<CheckBox>();
 
         for (Opcion unaOpcion : opciones){
             CheckBox opcionActual = new CheckBox(unaOpcion.texto());
+            opcionActual.setStyle("-fx-font-size: 18px");
             opcionActual.setUserData(unaOpcion);
-
             checkBoxes.add(opcionActual);
-            contenedorOpciones.getChildren().add(opcionActual);
+            contenedorOpciones.add(opcionActual,columna,fila);
+            columna++;
+            if(columna==2){
+                fila++;
+                columna=0;
+            }
         }
 
         Button enviarRespuesta = new Button("Enviar");
+        enviarRespuesta.setStyle("-fx-font-size: 18px");
         enviarRespuesta.setOnAction(new AsignarRespuestaMultipleChoiceEventHandler(jugador, pregunta, checkBoxes, ronda));
-        contenedorOpciones.getChildren().add(enviarRespuesta);
-
-        this.getChildren().addAll(textoPregunta, contenedorOpciones);
+        this.getChildren().addAll(textoPregunta, contenedorOpciones,enviarRespuesta);
     }
 }

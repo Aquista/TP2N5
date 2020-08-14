@@ -20,19 +20,26 @@ public class VistaCreacionJugadores extends VBox {
         logoView.setFitHeight(140);
         logoView.setFitWidth(240);
 
+        VBox nombreJugadores= new VBox();
+        nombreJugadores.setAlignment(Pos.CENTER);
+        nombreJugadores.setSpacing(10);
+        nombreJugadores.setMaxWidth(220);
+
         TextField nombreJugador1 = new TextField();
         TextField nombreJugador2 = new TextField();
-        nombreJugador1.setPromptText("Ingrese su Nombre");
+        nombreJugador1.setPromptText("Primer Jugador");
         nombreJugador1.setStyle("-fx-font-size: 16px");
-        nombreJugador2.setPromptText("Ingrese su Nombre");
+        nombreJugador2.setPromptText("Segundo Jugador");
         nombreJugador2.setStyle("-fx-font-size: 16px");
+
+        nombreJugadores.getChildren().addAll(nombreJugador1,nombreJugador2);
 
         Button agregarJugadores = new Button();
         agregarJugadores.setOnAction(new AgregarJugadoresEventHandler(nombreJugador1, nombreJugador2, kahoot));
         agregarJugadores.setText("Enter");
         agregarJugadores.setStyle("-fx-font-size: 16px;-fx-background-color: rgb(51, 51, 51);-fx-text-fill:white;-fx-font-family: 'Cooper Black'");
         agregarJugadores.setMaxWidth(220);
-        this.getChildren().addAll(logoView,nombreJugador1, nombreJugador2, agregarJugadores);
+        this.getChildren().addAll(logoView,nombreJugadores, agregarJugadores);
     }
 
 
