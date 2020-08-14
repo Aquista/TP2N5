@@ -2,7 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Preguntas.*;
-import edu.fiuba.algo3.modelo.Ronda;
+import edu.fiuba.algo3.controlador.Ronda;
 import javafx.scene.layout.VBox;
 
 public class VistaPreguntasFactory {

@@ -1,9 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.controlador;
 
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
-import edu.fiuba.algo3.modelo.Ronda;
 import edu.fiuba.algo3.vista.VistaPreguntasFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;

@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista.inicioScenes;
 
-import edu.fiuba.algo3.Controladores.AgregarJugadoresEventHandler;
-import edu.fiuba.algo3.modelo.Kahoot;
+import edu.fiuba.algo3.controlador.AgregarJugadoresEventHandler;
+import edu.fiuba.algo3.controlador.Kahoot;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -12,6 +12,9 @@ import javafx.scene.layout.VBox;
 public class VistaCreacionJugadores extends VBox {
 
     public VistaCreacionJugadores(Kahoot kahoot){
+        this.setAlignment(Pos.CENTER);
+        this.setSpacing(20);
+        this.setStyle("-fx-background-color:rgb(140, 199, 63)");
         Image logo = new Image("file:src/main/java/edu/fiuba/algo3/vista/otros/logo.png");
         ImageView logoView = new ImageView(logo);
         logoView.setFitHeight(140);
@@ -19,7 +22,6 @@ public class VistaCreacionJugadores extends VBox {
 
         TextField nombreJugador1 = new TextField();
         TextField nombreJugador2 = new TextField();
-
         nombreJugador1.setPromptText("Ingrese su Nombre");
         nombreJugador1.setStyle("-fx-font-size: 16px");
         nombreJugador2.setPromptText("Ingrese su Nombre");
@@ -30,13 +32,7 @@ public class VistaCreacionJugadores extends VBox {
         agregarJugadores.setText("Enter");
         agregarJugadores.setStyle("-fx-font-size: 16px;-fx-background-color: rgb(51, 51, 51);-fx-text-fill:white;-fx-font-family: 'Cooper Black'");
         agregarJugadores.setMaxWidth(220);
-
-        this.getChildren().addAll(nombreJugador1, nombreJugador2, agregarJugadores);
-
-        this.setAlignment(Pos.CENTER);
-        this.setSpacing(20);
-        this.setStyle("-fx-background-color:rgb(140, 199, 63)");
-        this.getChildren().addAll(logoView);
+        this.getChildren().addAll(logoView,nombreJugador1, nombreJugador2, agregarJugadores);
     }
 
 

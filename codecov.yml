@@ -1,6 +1,6 @@
 ignore:
   - "src/main/java/edu/fiuba/algo3/vista"
-  - "src/main/java/edu/fiuba/algo3/Controladores"
+  - "src/main/java/edu/fiuba/algo3/controlador"
   - "src/main/java/edu/fiuba/algo3/modelo/Kahoot.java"
   - "src/main/java/edu/fiuba/algo3/modelo/Panel.java"
   - "src/main/java/edu/fiuba/algo3/modelo/Ronda.java"

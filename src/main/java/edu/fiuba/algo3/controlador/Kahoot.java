@@ -1,5 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.controlador;
 
+import edu.fiuba.algo3.modelo.CreadorDePreguntas;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
 import edu.fiuba.algo3.vista.finalScenes.VistaFinal;
@@ -28,7 +29,6 @@ public class Kahoot {
 
         generarRondas(panel);
         avanzarRonda();
-
     }
 
     public void avanzarRonda() {
@@ -56,7 +56,7 @@ public class Kahoot {
     private void mostrarResultadosFinales() {
         Collections.sort(jugadores);
         VistaFinal vistaFinal = new VistaFinal(jugadores.get(0), jugadores.get(1));
-        Scene escenaFinal = new Scene(vistaFinal);
+        Scene escenaFinal = new Scene(vistaFinal,800,600);
         stage.setScene(escenaFinal);
     }
 }
