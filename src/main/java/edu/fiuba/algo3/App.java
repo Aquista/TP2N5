@@ -1,9 +1,11 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.controlador.Kahoot;
+import edu.fiuba.algo3.modelo.Kahoot;
+import edu.fiuba.algo3.controlador.Panel;
 import edu.fiuba.algo3.vista.inicioScenes.VistaCreacionJugadores;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class App extends Application{
@@ -14,11 +16,12 @@ public class App extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        Kahoot kahoot = new Kahoot(stage);
+        Kahoot kahoot = new Kahoot();
+        Panel panel = new Panel(kahoot, stage);
         stage.setTitle("TP2-Kahoot");
-
-        VistaCreacionJugadores vistaCreacionJugadores = new VistaCreacionJugadores(kahoot);
-        Scene scene = new Scene(vistaCreacionJugadores,800,600);
+        BorderPane layout = new BorderPane();
+        layout.setCenter(new VistaCreacionJugadores(kahoot, panel));
+        Scene scene = new Scene(layout,800,600);
         stage.setScene(scene);
         stage.show();
     }

@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.AsignarRespuestaOrderedChoiceEventHandler;
+import edu.fiuba.algo3.controlador.Panel;
 import edu.fiuba.algo3.controlador.SeleccionarOpcionConOrdenEventHandler;
-import edu.fiuba.algo3.controlador.Ronda;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaOrderedChoice;
@@ -10,26 +10,28 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
-public class VistaPreguntaOrderedChoice extends VBox {
+public class VistaPreguntaOrderedChoice extends VistaPregunta {
     private PreguntaOrderedChoice pregunta;
     private Jugador jugador;
-    private Ronda ronda;
+    private Panel panel;
 
-    public VistaPreguntaOrderedChoice(Jugador jugador, PreguntaOrderedChoice unaPregunta, Ronda ronda){
+    public VistaPreguntaOrderedChoice(Jugador jugador, PreguntaOrderedChoice unaPregunta, Panel panel){
         this.setAlignment(Pos.CENTER);
         this.setStyle("-fx-background-color: #FFA630");
         this.setSpacing(20);
         this.pregunta = unaPregunta;
         this.jugador = jugador;
-        this.ronda = ronda;
+        this.panel = panel;
         this.agregarInfo();
     }
 
     public void agregarInfo(){
+        Label textoNombreJugador = new Label(this.jugador.nombre());
+        textoNombreJugador.setStyle("-fx-font-size: 25px");
+
         Label textoPregunta = new Label(this.pregunta.texto());
         textoPregunta.setStyle("-fx-font-size: 30px");
 
@@ -58,8 +60,8 @@ public class VistaPreguntaOrderedChoice extends VBox {
 
         Button enviarRespuesta = new Button("Enviar");
         enviarRespuesta.setStyle("-fx-font-size: 18px");
-        enviarRespuesta.setOnAction(new AsignarRespuestaOrderedChoiceEventHandler(jugador, pregunta, opcionesSeleccionadas, ronda));
+        enviarRespuesta.setOnAction(new AsignarRespuestaOrderedChoiceEventHandler(jugador, pregunta, opcionesSeleccionadas, panel));
 
-        this.getChildren().addAll(textoPregunta, contenedorOpciones,enviarRespuesta);
+        this.getChildren().addAll(textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
     }
 }

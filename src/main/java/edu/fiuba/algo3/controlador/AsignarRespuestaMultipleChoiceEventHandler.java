@@ -14,13 +14,13 @@ public class AsignarRespuestaMultipleChoiceEventHandler implements EventHandler<
     private Jugador jugador;
     private Pregunta pregunta;
     private ArrayList<CheckBox> checkBoxes;
-    private Ronda ronda;
+    private Panel panel;
 
-    public AsignarRespuestaMultipleChoiceEventHandler(Jugador jugador, Pregunta pregunta, ArrayList<CheckBox> checkBoxes, Ronda ronda) {
+    public AsignarRespuestaMultipleChoiceEventHandler(Jugador jugador, Pregunta pregunta, ArrayList<CheckBox> checkBoxes, Panel panel) {
         this.jugador = jugador;
         this.pregunta = pregunta;
         this.checkBoxes = checkBoxes;
-        this.ronda = ronda;
+        this.panel = panel;
     }
 
     @Override
@@ -33,6 +33,6 @@ public class AsignarRespuestaMultipleChoiceEventHandler implements EventHandler<
             }
         }
         jugador.responder(pregunta.tipo(), seleccionadas.toArray(new Opcion[seleccionadas.size()]));
-        ronda.avanzarTurno();
+        AvanzarTurnoController.avanzarTurno(panel);
     }
 }

@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.vista.inicioScenes;
 
 import edu.fiuba.algo3.controlador.AgregarJugadoresEventHandler;
-import edu.fiuba.algo3.controlador.Kahoot;
+import edu.fiuba.algo3.modelo.Kahoot;
+import edu.fiuba.algo3.controlador.Panel;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -11,7 +12,7 @@ import javafx.scene.layout.VBox;
 
 public class VistaCreacionJugadores extends VBox {
 
-    public VistaCreacionJugadores(Kahoot kahoot){
+    public VistaCreacionJugadores(Kahoot kahoot, Panel panel){
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.setStyle("-fx-background-color:rgb(140, 199, 63)");
@@ -35,7 +36,7 @@ public class VistaCreacionJugadores extends VBox {
         nombreJugadores.getChildren().addAll(nombreJugador1,nombreJugador2);
 
         Button agregarJugadores = new Button();
-        agregarJugadores.setOnAction(new AgregarJugadoresEventHandler(nombreJugador1, nombreJugador2, kahoot));
+        agregarJugadores.setOnAction(new AgregarJugadoresEventHandler(nombreJugador1, nombreJugador2, kahoot, panel));
         agregarJugadores.setText("Enter");
         agregarJugadores.setStyle("-fx-font-size: 16px;-fx-background-color: rgb(51, 51, 51);-fx-text-fill:white;-fx-font-family: 'Cooper Black'");
         agregarJugadores.setMaxWidth(220);

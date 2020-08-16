@@ -10,18 +10,18 @@ public class AsignarRespuestaVFEventHandler implements EventHandler<ActionEvent>
     private Jugador jugador;
     private Pregunta pregunta;
     private Opcion seleccionada;
-    private Ronda ronda;
+    private Panel panel;
 
-    public AsignarRespuestaVFEventHandler(Jugador jugador, Pregunta pregunta, Opcion seleccionada, Ronda ronda) {
+    public AsignarRespuestaVFEventHandler(Jugador jugador, Pregunta pregunta, Opcion seleccionada, Panel panel) {
         this.jugador = jugador;
         this.pregunta = pregunta;
         this.seleccionada = seleccionada;
-        this.ronda = ronda;
+        this.panel = panel;
     }
 
     @Override
     public void handle(ActionEvent event) {
         jugador.responder(pregunta.tipo(), seleccionada);
-        ronda.avanzarTurno();
+        AvanzarTurnoController.avanzarTurno(panel);
     }
 }

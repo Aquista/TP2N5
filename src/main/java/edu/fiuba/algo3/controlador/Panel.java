@@ -2,24 +2,75 @@ package edu.fiuba.algo3.controlador;
 
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Preguntas.Pregunta;
+import edu.fiuba.algo3.modelo.Kahoot;
+import edu.fiuba.algo3.modelo.Ronda;
+import edu.fiuba.algo3.vista.VistaPregunta;
 import edu.fiuba.algo3.vista.VistaPreguntasFactory;
+import edu.fiuba.algo3.vista.finalScenes.VistaFinal;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class Panel {
-    Stage stage;
+import java.util.ArrayList;
+import java.util.Collections;
 
-    public Panel(Stage stage){
+public class Panel extends BorderPane {
+    private Stage stage;
+    //private VistaModificadores vistaModificadores;
+    private VistaPregunta vistaPregunta;
+    //private VistaPuntajes vistaPuntajes;
+    private Kahoot kahoot;
+    private Ronda ronda;
+
+    public Panel(Kahoot kahoot, Stage stage) {
+        this.kahoot = kahoot;
         this.stage = stage;
     }
-
-    public void mostrarVista(Pregunta pregunta, Jugador jugador, Ronda ronda){
-        VistaPreguntasFactory factory = new VistaPreguntasFactory();
-        VBox vistaPregunta = factory.creaVistaPregunta(jugador, pregunta, ronda);
-        Scene scene = new Scene(vistaPregunta, 800, 600);
+    public void empezarPartida() {
+        kahoot.empezarPartida();
+        Scene scene = new Scene(this,800,600);
         stage.setScene(scene);
-        stage.show();
+        avanzarRonda();
+
+    }
+
+    public void avanzarRonda() {
+        ronda = kahoot.avanzarRonda();
+        if(ronda == null)
+            mostrarResultadosFinales();
+        else
+            avanzarTurno();
+
+        actualizar();
+    }
+
+    public void actualizar() {
+        setCenter(vistaPregunta);
+        /*vistaModificadores.actualizar();
+        vistaPregunta.actualizar();
+        vistaPuntajes.actualizar();*/
+    }
+
+    private void mostrarResultadosFinales() {
+        ArrayList<Jugador> jugadores = kahoot.getJugadores();
+
+        Collections.sort(jugadores);
+        VistaFinal vistaFinal = new VistaFinal(jugadores.get(0), jugadores.get(1));
+        Scene escenaFinal = new Scene(vistaFinal,800,600);
+        stage.setScene(escenaFinal);
+    }
+
+    public Ronda getRonda() {
+        return ronda;
+    }
+
+    public void avanzarTurno() {
+        ronda.avanzarTurno();
+
+        VistaPreguntasFactory factory = new VistaPreguntasFactory();
+        vistaPregunta = factory.creaVistaPregunta(ronda.getJugador(), ronda.getPregunta(), this);
+
+        //vistaModificadores = new VistaModificadores(jugador);
+        actualizar();
     }
 }
