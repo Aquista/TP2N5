@@ -96,7 +96,7 @@ public class CreadorDePreguntas {
                 pregunta.agregarOpcionCorrecta((String)opcionCorrecta);
 
             for(Object opcionIncorrecta : preguntaJSON.getJSONArray("opcionesIncorrectas"))
-                pregunta.agregarOpcionCorrecta((String)opcionIncorrecta);
+                pregunta.agregarOpcionIncorrecta((String)opcionIncorrecta);
         } catch (JSONException e) {}
     }
 
