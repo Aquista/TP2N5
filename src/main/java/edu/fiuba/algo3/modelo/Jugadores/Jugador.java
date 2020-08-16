@@ -36,6 +36,7 @@ public class Jugador implements Comparable<Jugador>{
     public int getPuntaje() {
         return puntaje;
     }
+
     public void evaluarRespuestas(Puntaje unPuntaje) {
         if (tipoDeJugador != null){
             this.tipoDeJugador.evaluar(unPuntaje);
@@ -87,5 +88,13 @@ public class Jugador implements Comparable<Jugador>{
     @Override
     public int compareTo(Jugador otroJugador) {
         return otroJugador.getPuntaje() - puntaje;
+    }
+
+    public ArrayList<Multiplicador> getMultiplicadores() {
+        return multiplicadores;
+    }
+
+    public ArrayList<Exclusividad> getExclusividades() {
+        return exclusividades;
     }
 }

@@ -21,4 +21,8 @@ public abstract class Pregunta {
 
     public abstract JugadorDeTipo tipo();
 
+    public Puntaje getPuntaje() {
+        return puntaje;
+    }
+
 }

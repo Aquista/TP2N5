@@ -8,4 +8,9 @@ public class ExclusividadNula implements Exclusividad {
     public void aplicar(Puntaje puntaje1, Puntaje puntaje2) {
 
     }
+
+    @Override
+    public String texto() {
+        return "Exclusividad nula";
+    }
 }

@@ -9,4 +9,9 @@ public class MultiplicadorX3 implements Multiplicador {
     public void multiplicar(Puntaje puntaje) {
         puntaje.multiplicar(3);
     }
+
+    @Override
+    public String texto() {
+        return "Multiplicador x3";
+    }
 }

@@ -15,4 +15,9 @@ public class ExclusividadSimple implements Exclusividad {
         if(correctos.size() == 1)
             correctos.get(0).multiplicar(2);
     }
+
+    @Override
+    public String texto() {
+        return "Exclusividad";
+    }
 }

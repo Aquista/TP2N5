@@ -4,8 +4,10 @@ package edu.fiuba.algo3.controlador;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Kahoot;
 import edu.fiuba.algo3.modelo.Ronda;
+import edu.fiuba.algo3.vista.VistaModificadores;
 import edu.fiuba.algo3.vista.VistaPregunta;
 import edu.fiuba.algo3.vista.VistaPreguntasFactory;
+import edu.fiuba.algo3.vista.VistaPuntajes;
 import edu.fiuba.algo3.vista.finalScenes.VistaFinal;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -16,7 +18,7 @@ import java.util.Collections;
 
 public class Panel extends BorderPane {
     private Stage stage;
-    //private VistaModificadores vistaModificadores;
+    private VistaModificadores vistaModificadores;
     private VistaPregunta vistaPregunta;
     private VistaPuntajes vistaPuntajes;
     private Kahoot kahoot;
@@ -52,6 +54,7 @@ public class Panel extends BorderPane {
         setCenter(vistaPregunta);
         vistaPuntajes.actualizar();
         setBottom(vistaPuntajes);
+        setLeft(vistaModificadores);
         /*vistaModificadores.actualizar();
         vistaPregunta.actualizar();
         vistaPuntajes.actualizar();*/
@@ -76,7 +79,8 @@ public class Panel extends BorderPane {
         VistaPreguntasFactory factory = new VistaPreguntasFactory();
         vistaPregunta = factory.creaVistaPregunta(ronda.getJugador(), ronda.getPregunta(), this);
 
-        //vistaModificadores = new VistaModificadores(jugador);
+        vistaModificadores = new VistaModificadores(ronda);
+
         actualizar();
     }
 }
