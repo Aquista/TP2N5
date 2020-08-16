@@ -1,10 +1,13 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.controlador.AsignarRespuestaGroupChoiceEventHandler;
 import edu.fiuba.algo3.controlador.AsignarRespuestaMultipleChoiceEventHandler;
+import edu.fiuba.algo3.controlador.Temporizador;
 import edu.fiuba.algo3.controlador.Panel;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
+import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -17,6 +20,7 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
     private PreguntaMultipleChoice pregunta;
     private Jugador jugador;
     private Panel panel;
+    int tiempo = 10;
 
     public VistaPreguntaMultipleChoice(Jugador jugador, PreguntaMultipleChoice unaPregunta, Panel panel){
         this.setAlignment(Pos.CENTER);
@@ -29,6 +33,8 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
     }
 
     public void agregarInfo(){
+
+
         Label textoNombreJugador = new Label(this.jugador.nombre());
         textoNombreJugador.setStyle("-fx-font-size: 25px");
 
@@ -42,6 +48,12 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
         int fila=0;
         ArrayList<Opcion> opciones = this.pregunta.opciones();
         ArrayList<CheckBox> checkBoxes = new ArrayList<CheckBox>();
+
+        Label textoTiempo = new Label(String.valueOf(tiempo));
+        Temporizador temporizador = new Temporizador(textoTiempo, tiempo);
+        AsignarRespuestaMultipleChoiceEventHandler evento = new AsignarRespuestaMultipleChoiceEventHandler(jugador, pregunta, checkBoxes, panel, temporizador);
+        temporizador.setEvento(evento);
+        temporizador.empezarTemporizador();
 
         for (Opcion unaOpcion : opciones){
             CheckBox opcionActual = new CheckBox(unaOpcion.texto());
@@ -58,7 +70,12 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
 
         Button enviarRespuesta = new Button("Enviar");
         enviarRespuesta.setStyle("-fx-font-size: 18px");
-        enviarRespuesta.setOnAction(new AsignarRespuestaMultipleChoiceEventHandler(jugador, pregunta, checkBoxes, panel));
-        this.getChildren().addAll(textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
+        enviarRespuesta.setOnAction(new AsignarRespuestaMultipleChoiceEventHandler(jugador, pregunta, checkBoxes, panel, temporizador));
+
+
+
+
+
+        this.getChildren().addAll(textoTiempo, textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
     }
 }

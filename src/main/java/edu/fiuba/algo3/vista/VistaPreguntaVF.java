@@ -5,10 +5,15 @@ import edu.fiuba.algo3.controlador.Panel;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 
@@ -45,7 +50,6 @@ public class VistaPreguntaVF extends VistaPregunta {
             opcionActual.setOnAction(eventoBoton);
             botones.getChildren().add(opcionActual);
         }
-
 
         this.getChildren().addAll(textoNombreJugador, textoPregunta,botones);
     }

@@ -16,6 +16,7 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
     private PreguntaGroupChoice pregunta;
     private Jugador jugador;
     private Panel panel;
+    private int tiempo = 10;
 
     public VistaPreguntaGroupChoice(Jugador jugador, PreguntaGroupChoice unaPregunta, Panel panel){
         this.setAlignment(Pos.CENTER);
@@ -41,6 +42,13 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
         contenedorOpciones.setVgap(20);
         int columna=0;
         int fila=0;
+
+        Label textoTiempo = new Label(String.valueOf(tiempo));
+        Temporizador temporizador = new Temporizador(textoTiempo, tiempo);
+        AsignarRespuestaGroupChoiceEventHandler evento = new AsignarRespuestaGroupChoiceEventHandler(jugador, pregunta, choiceBoxes, panel, temporizador);
+        temporizador.setEvento(evento);
+        temporizador.empezarTemporizador();
+
         for (OpcionConGrupo unaOpcion:opciones){
             HBox contenedorOpcion = new HBox(10);
             Label textoOpcion = new Label(unaOpcion.texto());
@@ -59,7 +67,7 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
         }
         Button enviarRespuesta = new Button("Enviar");
         enviarRespuesta.setStyle("-fx-font-size: 18px");
-        enviarRespuesta.setOnAction(new AsignarRespuestaGroupChoiceEventHandler(jugador, pregunta, choiceBoxes, panel));
-        this.getChildren().addAll(textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
+        enviarRespuesta.setOnAction(new AsignarRespuestaGroupChoiceEventHandler(jugador, pregunta, choiceBoxes, panel, temporizador));
+        this.getChildren().addAll(textoTiempo, textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
     }
 }

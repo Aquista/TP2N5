@@ -15,12 +15,14 @@ public class AsignarRespuestaGroupChoiceEventHandler implements EventHandler<Act
     private PreguntaGroupChoice pregunta;
     private ArrayList<ChoiceBox> choiceBoxes;
     private Panel panel;
+    private Temporizador temporizador;
 
-    public AsignarRespuestaGroupChoiceEventHandler(Jugador jugador, PreguntaGroupChoice pregunta, ArrayList<ChoiceBox> choiceBoxes, Panel panel) {
+    public AsignarRespuestaGroupChoiceEventHandler(Jugador jugador, PreguntaGroupChoice pregunta, ArrayList<ChoiceBox> choiceBoxes, Panel panel, Temporizador temporizador) {
         this.jugador = jugador;
         this.pregunta = pregunta;
         this.choiceBoxes = choiceBoxes;
         this.panel = panel;
+        this.temporizador = temporizador;
     }
 
     @Override
@@ -34,6 +36,7 @@ public class AsignarRespuestaGroupChoiceEventHandler implements EventHandler<Act
             }
         }
         jugador.responder(pregunta.tipo(), seleccionadas.toArray(new Opcion[seleccionadas.size()]));
+        temporizador.apagarTemporizador();
         AvanzarTurnoController.avanzarTurno(panel);
     }
 }

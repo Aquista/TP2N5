@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.controlador.AsignarRespuestaOrderedChoiceEventHandler;
-import edu.fiuba.algo3.controlador.Panel;
-import edu.fiuba.algo3.controlador.SeleccionarOpcionConOrdenEventHandler;
+import edu.fiuba.algo3.controlador.*;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaOrderedChoice;
@@ -17,6 +15,7 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
     private PreguntaOrderedChoice pregunta;
     private Jugador jugador;
     private Panel panel;
+    private int tiempo = 10;
 
     public VistaPreguntaOrderedChoice(Jugador jugador, PreguntaOrderedChoice unaPregunta, Panel panel){
         this.setAlignment(Pos.CENTER);
@@ -45,6 +44,12 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
         ArrayList<OpcionConOrden> opcionesPregunta = this.pregunta.opciones();
         ArrayList<OpcionConOrden> opcionesSeleccionadas = new ArrayList<OpcionConOrden>();
 
+        Label textoTiempo = new Label(String.valueOf(tiempo));
+        Temporizador temporizador = new Temporizador(textoTiempo, tiempo);
+        AsignarRespuestaOrderedChoiceEventHandler evento = new AsignarRespuestaOrderedChoiceEventHandler(jugador, pregunta, opcionesSeleccionadas, panel, temporizador);
+        temporizador.setEvento(evento);
+        temporizador.empezarTemporizador();
+
         for (OpcionConOrden unaOpcion : opcionesPregunta){
             Button opcionActual = new Button(unaOpcion.texto());
             opcionActual.setStyle("-fx-font-size: 18px");
@@ -60,8 +65,8 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
 
         Button enviarRespuesta = new Button("Enviar");
         enviarRespuesta.setStyle("-fx-font-size: 18px");
-        enviarRespuesta.setOnAction(new AsignarRespuestaOrderedChoiceEventHandler(jugador, pregunta, opcionesSeleccionadas, panel));
+        enviarRespuesta.setOnAction(new AsignarRespuestaOrderedChoiceEventHandler(jugador, pregunta, opcionesSeleccionadas, panel, temporizador));
 
-        this.getChildren().addAll(textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
+        this.getChildren().addAll(textoTiempo, textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
     }
 }

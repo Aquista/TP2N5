@@ -13,18 +13,20 @@ public class AsignarRespuestaOrderedChoiceEventHandler implements EventHandler<A
     private Pregunta pregunta;
     private ArrayList<OpcionConOrden> opcionesSeleccionadas;
     private Panel panel;
+    private Temporizador temporizador;
 
-
-    public AsignarRespuestaOrderedChoiceEventHandler(Jugador jugador, Pregunta pregunta, ArrayList<OpcionConOrden> opcionesSeleccionadas, Panel panel) {
+    public AsignarRespuestaOrderedChoiceEventHandler(Jugador jugador, Pregunta pregunta, ArrayList<OpcionConOrden> opcionesSeleccionadas, Panel panel, Temporizador temporizador) {
         this.jugador = jugador;
         this.pregunta = pregunta;
         this.opcionesSeleccionadas = opcionesSeleccionadas;
         this.panel = panel;
+        this.temporizador = temporizador;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         jugador.responder(pregunta.tipo(), opcionesSeleccionadas.toArray(new OpcionConOrden[opcionesSeleccionadas.size()]));
+        temporizador.apagarTemporizador();
         AvanzarTurnoController.avanzarTurno(panel);
     }
 }
