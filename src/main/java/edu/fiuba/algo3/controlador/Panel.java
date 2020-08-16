@@ -9,6 +9,7 @@ import edu.fiuba.algo3.vista.VistaPregunta;
 import edu.fiuba.algo3.vista.VistaPreguntasFactory;
 import edu.fiuba.algo3.vista.VistaPuntajes;
 import edu.fiuba.algo3.vista.finalScenes.VistaFinal;
+import edu.fiuba.algo3.vista.otros.VistaCambioTurno;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -36,7 +37,6 @@ public class Panel extends BorderPane {
         vistaPuntajes = new VistaPuntajes(jugadores.get(0), jugadores.get(1));
 
         avanzarRonda();
-
     }
 
     public void avanzarRonda() {
@@ -44,10 +44,8 @@ public class Panel extends BorderPane {
         if(ronda == null)
             mostrarResultadosFinales();
         else
-            avanzarTurno();
+            AvanzarTurnoController.avanzarTurno(this);
 
-
-        actualizar();
     }
 
     public void actualizar() {
@@ -60,6 +58,14 @@ public class Panel extends BorderPane {
         vistaPuntajes.actualizar();*/
     }
 
+    public void mostrarCambioTurno() {
+        VistaCambioTurno vistaCambioTurno = new VistaCambioTurno(ronda.getJugador(),this);
+
+        setCenter(vistaCambioTurno);
+        setBottom(null);
+        setLeft(null);
+    }
+
     private void mostrarResultadosFinales() {
         ArrayList<Jugador> jugadores = kahoot.getJugadores();
 
@@ -67,6 +73,8 @@ public class Panel extends BorderPane {
         VistaFinal vistaFinal = new VistaFinal(jugadores.get(0), jugadores.get(1));
         Scene escenaFinal = new Scene(vistaFinal,800,600);
         stage.setScene(escenaFinal);
+
+        actualizar();
     }
 
     public Ronda getRonda() {
@@ -74,8 +82,6 @@ public class Panel extends BorderPane {
     }
 
     public void avanzarTurno() {
-        ronda.avanzarTurno();
-
         VistaPreguntasFactory factory = new VistaPreguntasFactory();
         vistaPregunta = factory.creaVistaPregunta(ronda.getJugador(), ronda.getPregunta(), this);
 

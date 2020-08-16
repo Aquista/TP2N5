@@ -44,8 +44,8 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
         contenedorOpciones.setAlignment(Pos.CENTER);
         contenedorOpciones.setHgap(40);
         contenedorOpciones.setVgap(20);
-        int columna=0;
-        int fila=0;
+        int columna = 0;
+        int fila = 0;
         ArrayList<Opcion> opciones = this.pregunta.opciones();
         ArrayList<CheckBox> checkBoxes = new ArrayList<CheckBox>();
 
@@ -62,9 +62,9 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
             checkBoxes.add(opcionActual);
             contenedorOpciones.add(opcionActual,columna,fila);
             columna++;
-            if(columna==2){
+            if(columna == 2){
                 fila++;
-                columna=0;
+                columna = 0;
             }
         }
 

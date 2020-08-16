@@ -11,7 +11,12 @@ public class AvanzarTurnoController{
             ronda.evaluarJugadores();
             panel.avanzarRonda();
         } else {
-            panel.avanzarTurno();
+            ronda.avanzarTurno();
+            panel.mostrarCambioTurno();
         }
+    }
+
+    public static void avanzarTurnoPanel(Panel panel){
+        panel.avanzarTurno();
     }
 }

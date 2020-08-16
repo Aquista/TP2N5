@@ -38,8 +38,8 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
         contenedorOpciones.setAlignment(Pos.CENTER);
         contenedorOpciones.setHgap(40);
         contenedorOpciones.setVgap(20);
-        int columna=0;
-        int fila=0;
+        int columna = 0;
+        int fila = 0;
 
         ArrayList<OpcionConOrden> opcionesPregunta = this.pregunta.opciones();
         ArrayList<OpcionConOrden> opcionesSeleccionadas = new ArrayList<OpcionConOrden>();
@@ -57,9 +57,9 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
             opcionActual.setOnAction(eventoBoton);
             contenedorOpciones.add(opcionActual,columna,fila);
             columna++;
-            if(columna==2){
+            if(columna == 2){
                 fila++;
-                columna=0;
+                columna = 0;
             }
         }
 

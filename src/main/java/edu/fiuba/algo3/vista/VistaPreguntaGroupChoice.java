@@ -60,9 +60,9 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
             choiceBoxes.add(opcionActual);
             contenedorOpciones.add(contenedorOpcion,columna,fila);
             columna++;
-            if(columna==2){
+            if(columna == 2){
                 fila++;
-                columna=0;
+                columna = 0;
             }
         }
         Button enviarRespuesta = new Button("Enviar");
