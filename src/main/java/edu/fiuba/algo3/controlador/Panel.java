@@ -18,7 +18,7 @@ public class Panel extends BorderPane {
     private Stage stage;
     //private VistaModificadores vistaModificadores;
     private VistaPregunta vistaPregunta;
-    //private VistaPuntajes vistaPuntajes;
+    private VistaPuntajes vistaPuntajes;
     private Kahoot kahoot;
     private Ronda ronda;
 
@@ -30,6 +30,9 @@ public class Panel extends BorderPane {
         kahoot.empezarPartida();
         Scene scene = new Scene(this,800,600);
         stage.setScene(scene);
+        ArrayList<Jugador> jugadores = kahoot.getJugadores();
+        vistaPuntajes = new VistaPuntajes(jugadores.get(0), jugadores.get(1));
+
         avanzarRonda();
 
     }
@@ -41,11 +44,14 @@ public class Panel extends BorderPane {
         else
             avanzarTurno();
 
+
         actualizar();
     }
 
     public void actualizar() {
         setCenter(vistaPregunta);
+        vistaPuntajes.actualizar();
+        setBottom(vistaPuntajes);
         /*vistaModificadores.actualizar();
         vistaPregunta.actualizar();
         vistaPuntajes.actualizar();*/
