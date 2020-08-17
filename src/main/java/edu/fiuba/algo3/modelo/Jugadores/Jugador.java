@@ -76,9 +76,9 @@ public class Jugador implements Comparable<Jugador>{
         }
     }
 
-    public Respuesta responder(JugadorDeTipo tipo, Opcion... opciones){
+    public void responder(JugadorDeTipo tipo, Opcion... opciones){
         tipoDeJugador = tipo;
-        return tipoDeJugador.responder(opciones);
+        tipoDeJugador.responder(opciones);
     }
 
     public String nombre(){

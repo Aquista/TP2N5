@@ -8,6 +8,6 @@ public abstract class JugadorDeTipo {
 
     protected Respuesta respuesta;
 
-    public abstract Respuesta responder(Opcion... opciones);
+    public abstract void responder(Opcion... opciones);
     public void evaluar(Puntaje unPuntaje){ this.respuesta.evaluar(unPuntaje); }
 }

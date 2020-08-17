@@ -8,8 +8,7 @@ import edu.fiuba.algo3.modelo.Respuestas.RespuestaOrderChoice;
 
 public class JugadorDeOrderChoice extends JugadorDeTipo {
     @Override
-    public Respuesta responder(Opcion... opciones) {
+    public void responder(Opcion... opciones) {
         this.respuesta = new RespuestaOrderChoice(opciones);
-        return this.respuesta;
     }
 }

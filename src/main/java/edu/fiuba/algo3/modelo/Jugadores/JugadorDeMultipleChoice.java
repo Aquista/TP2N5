@@ -7,8 +7,7 @@ import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
 
 public class JugadorDeMultipleChoice extends JugadorDeTipo {
     @Override
-    public Respuesta responder(Opcion... opciones) {
+    public void responder(Opcion... opciones) {
         this.respuesta = new RespuestaMultipleChoice(opciones);
-        return this.respuesta;
     }
 }
