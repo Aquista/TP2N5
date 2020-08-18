@@ -22,11 +22,6 @@ public class RespuestaGroupChoice implements Respuesta {
 
     }
 
-    public RespuestaGroupChoice(Opcion ... opciones) {
-        for (Opcion opcion : opciones){
-            this.opciones.add(opcion);
-        }
-    }
 
     public void evaluar(Puntaje unPuntaje){
         for(Opcion opcion : opciones){

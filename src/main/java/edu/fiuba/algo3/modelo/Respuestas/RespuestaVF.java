@@ -8,10 +8,6 @@ public class RespuestaVF implements Respuesta {
 
     public RespuestaVF(){}
 
-    public RespuestaVF(Opcion opcion){
-       this.opcion = opcion;
-    }
-
     public void evaluar(Puntaje unPuntaje){
         this.opcion.evaluar(unPuntaje);
     }

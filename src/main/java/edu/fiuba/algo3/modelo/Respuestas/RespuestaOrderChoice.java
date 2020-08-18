@@ -10,13 +10,6 @@ import java.util.Collections;
 public class RespuestaOrderChoice implements Respuesta {
     private ArrayList<Opcion> opciones = new ArrayList<>();
 
-    public RespuestaOrderChoice(Opcion ... opciones) {
-        for (Opcion opcion : opciones){
-
-            ((OpcionConOrden) opcion).seleccionarOrden(this.opciones.size()+1);
-            this.opciones.add(opcion);
-        }
-    }
     public RespuestaOrderChoice(){
 
     }

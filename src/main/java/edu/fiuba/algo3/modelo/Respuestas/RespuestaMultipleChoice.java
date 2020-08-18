@@ -8,11 +8,7 @@ import java.util.ArrayList;
 public class RespuestaMultipleChoice implements Respuesta {
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
 
-    public RespuestaMultipleChoice(Opcion ... opciones) {
-        for (Opcion op : opciones){
-            this.opciones.add(op);
-        }
-    }
+
     public RespuestaMultipleChoice(){
 
     }
