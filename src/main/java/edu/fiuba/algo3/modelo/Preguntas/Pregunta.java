@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
+import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
 
 public abstract class Pregunta {
 
@@ -19,7 +19,7 @@ public abstract class Pregunta {
 
     public abstract void evaluarJugadores(Jugador jugador1, Jugador jugador2);
 
-    public abstract JugadorDeTipo tipo();
+    public abstract Respuesta tipo();
 
     public Puntaje getPuntaje() {
         return puntaje;

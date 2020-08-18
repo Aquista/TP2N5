@@ -11,8 +11,12 @@ public class RespuestaVF implements Respuesta {
     public RespuestaVF(Opcion opcion){
        this.opcion = opcion;
     }
-    
+
     public void evaluar(Puntaje unPuntaje){
         this.opcion.evaluar(unPuntaje);
+    }
+
+    public void agregarOpciones(Opcion... opciones) {
+        this.opcion = opciones[0];
     }
 }

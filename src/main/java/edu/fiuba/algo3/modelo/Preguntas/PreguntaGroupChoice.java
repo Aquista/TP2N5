@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeGroupChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
+import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaGroupChoice;
 
 import java.util.ArrayList;
 
@@ -32,8 +32,8 @@ public class PreguntaGroupChoice extends Pregunta{
     }
 
     @Override
-    public JugadorDeTipo tipo() {
-        return new JugadorDeGroupChoice();
+    public Respuesta tipo() {
+        return new RespuestaGroupChoice();
     }
 
     public ArrayList<OpcionConGrupo> opciones(){

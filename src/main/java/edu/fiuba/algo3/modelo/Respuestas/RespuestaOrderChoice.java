@@ -17,6 +17,16 @@ public class RespuestaOrderChoice implements Respuesta {
             this.opciones.add(opcion);
         }
     }
+    public RespuestaOrderChoice(){
+
+    }
+    public void agregarOpciones(Opcion ... opciones){
+        for (Opcion opcion : opciones){
+
+            ((OpcionConOrden) opcion).seleccionarOrden(this.opciones.size()+1);
+            this.opciones.add(opcion);
+        }
+    }
 
     public void evaluar(Puntaje unPuntaje){
         for(Opcion opcion : opciones){

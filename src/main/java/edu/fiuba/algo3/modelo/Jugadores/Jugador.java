@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 public class Jugador implements Comparable<Jugador>{
     private String nombre;
     private int puntaje = 0;
-    private JugadorDeTipo tipoDeJugador = null;
     private ArrayList<Multiplicador> multiplicadores = new ArrayList<Multiplicador>();
     private ArrayList<Exclusividad> exclusividades = new ArrayList<Exclusividad>();
 
     private Multiplicador multiplicadorActivo = new MultiplicadorX1();
     private Exclusividad exclusividadActiva = new ExclusividadNula();
+    private Respuesta respuestaActual = null;
 
     public Jugador(String unNombre) {
         this.nombre = unNombre;
@@ -38,8 +38,11 @@ public class Jugador implements Comparable<Jugador>{
     }
 
     public void evaluarRespuestas(Puntaje unPuntaje) {
-        if (tipoDeJugador != null){
+        /*if (tipoDeJugador != null){
             this.tipoDeJugador.evaluar(unPuntaje);
+        }*/
+        if(respuestaActual != null){
+            this.respuestaActual.evaluar(unPuntaje);
         }
     }
 
@@ -76,9 +79,9 @@ public class Jugador implements Comparable<Jugador>{
         }
     }
 
-    public void responder(JugadorDeTipo tipo, Opcion... opciones){
-        tipoDeJugador = tipo;
-        tipoDeJugador.responder(opciones);
+    public void responder(Respuesta respuesta, Opcion ... opciones){
+        respuesta.agregarOpciones(opciones);
+        this.respuestaActual = respuesta;
     }
 
     public String nombre(){

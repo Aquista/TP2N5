@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeVerdadoroFalso;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Puntajes.*;
+import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 
 public class PreguntaVF extends PreguntaClasica {
     public PreguntaVF(String texto, Puntaje puntaje){
@@ -40,8 +40,8 @@ public class PreguntaVF extends PreguntaClasica {
     }
 
     @Override
-    public JugadorDeTipo tipo() {
-        return new JugadorDeVerdadoroFalso();
+    public Respuesta tipo() {
+        return new RespuestaVF();
     }
 
 }

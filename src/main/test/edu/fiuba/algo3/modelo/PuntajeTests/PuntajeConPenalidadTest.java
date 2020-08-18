@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.modelo.PuntajeTests;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeVerdadoroFalso;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,7 +16,7 @@ public class PuntajeConPenalidadTest {
         Jugador unJugador = new Jugador("AAS");
         OpcionCorrecta opcion = new OpcionCorrecta("true");
 
-        unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);
+        unJugador.responder(new RespuestaVF(), opcion);
 
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
 
@@ -29,7 +29,7 @@ public class PuntajeConPenalidadTest {
         Jugador unJugador = new Jugador("ASDF");
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
 
-        unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);
+        unJugador.responder(new RespuestaVF(), opcion);
 
         PuntajeConPenalidad unPuntaje = new PuntajeConPenalidad();
 

@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.modelo.PuntajeTests;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeMultipleChoice;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeVerdadoroFalso;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaMultipleChoice;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,7 +16,7 @@ public class PuntajeClasicoTest {
         OpcionCorrecta opcion = new OpcionCorrecta("true");
 
         Jugador unJugador = new Jugador("ASD");
-        unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);
+        unJugador.responder(new RespuestaVF(), opcion);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
 
@@ -29,7 +29,7 @@ public class PuntajeClasicoTest {
         Jugador unJugador = new Jugador("SFD");
 
         OpcionIncorrecta opcion = new OpcionIncorrecta("true");
-        unJugador.responder(new JugadorDeVerdadoroFalso(), opcion);
+        unJugador.responder(new RespuestaVF(), opcion);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
 
@@ -44,7 +44,7 @@ public class PuntajeClasicoTest {
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
         OpcionCorrecta opcion3 = new OpcionCorrecta("");
 
-        unJugador.responder(new JugadorDeMultipleChoice(), opcion1, opcion2, opcion3);
+        unJugador.responder(new RespuestaMultipleChoice(), opcion1, opcion2, opcion3);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         unPuntaje.asignarPuntaje(unJugador);
@@ -59,7 +59,7 @@ public class PuntajeClasicoTest {
         OpcionCorrecta opcion3 = new OpcionCorrecta("");
         OpcionIncorrecta opcion4 = new OpcionIncorrecta("");
 
-        unJugador.responder(new JugadorDeMultipleChoice(), opcion1, opcion2, opcion3, opcion4);
+        unJugador.responder(new RespuestaMultipleChoice(), opcion1, opcion2, opcion3, opcion4);
         PuntajeClasico unPuntaje = new PuntajeClasico();
 
         assertEquals(0,unPuntaje.calcularPuntaje(unJugador, 3));
@@ -73,7 +73,7 @@ public class PuntajeClasicoTest {
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
         OpcionIncorrecta opcion3 = new OpcionIncorrecta("");
 
-        unJugador.responder(new JugadorDeMultipleChoice(), opcion1 ,opcion2,opcion3);
+        unJugador.responder(new RespuestaMultipleChoice(), opcion1 ,opcion2,opcion3);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
         assertEquals(0,unPuntaje.calcularPuntaje(unJugador, 3));
@@ -85,7 +85,7 @@ public class PuntajeClasicoTest {
         OpcionCorrecta opcion1 = new OpcionCorrecta("");
         OpcionCorrecta opcion2 = new OpcionCorrecta("");
 
-        unJugador.responder(new JugadorDeMultipleChoice(), opcion1);
+        unJugador.responder(new RespuestaMultipleChoice(), opcion1);
 
         PuntajeClasico unPuntaje = new PuntajeClasico();
 

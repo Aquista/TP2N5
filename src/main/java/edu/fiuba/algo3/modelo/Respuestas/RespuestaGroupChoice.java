@@ -12,6 +12,16 @@ import java.util.Collections;
 public class RespuestaGroupChoice implements Respuesta {
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
 
+    public RespuestaGroupChoice(){
+
+    }
+    public void agregarOpciones(Opcion ... opciones){
+        for (Opcion opcion : opciones){
+            this.opciones.add(opcion);
+        }
+
+    }
+
     public RespuestaGroupChoice(Opcion ... opciones) {
         for (Opcion opcion : opciones){
             this.opciones.add(opcion);

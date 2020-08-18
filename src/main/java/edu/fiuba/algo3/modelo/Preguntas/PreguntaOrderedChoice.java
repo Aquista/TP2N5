@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeTipo;
-import edu.fiuba.algo3.modelo.Jugadores.JugadorDeOrderChoice;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
+import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
+import edu.fiuba.algo3.modelo.Respuestas.RespuestaOrderChoice;
 
 import java.util.ArrayList;
 
@@ -32,8 +32,8 @@ public class PreguntaOrderedChoice extends Pregunta {
     }
 
     @Override
-    public JugadorDeTipo tipo() {
-        return new JugadorDeOrderChoice();
+    public Respuesta tipo() {
+        return new RespuestaOrderChoice();
     }
 
     public ArrayList<OpcionConOrden> opciones(){

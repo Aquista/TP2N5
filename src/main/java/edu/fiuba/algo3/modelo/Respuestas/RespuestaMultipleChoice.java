@@ -13,6 +13,14 @@ public class RespuestaMultipleChoice implements Respuesta {
             this.opciones.add(op);
         }
     }
+    public RespuestaMultipleChoice(){
+
+    }
+    public void agregarOpciones(Opcion ... opciones){
+        for (Opcion op : opciones){
+            this.opciones.add(op);
+        }
+    }
 
     public void evaluar(Puntaje unPuntaje){
         for(Opcion opcion : opciones){
