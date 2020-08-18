@@ -1,7 +1,9 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.controlador.AsignarRespuestaMultipleChoiceEventHandler;
 import edu.fiuba.algo3.controlador.AsignarRespuestaVFEventHandler;
 import edu.fiuba.algo3.controlador.Panel;
+import edu.fiuba.algo3.controlador.Temporizador;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaVF;
@@ -22,6 +24,7 @@ public class VistaPreguntaVF extends VistaPregunta {
     private PreguntaVF pregunta;
     private Jugador jugador;
     private Panel panel;
+    private int tiempo = 15;
 
     public VistaPreguntaVF(Jugador jugador, PreguntaVF unaPregunta, Panel panel){
             this.setAlignment(Pos.CENTER);
@@ -44,14 +47,20 @@ public class VistaPreguntaVF extends VistaPregunta {
         botones.setAlignment(Pos.CENTER);
         ArrayList<Opcion> opciones = this.pregunta.opciones();
 
+        Label textoTiempo = new Label(String.valueOf(tiempo));
+        Temporizador temporizador = new Temporizador(textoTiempo, tiempo);
+        AsignarRespuestaVFEventHandler evento = new AsignarRespuestaVFEventHandler(jugador, pregunta, null, panel, temporizador);
+        temporizador.setEvento(evento);
+        temporizador.empezarTemporizador();
+
         for (Opcion unaOpcion : opciones){
             Button opcionActual = new Button(unaOpcion.texto());
             opcionActual.getStyleClass().add("opcion-VF");
-            AsignarRespuestaVFEventHandler eventoBoton = new AsignarRespuestaVFEventHandler(jugador, pregunta, unaOpcion, panel);
+            AsignarRespuestaVFEventHandler eventoBoton = new AsignarRespuestaVFEventHandler(jugador, pregunta, unaOpcion, panel, temporizador);
             opcionActual.setOnAction(eventoBoton);
             botones.getChildren().add(opcionActual);
         }
 
-        this.getChildren().addAll(textoNombreJugador, textoPregunta,botones);
+        this.getChildren().addAll(textoTiempo, textoNombreJugador, textoPregunta,botones);
     }
 }
