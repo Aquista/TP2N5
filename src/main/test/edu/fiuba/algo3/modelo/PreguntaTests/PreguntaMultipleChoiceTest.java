@@ -272,4 +272,23 @@ public class PreguntaMultipleChoiceTest {
         assertEquals(puntajeJugador2Esperado, jugador2.getPuntaje());
     }
 
+    @Test
+    public void test013JugadorRespondeUnaPreguntaConNullEntoncesNoSumaPuntos(){
+        int puntajeEsperado = 0;
+
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
+
+        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
+        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+        OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
+        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
+
+        jugador.responder(pregunta.tipo(), null);
+
+        pregunta.evaluarJugadores(jugador, contrincante);
+
+        assertEquals(puntajeEsperado, jugador.getPuntaje());
+    }
 }

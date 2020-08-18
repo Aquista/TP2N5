@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PreguntaGroupChoiceTest {
 
     @Test
-
     public void test01JugadorCon0PuntosRespondeBienYSuma1Punto(){
 
         Jugador jugador = new Jugador("J1");
@@ -104,4 +103,21 @@ public class PreguntaGroupChoiceTest {
         assertEquals(0, jugador2.getPuntaje());
     }
 
+    @Test
+    public void test06JugadorRespondeConUnaOpcionNulaEntoncesNoSumaPuntos(){
+
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
+
+        PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
+        OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+        OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+        OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+
+        jugador.responder(pregunta.tipo(), null);
+
+        pregunta.evaluarJugadores(jugador, contrincante);
+
+        assertEquals(0, jugador.getPuntaje());
+    }
 }

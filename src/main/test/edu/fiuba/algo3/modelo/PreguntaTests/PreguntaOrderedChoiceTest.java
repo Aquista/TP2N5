@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 public class PreguntaOrderedChoiceTest {
 
     @Test
-
     public void test01JugadorCon0PuntosRespondeConOrdenCorrectoYSuma1Punto(){
         Jugador jugador = new Jugador("J1");
         Jugador contrincante = new Jugador("J2");
@@ -27,6 +26,7 @@ public class PreguntaOrderedChoiceTest {
         assertEquals(1, jugador.getPuntaje());
 
     }
+
     @Test
     public void test02JugadorCon0PuntosRespondeConOrdenIncorrectoYSuma0Puntos(){
         Jugador jugador = new Jugador("NOMBRE");
@@ -99,5 +99,22 @@ public class PreguntaOrderedChoiceTest {
 
         assertEquals(0, jugador1.getPuntaje());
         assertEquals(0, jugador2.getPuntaje());
+    }
+    @Test
+    public void test06JugadorRespondeConUnaOpcionNulaEntoncesNoSumaPuntos(){
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
+
+        PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
+        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
+
+        jugador.responder(pregunta.tipo(), null);
+
+        pregunta.evaluarJugadores(jugador, contrincante);
+
+        assertEquals(0, jugador.getPuntaje());
+
     }
 }

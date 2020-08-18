@@ -155,5 +155,23 @@ public class PreguntaVFTest {
         assertEquals(puntajeJugador1Esperado, jugador1.getPuntaje());
         assertEquals(puntajeJugador2Esperado, jugador2.getPuntaje());
     }
+
+    @Test
+    public void test08CreoUnaPreguntaClasicaUnJugadorRespondeConNullYRecibe0Puntos() {
+        int puntajeEsperado = 0;
+
+        Jugador jugador = new Jugador("SAFKIH");
+        Jugador contrincante = new Jugador("HAMOOD");
+
+        PreguntaVF pregunta = new PreguntaVF("Soy una pregunta", new PuntajeClasico());
+        OpcionCorrecta opcionCorrecta = pregunta.agregarOpcionCorrecta("true");
+        OpcionIncorrecta opcionIncorrecta = pregunta.agregarOpcionIncorrecta("false");
+
+        jugador.responder(pregunta.tipo(), null);
+
+        pregunta.evaluarJugadores(jugador, contrincante);
+
+        assertEquals(puntajeEsperado,jugador.getPuntaje());
+    }
     
 }

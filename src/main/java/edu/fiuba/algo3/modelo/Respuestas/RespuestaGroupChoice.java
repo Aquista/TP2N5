@@ -16,6 +16,9 @@ public class RespuestaGroupChoice implements Respuesta {
 
     }
     public void agregarOpciones(Opcion ... opciones){
+        if(opciones == null || Arrays.asList(opciones).contains(null))
+            return;
+
         for (Opcion opcion : opciones){
             this.opciones.add(opcion);
         }

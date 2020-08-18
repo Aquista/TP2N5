@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class RespuestaOrderChoice implements Respuesta {
@@ -14,9 +15,12 @@ public class RespuestaOrderChoice implements Respuesta {
 
     }
     public void agregarOpciones(Opcion ... opciones){
-        for (Opcion opcion : opciones){
 
-            ((OpcionConOrden) opcion).seleccionarOrden(this.opciones.size()+1);
+        if(opciones == null || Arrays.asList(opciones).contains(null))
+            return;
+
+        for (Opcion opcion : opciones){
+            ((OpcionConOrden) opcion).seleccionarOrden(this.opciones.size() + 1);
             this.opciones.add(opcion);
         }
     }

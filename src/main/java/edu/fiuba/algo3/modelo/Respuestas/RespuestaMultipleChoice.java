@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class RespuestaMultipleChoice implements Respuesta {
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
@@ -13,8 +14,11 @@ public class RespuestaMultipleChoice implements Respuesta {
 
     }
     public void agregarOpciones(Opcion ... opciones){
-        for (Opcion op : opciones){
-            this.opciones.add(op);
+        if(opciones == null || Arrays.asList(opciones).contains(null))
+            return;
+
+        for (Opcion opcion : opciones){
+            this.opciones.add(opcion);
         }
     }
 
