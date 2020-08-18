@@ -36,7 +36,7 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
 
 
         Label textoNombreJugador = new Label(this.jugador.nombre());
-        textoNombreJugador.setStyle("-fx-font-size: 25px");
+        textoNombreJugador.getStyleClass().add("texto-jugador");
 
         Label textoPregunta = new Label(this.pregunta.texto());
         textoPregunta.getStyleClass().add("texto-pregunta");
@@ -55,6 +55,8 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
         AsignarRespuestaMultipleChoiceEventHandler evento = new AsignarRespuestaMultipleChoiceEventHandler(jugador, pregunta, checkBoxes, panel, temporizador);
         temporizador.setEvento(evento);
         temporizador.empezarTemporizador();
+
+        textoTiempo.getStyleClass().add("temporizador");
 
         for (Opcion unaOpcion : opciones){
             CheckBox opcionActual = new CheckBox(unaOpcion.texto());

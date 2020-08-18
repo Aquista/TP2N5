@@ -38,7 +38,7 @@ public class VistaPreguntaVF extends VistaPregunta {
 
     public void agregarInfo(){
         Label textoNombreJugador = new Label(this.jugador.nombre());
-        textoNombreJugador.setStyle("-fx-font-size: 25px");
+        textoNombreJugador.getStyleClass().add("texto-jugador");
 
         Label textoPregunta = new Label(this.pregunta.texto());
         textoPregunta.getStyleClass().add("texto-pregunta");
@@ -52,6 +52,8 @@ public class VistaPreguntaVF extends VistaPregunta {
         AsignarRespuestaVFEventHandler evento = new AsignarRespuestaVFEventHandler(jugador, pregunta, null, panel, temporizador);
         temporizador.setEvento(evento);
         temporizador.empezarTemporizador();
+
+        textoTiempo.getStyleClass().add("temporizador");
 
         for (Opcion unaOpcion : opciones){
             Button opcionActual = new Button(unaOpcion.texto());

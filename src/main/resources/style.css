@@ -21,7 +21,7 @@
     -fx-font-family: "Bangers";
     -fx-text-fill: #FFFCF2;
 }
-.texto-nombre-jugador {
+.texto-jugador, .texto-nombre-jugador {
     -fx-font-family: "Press Start 2P";
     -fx-font-size: 25px;
     -fx-padding: 8px 0px 8px 8px;
@@ -41,4 +41,11 @@
     -fx-font-size: 18px;
     -fx-background-color: #403D39;
     -fx-text-fill: #FFFCF2;
+}
+.temporizador {
+    -fx-font-size: 30px;
+    -fx-font-family: "Press Start 2P";
+}
+.temporizador.alerta {
+    -fx-text-fill: red;
 }

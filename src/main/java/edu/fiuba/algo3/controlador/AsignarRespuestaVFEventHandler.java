@@ -29,7 +29,7 @@ public class AsignarRespuestaVFEventHandler implements EventHandler<ActionEvent>
             jugador.responder(pregunta.tipo(), seleccionada);
         else
             jugador.responder(pregunta.tipo(), new OpcionIncorrecta("provisorio"));
-        
+
         temporizador.apagarTemporizador();
         AvanzarTurnoController.avanzarTurno(panel);
     }

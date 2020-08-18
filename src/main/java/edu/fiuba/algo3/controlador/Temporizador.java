@@ -11,6 +11,7 @@ public class Temporizador {
     private Timeline temporizador = new Timeline();
     private Label texto;
     private int tiempo;
+    private int tiempoAlerta = 5;
     private boolean activo = true;
     private EventHandler<ActionEvent> evento = null;
 
@@ -37,6 +38,8 @@ public class Temporizador {
                         tiempo--;
                         if(tiempo > 0) {
                             texto.setText(String.valueOf(tiempo));
+                            if(tiempo <= tiempoAlerta)
+                                texto.getStyleClass().add("alerta");
                         }
                         else if(activo == true){
                             evento.handle(event);
