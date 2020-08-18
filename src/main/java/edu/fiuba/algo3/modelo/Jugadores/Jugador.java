@@ -22,7 +22,6 @@ public class Jugador implements Comparable<Jugador>{
         this.nombre = unNombre;
         multiplicadores.add(new MultiplicadorX2());
         multiplicadores.add(new MultiplicadorX3());
-        multiplicadores.add(new MultiplicadorX3());
         exclusividades.add(new ExclusividadSimple());
         exclusividades.add(new ExclusividadSimple());
     }

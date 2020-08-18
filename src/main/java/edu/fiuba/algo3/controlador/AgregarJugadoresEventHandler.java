@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.Kahoot;
+import edu.fiuba.algo3.vista.VistaAlertaJugadoresFaltantes;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
@@ -21,7 +22,14 @@ public class AgregarJugadoresEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        kahoot.agregarJugadores(nombreJugador1.getText(), nombreJugador2.getText());
-        panel.empezarPartida();
+        String primerJugador=nombreJugador1.getText();
+        String segundoJugador= nombreJugador2.getText();
+        if(primerJugador.isEmpty()||segundoJugador.isEmpty()){
+            VistaAlertaJugadoresFaltantes alerta = new VistaAlertaJugadoresFaltantes();
+            alerta.showAndWait();
+        }else{
+            kahoot.agregarJugadores(primerJugador,segundoJugador );
+            panel.empezarPartida();
+        }
     }
 }
