@@ -33,7 +33,8 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
         textoNombreJugador.setStyle("-fx-font-size: 25px");
 
         Label textoPregunta = new Label(this.pregunta.texto());
-        textoPregunta.setStyle("-fx-font-size: 25px");
+        textoPregunta.getStyleClass().add("texto-pregunta");
+
         ArrayList<OpcionConGrupo> opciones = this.pregunta.opciones();
         ArrayList<ChoiceBox> choiceBoxes = new ArrayList<ChoiceBox>();
         GridPane contenedorOpciones = new GridPane();

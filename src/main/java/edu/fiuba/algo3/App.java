@@ -21,6 +21,7 @@ public class App extends Application{
         stage.setTitle("TP2-Kahoot");
         BorderPane layout = new BorderPane();
         layout.setCenter(new VistaCreacionJugadores(kahoot, panel));
+
         Scene scene = new Scene(layout,800,600);
         stage.setScene(scene);
         stage.show();

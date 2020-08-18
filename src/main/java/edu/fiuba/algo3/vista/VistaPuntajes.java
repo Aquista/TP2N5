@@ -15,6 +15,7 @@ public class VistaPuntajes extends HBox {
     public VistaPuntajes(Jugador jugador1, Jugador jugador2) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
+        this.getStyleClass().add("contenedor-puntajes");
 
         agregarInfo();
     }
@@ -22,14 +23,13 @@ public class VistaPuntajes extends HBox {
         Label nombreJugador1 = new Label(this.jugador1.nombre() + ": ");
         puntajeJugador1 = new Label(String.valueOf(this.jugador1.getPuntaje()));
 
-
         Label nombreJugador2 = new Label(this.jugador2.nombre() + ": ");
         puntajeJugador2 = new Label(String.valueOf(this.jugador2.getPuntaje()));
 
-        nombreJugador1.setStyle("-fx-font-size: 25px");
-        nombreJugador2.setStyle("-fx-font-size: 25px");
-        puntajeJugador1.setStyle("-fx-font-size: 25px");
-        puntajeJugador2.setStyle("-fx-font-size: 25px");
+        nombreJugador1.getStyleClass().add("texto-nombre-jugador");
+        puntajeJugador1.getStyleClass().add("texto-puntaje");
+        nombreJugador2.getStyleClass().add("texto-nombre-jugador");
+        puntajeJugador2.getStyleClass().add("texto-puntaje");
 
         final Pane espacio = new Pane();
         HBox.setHgrow(espacio, Priority.ALWAYS);

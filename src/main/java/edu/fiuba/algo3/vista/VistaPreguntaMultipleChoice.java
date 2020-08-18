@@ -39,7 +39,8 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
         textoNombreJugador.setStyle("-fx-font-size: 25px");
 
         Label textoPregunta = new Label(this.pregunta.texto());
-        textoPregunta.setStyle("-fx-font-size:25px");
+        textoPregunta.getStyleClass().add("texto-pregunta");
+
         GridPane contenedorOpciones = new GridPane();
         contenedorOpciones.setAlignment(Pos.CENTER);
         contenedorOpciones.setHgap(40);

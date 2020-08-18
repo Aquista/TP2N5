@@ -38,14 +38,15 @@ public class VistaPreguntaVF extends VistaPregunta {
         textoNombreJugador.setStyle("-fx-font-size: 25px");
 
         Label textoPregunta = new Label(this.pregunta.texto());
-        textoPregunta.setStyle("-fx-font-size: 25px");
+        textoPregunta.getStyleClass().add("texto-pregunta");
+
         HBox botones = new HBox(10);
         botones.setAlignment(Pos.CENTER);
         ArrayList<Opcion> opciones = this.pregunta.opciones();
 
         for (Opcion unaOpcion : opciones){
             Button opcionActual = new Button(unaOpcion.texto());
-            opcionActual.setStyle("-fx-font-size: 18px");
+            opcionActual.getStyleClass().add("opcion-VF");
             AsignarRespuestaVFEventHandler eventoBoton = new AsignarRespuestaVFEventHandler(jugador, pregunta, unaOpcion, panel);
             opcionActual.setOnAction(eventoBoton);
             botones.getChildren().add(opcionActual);

@@ -1,0 +1,44 @@
+.modificador {
+    -fx-font-size: 12px;
+    -fx-font-family: "Press Start 2P";
+    -fx-text-fill: #FFFCF2;
+    -fx-background-color: #403D39;
+    -fx-padding: 13px 0px 13px 0px;
+    -fx-pref-width: 185px;
+    -fx-background-radius: 0
+}
+.modificador:hover {
+    -fx-background-color: #d90429;
+}
+.modificador-deshabilitado {
+    -fx-background-color: #403D39;
+}
+.modificador-seleccionado {
+    -fx-background-color: #d90429;
+}
+.texto-pregunta {
+    -fx-font-size: 30px;
+    -fx-font-family: "Bangers";
+    -fx-text-fill: #FFFCF2;
+}
+.texto-nombre-jugador {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 25px;
+    -fx-padding: 8px 0px 8px 8px;
+}
+.texto-puntaje {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 25px;
+    -fx-padding: 8px 8px 8px 0px;
+}
+.contenedor-puntajes {
+    -fx-background-color: #FFFCF2;
+}
+.contenedor-modificadores {
+    -fx-background-color: #FFFCF2;
+}
+.opcion-VF {
+    -fx-font-size: 18px;
+    -fx-background-color: #403D39;
+    -fx-text-fill: #FFFCF2;
+}

@@ -21,7 +21,8 @@ public class VistaModificadores extends VBox {
 
     public VistaModificadores(Ronda ronda) {
         this.ronda = ronda;
-
+        this.getStyleClass().add("contenedor-modificadores");
+        this.setSpacing(10);
         agregarInfo();
     }
 
@@ -39,7 +40,7 @@ public class VistaModificadores extends VBox {
 
         for(Multiplicador multiplicador : multiplicadores) {
             Button boton = new Button(multiplicador.texto());
-            boton.setStyle("-fx-font-size: 18px");
+            boton.getStyleClass().add("modificador");
             ElegirMultiplicadorEventHandler eventoBoton = new ElegirMultiplicadorEventHandler(jugador, multiplicador, this, boton);
             boton.setOnAction(eventoBoton);
             this.getChildren().add(boton);
@@ -52,7 +53,7 @@ public class VistaModificadores extends VBox {
 
         for(Exclusividad exclusividad : exclusividades) {
             Button boton = new Button(exclusividad.texto());
-            boton.setStyle("-fx-font-size: 18px");
+            boton.getStyleClass().add("modificador");
             ElegirExclusividadEventHandler eventoBoton = new ElegirExclusividadEventHandler(jugador, exclusividad, this, boton);
             boton.setOnAction(eventoBoton);
             this.getChildren().add(boton);
@@ -61,7 +62,8 @@ public class VistaModificadores extends VBox {
     public void deshabilitarBotones(Button bottonSeleccionado) {
         for(Node boton : this.getChildren()) {
             boton.setDisable(true);
+            boton.getStyleClass().add("modificador-deshabilitado");
         }
-        bottonSeleccionado.setStyle("-fx-background-color: #50aa50");
+        bottonSeleccionado.getStyleClass().add("modificador-seleccionado");
     }
 }

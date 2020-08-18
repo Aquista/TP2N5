@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Panel extends BorderPane {
+    private Scene scene;
     private Stage stage;
     private VistaModificadores vistaModificadores;
     private VistaPregunta vistaPregunta;
@@ -28,11 +29,20 @@ public class Panel extends BorderPane {
     public Panel(Kahoot kahoot, Stage stage) {
         this.kahoot = kahoot;
         this.stage = stage;
+
+        scene = new Scene(this,800,600);
+        String pathCSS = this.getClass().getResource("/style.css").toExternalForm();
+        scene.getStylesheets().add(pathCSS);
+        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
     }
     public void empezarPartida() {
         kahoot.empezarPartida();
-        Scene scene = new Scene(this,800,600);
+
+
         stage.setScene(scene);
+
         ArrayList<Jugador> jugadores = kahoot.getJugadores();
         vistaPuntajes = new VistaPuntajes(jugadores.get(0), jugadores.get(1));
 

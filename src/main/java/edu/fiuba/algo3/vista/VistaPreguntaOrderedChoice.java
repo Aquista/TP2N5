@@ -32,7 +32,7 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
         textoNombreJugador.setStyle("-fx-font-size: 25px");
 
         Label textoPregunta = new Label(this.pregunta.texto());
-        textoPregunta.setStyle("-fx-font-size: 30px");
+        textoPregunta.getStyleClass().add("texto-pregunta");
 
         GridPane contenedorOpciones = new GridPane();
         contenedorOpciones.setAlignment(Pos.CENTER);
