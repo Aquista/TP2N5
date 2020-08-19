@@ -17,13 +17,14 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
     private PreguntaOrderedChoice pregunta;
     private Jugador jugador;
     private Panel panel;
-    private int tiempo = 10;
+    private int tiempo;
 
     public VistaPreguntaOrderedChoice(Jugador jugador, PreguntaOrderedChoice unaPregunta, Panel panel){
         this.setAlignment(Pos.CENTER);
         this.setStyle("-fx-background-color: #FFA630");
         this.setSpacing(20);
         this.pregunta = unaPregunta;
+        this.tiempo = unaPregunta.getTiempo();
         this.jugador = jugador;
         this.panel = panel;
         this.agregarInfo();

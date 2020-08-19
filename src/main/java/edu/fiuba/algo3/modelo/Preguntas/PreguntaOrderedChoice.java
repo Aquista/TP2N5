@@ -16,6 +16,10 @@ public class PreguntaOrderedChoice extends Pregunta {
         super(texto, new PuntajeClasico());
     }
 
+    public PreguntaOrderedChoice(String texto, int tiempo) {
+        super(texto, new PuntajeClasico(), tiempo);
+    }
+
     @Override
     public void evaluarJugadores(Jugador jugador1, Jugador jugador2) {
         PuntajeClasico puntaje1 = new PuntajeClasico();

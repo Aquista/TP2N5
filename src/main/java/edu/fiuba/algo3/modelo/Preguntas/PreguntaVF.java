@@ -8,8 +8,13 @@ import edu.fiuba.algo3.modelo.Respuestas.Respuesta;
 import edu.fiuba.algo3.modelo.Respuestas.RespuestaVF;
 
 public class PreguntaVF extends PreguntaClasica {
+
     public PreguntaVF(String texto, Puntaje puntaje){
         super(texto, puntaje);
+    }
+
+    public PreguntaVF(String texto, Puntaje puntaje, int tiempo){
+        super(texto, puntaje, tiempo);
     }
 
     public OpcionCorrecta agregarOpcionCorrecta(String texto) {

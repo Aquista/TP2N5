@@ -8,10 +8,17 @@ public abstract class Pregunta {
 
     protected String texto;
     protected Puntaje puntaje;
+    protected int tiempo = 0;
 
     public Pregunta(String texto, Puntaje puntaje){
         this.texto = texto;
         this.puntaje = puntaje;
+    }
+
+    public Pregunta(String texto, Puntaje puntaje, int tiempo){
+        this.texto = texto;
+        this.puntaje = puntaje;
+        this.tiempo = tiempo;
     }
     public String texto(){
         return this.texto;
@@ -23,6 +30,10 @@ public abstract class Pregunta {
 
     public Puntaje getPuntaje() {
         return puntaje;
+    }
+
+    public int getTiempo() {
+        return tiempo;
     }
 
 }
