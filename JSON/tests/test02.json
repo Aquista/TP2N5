@@ -1,0 +1,46 @@
+[
+	{
+		"tipoPuntaje": "Clasico",
+		"tipoPregunta": "VF",
+		"pregunta": "Diego Sanchez es profesor de la materia Algoritmos 3?",
+		"opcionCorrecta": true,
+		"tiempo": 30
+	},
+	{
+		"tipoPuntaje": "ConPenalidad",
+		"tipoPregunta": "MultipleChoice",
+		"pregunta": "Que lenguajes de programación vimos en Algoritmos 3?",
+		"opcionesCorrectas": [
+			"Smalltalk",
+			"Java"
+		],
+		"opcionesIncorrectas": [
+			"Python",
+			"C"
+		],
+		"tiempo": 50
+	},
+	{
+		"tipoPregunta": "OrderedChoice",
+		"pregunta": "Ordenar ascendentemente por año de lanzamiento",
+		"opciones": [
+			"C",
+			"Smalltalk",
+			"Java"
+		],
+		"tiempo": 20
+	},
+	{
+		"tipoPregunta": "GroupChoice",
+		"pregunta": "Grupo 1: Lenguajes estructurados. Grupo 2: Lenguajes de POO.",
+		"grupo1": [
+			"C",
+			"Assembler"
+		],
+		"grupo2": [
+			"Smalltalk",
+			"Java"
+		],
+		"tiempo": 20
+	}
+]
