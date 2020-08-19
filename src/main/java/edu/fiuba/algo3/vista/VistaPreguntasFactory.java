@@ -3,6 +3,10 @@ package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.controlador.Panel;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Preguntas.*;
+import edu.fiuba.algo3.vista.vistasPreguntas.VistaPreguntaGroupChoice;
+import edu.fiuba.algo3.vista.vistasPreguntas.VistaPreguntaMultipleChoice;
+import edu.fiuba.algo3.vista.vistasPreguntas.VistaPreguntaOrderedChoice;
+import edu.fiuba.algo3.vista.vistasPreguntas.VistaPreguntaVF;
 import javafx.scene.layout.VBox;
 
 public class VistaPreguntasFactory {

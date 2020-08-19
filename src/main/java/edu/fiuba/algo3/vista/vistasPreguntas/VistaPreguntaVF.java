@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista;
+package edu.fiuba.algo3.vista.vistasPreguntas;
 
 import edu.fiuba.algo3.controlador.AsignarRespuestaMultipleChoiceEventHandler;
 import edu.fiuba.algo3.controlador.AsignarRespuestaVFEventHandler;
