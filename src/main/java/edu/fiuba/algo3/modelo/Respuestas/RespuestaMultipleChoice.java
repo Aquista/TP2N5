@@ -10,9 +10,6 @@ public class RespuestaMultipleChoice implements Respuesta {
     private ArrayList<Opcion> opciones = new ArrayList<Opcion>();
 
 
-    public RespuestaMultipleChoice(){
-
-    }
     public void agregarOpciones(Opcion ... opciones){
         if(opciones == null || Arrays.asList(opciones).contains(null))
             return;

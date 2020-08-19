@@ -6,9 +6,7 @@ import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 
 public class RespuestaVF implements Respuesta {
     private Opcion seleccionada = new OpcionNula();
-
-    public RespuestaVF(){}
-
+    
     public void evaluar(Puntaje unPuntaje){
         this.seleccionada.evaluar(unPuntaje);
     }

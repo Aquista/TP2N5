@@ -11,9 +11,6 @@ import java.util.Collections;
 public class RespuestaOrderChoice implements Respuesta {
     private ArrayList<Opcion> opciones = new ArrayList<>();
 
-    public RespuestaOrderChoice(){
-
-    }
     public void agregarOpciones(Opcion ... opciones){
 
         if(opciones == null || Arrays.asList(opciones).contains(null))
