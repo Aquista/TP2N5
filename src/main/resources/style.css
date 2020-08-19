@@ -1,11 +1,11 @@
 .modificador {
-    -fx-font-size: 11px;
-    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 25px;
+    -fx-font-family: "Viga";
     -fx-text-fill: #FFFCF2;
-    -fx-background-color: #403D39;
+    -fx-background-color: #302e2b;
+    -fx-background-radius: 5px;
     -fx-padding: 13px 0px 13px 0px;
     -fx-pref-width: 190px;
-    -fx-background-radius: 0
 }
 .modificador:hover {
     -fx-background-color: #d90429;
@@ -17,25 +17,40 @@
     -fx-background-color: #d90429;
 }
 .texto-pregunta {
+    -fx-border-color: #403D39;
+    -fx-background-color: #403D39;
+    -fx-background-radius: 5px;
+    -fx-border-width: 5px;
+    -fx-border-radius: 5px;
+    -fx-font-smoothing-type: gray;
     -fx-font-size: 30px;
-    -fx-font-family: "Bangers";
-    -fx-text-fill: #FFFCF2;
+    -fx-font-family: "Cabin";
+    -fx-text-fill:white;
 }
-.texto-jugador, .texto-nombre-jugador {
-    -fx-font-family: "Press Start 2P";
+.texto-jugador {
+    -fx-font-family: "Lalezar";
+    -fx-font-size: 35px;
+    -fx-font-smoothing-type: gray;
+    -fx-padding: 8px 0px 8px 8px;
+}
+.texto-nombre-jugador {
+    -fx-font-family: "Viga";
+    -fx-text-fill: #FFFCF2;
+    -fx-font-smoothing-type: gray;
     -fx-font-size: 25px;
     -fx-padding: 8px 0px 8px 8px;
 }
 .texto-puntaje {
-    -fx-font-family: "Press Start 2P";
+    -fx-font-family: "Viga";
+    -fx-text-fill: #FFFCF2;
     -fx-font-size: 25px;
     -fx-padding: 8px 8px 8px 0px;
 }
 .contenedor-puntajes {
-    -fx-background-color: #FFFCF2;
+    -fx-background-color: #302e2b;
 }
 .contenedor-modificadores {
-    -fx-background-color: #FFFCF2;
+    -fx-background-color: #403D39;
 }
 .opcion-VF {
     -fx-font-size: 18px;
@@ -43,8 +58,10 @@
     -fx-text-fill: #FFFCF2;
 }
 .temporizador {
-    -fx-font-size: 30px;
-    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 65px;
+    -fx-font-smoothing-type: gray;
+    -fx-font-family: "Anton";
+    -fx-padding: 0px 5x 0px 0px;
 }
 .temporizador.alerta {
     -fx-text-fill: red;

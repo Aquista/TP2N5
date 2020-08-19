@@ -33,8 +33,10 @@ public class Panel extends BorderPane {
         scene = new Scene(this,800,600);
         String pathCSS = this.getClass().getResource("/style.css").toExternalForm();
         scene.getStylesheets().add(pathCSS);
-        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
-        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap");
+        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Viga&display=swap");
+        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
 
     }
     public void empezarPartida() {

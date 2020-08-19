@@ -22,13 +22,13 @@ public class AgregarJugadoresEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        String primerJugador=nombreJugador1.getText();
-        String segundoJugador= nombreJugador2.getText();
-        if(primerJugador.isEmpty()||segundoJugador.isEmpty()){
+        String primerJugador = nombreJugador1.getText().toUpperCase();
+        String segundoJugador = nombreJugador2.getText().toUpperCase();
+        if(primerJugador.isEmpty() || segundoJugador.isEmpty()){
             VistaAlertaJugadoresFaltantes alerta = new VistaAlertaJugadoresFaltantes();
             alerta.showAndWait();
         }else{
-            kahoot.agregarJugadores(primerJugador,segundoJugador );
+            kahoot.agregarJugadores(primerJugador, segundoJugador );
             panel.empezarPartida();
         }
     }
