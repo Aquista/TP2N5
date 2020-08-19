@@ -9,8 +9,8 @@ public class ExclusividadSimple implements Exclusividad {
     @Override
     public void aplicar(Puntaje puntaje1, Puntaje puntaje2) {
         ArrayList<Puntaje> correctos = new ArrayList<Puntaje>();
-        puntaje1.esExclusivo(correctos);
-        puntaje2.esExclusivo(correctos);
+        puntaje1.aplicarExclusividad(correctos);
+        puntaje2.aplicarExclusividad(correctos);
 
         if(correctos.size() == 1)
             correctos.get(0).multiplicar(2);

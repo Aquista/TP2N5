@@ -30,7 +30,7 @@ public abstract class Puntaje {
         puntos = puntos * multiplicador;
     }
 
-    public void esExclusivo(ArrayList<Puntaje> correctos) {
+    public void aplicarExclusividad(ArrayList<Puntaje> correctos) {
         if(puntos > 0)
             correctos.add(this);
     }
