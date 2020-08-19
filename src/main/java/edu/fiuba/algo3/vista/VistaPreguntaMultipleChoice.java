@@ -13,11 +13,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class VistaPreguntaMultipleChoice extends VistaPregunta {
+public class VistaPreguntaMultipleChoice extends VBox {
     private PreguntaMultipleChoice pregunta;
     private Jugador jugador;
     private Panel panel;

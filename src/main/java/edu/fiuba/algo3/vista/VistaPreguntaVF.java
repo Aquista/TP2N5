@@ -15,12 +15,13 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class VistaPreguntaVF extends VistaPregunta {
+public class VistaPreguntaVF extends VBox {
 
     private PreguntaVF pregunta;
     private Jugador jugador;

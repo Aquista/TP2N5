@@ -9,6 +9,7 @@ import edu.fiuba.algo3.vista.finalScenes.VistaFinal;
 import edu.fiuba.algo3.vista.VistaCambioTurno;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class Panel extends BorderPane {
     private Scene scene;
     private Stage stage;
     private VistaModificadores vistaModificadores;
-    private VistaPregunta vistaPregunta;
+    private VBox vistaPregunta;
     private VistaPuntajes vistaPuntajes;
     private Kahoot kahoot;
     private Ronda ronda;
