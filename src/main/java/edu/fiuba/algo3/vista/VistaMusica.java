@@ -18,6 +18,9 @@ public class VistaMusica extends VBox {
     private String intro;
     private Media media;
     private MediaPlayer reproductor;
+    private Image logoEncendido = new Image("file:src/main/java/edu/fiuba/algo3/vista/otros/sonido.png");
+    private Image logoApagado = new Image("file:src/main/java/edu/fiuba/algo3/vista/otros/sonidoMuted.png");
+    ImageView logoView = new ImageView();
     private boolean apagado;
     public VistaMusica(){
         this.intro="src/main/java/edu/fiuba/algo3/vista/otros/musica.mp3";
@@ -26,24 +29,26 @@ public class VistaMusica extends VBox {
         this.apagado=true;
         this.setStyle("-fx-background-color:rgb(140, 199, 63)");
         this.setAlignment(Pos.TOP_LEFT);
-        Image logo = new Image("file:src/main/java/edu/fiuba/algo3/vista/otros/sonido.png");
-        ImageView logoView = new ImageView(logo);
+
+        logoView.setImage(logoEncendido);
         logoView.setFitHeight(30);
         logoView.setFitWidth(30);
-        Button sonido= new Button();
+        Button sonido = new Button();
         sonido.setGraphic(logoView);
         sonido.setBackground(Background.EMPTY);
         sonido.setOnAction(new SonidoEventHandler(this));
         this.getChildren().add(sonido);
     }
     public void encencer(){
-        this.apagado=false;
+        this.apagado = false;
         this.reproductor.play();
         this.reproductor.setCycleCount(MediaPlayer.INDEFINITE);
+        logoView.setImage(logoEncendido);
     }
     public void apagar(){
-        this.apagado=true;
+        this.apagado = true;
         this.reproductor.pause();
+        logoView.setImage(logoApagado);
     }
     public void reproducir(){
         if(this.apagado){
