@@ -19,7 +19,7 @@ public class VistaCreacionJugadores extends VBox {
         Image logo = new Image("file:src/main/java/edu/fiuba/algo3/vista/otros/logo.png");
         ImageView logoView = new ImageView(logo);
         logoView.setFitHeight(140);
-        logoView.setFitWidth(240);
+        logoView.setFitWidth(300);
 
         VBox nombreJugadores= new VBox();
         nombreJugadores.setAlignment(Pos.CENTER);
