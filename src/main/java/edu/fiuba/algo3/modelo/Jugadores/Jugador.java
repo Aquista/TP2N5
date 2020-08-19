@@ -37,9 +37,6 @@ public class Jugador implements Comparable<Jugador>{
     }
 
     public void evaluarRespuestas(Puntaje unPuntaje) {
-        /*if (tipoDeJugador != null){
-            this.tipoDeJugador.evaluar(unPuntaje);
-        }*/
         if(respuestaActual != null){
             this.respuestaActual.evaluar(unPuntaje);
         }
