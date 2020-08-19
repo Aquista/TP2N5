@@ -29,7 +29,7 @@ public class App extends Application{
         VistaMusica musica= new VistaMusica();
         layout.setRight(musica);
         layout.setCenter(new VistaCreacionJugadores(kahoot, panel));
-        Scene scene = new Scene(layout,800,600);
+        Scene scene = new Scene(layout,1000,600);
         stage.setScene(scene);
         musica.encencer();
         stage.show();

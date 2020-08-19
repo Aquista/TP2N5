@@ -29,7 +29,7 @@ public class Panel extends BorderPane {
     public Panel(Kahoot kahoot, Stage stage) {
         this.kahoot = kahoot;
         this.stage = stage;
-        scene = new Scene(this,800,600);
+        scene = new Scene(this,1000,600);
         String pathCSS = this.getClass().getResource("/style.css").toExternalForm();
         scene.getStylesheets().add(pathCSS);
         scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap");
