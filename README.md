@@ -61,12 +61,6 @@ javafx 11
     mvn test
 ```
 
-Este comando crea el reporte de cobertura para CI y el reporte HTML que pueden abrir de la siguiente manera:
-
-```bash
-    <browser> ./target/site/jacoco/index.html
-```
-
 ## Ejecutando la aplicación
 
 ```bash
