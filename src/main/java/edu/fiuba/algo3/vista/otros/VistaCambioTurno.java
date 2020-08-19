@@ -20,6 +20,7 @@ public class VistaCambioTurno extends VBox {
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.setPrefWidth(200);
+        this.textoTiempo.getStyleClass().add("temporizador");
 
         Label nombreJugador1 = new Label("TURNO DE: " + jugador1.nombre());
         nombreJugador1.setStyle("-fx-font-size: 40px; -fx-text-fill: #ff8080; -fx-margin-bottom: 0px");
@@ -41,6 +42,6 @@ public class VistaCambioTurno extends VBox {
         timer.setCycleCount(tiempo);
         timer.play();
 
-        this.getChildren().addAll(nombreJugador1, textoTiempo);
+        this.getChildren().addAll(textoTiempo,nombreJugador1);
     }
 }

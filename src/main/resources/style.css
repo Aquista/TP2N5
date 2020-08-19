@@ -32,6 +32,7 @@
     -fx-font-size: 35px;
     -fx-font-smoothing-type: gray;
     -fx-padding: 8px 0px 8px 8px;
+    -fx-text-fill:white;
 }
 .texto-nombre-jugador {
     -fx-font-family: "Viga";
