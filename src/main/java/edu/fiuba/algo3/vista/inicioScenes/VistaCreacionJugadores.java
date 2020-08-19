@@ -15,7 +15,7 @@ public class VistaCreacionJugadores extends VBox {
     public VistaCreacionJugadores(Kahoot kahoot, Panel panel){
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
-        this.setStyle("-fx-background-color:rgb(140, 199, 63)");
+        this.setStyle("-fx-background-color: #8CC73F");
         Image logo = new Image("file:src/main/java/edu/fiuba/algo3/vista/otros/logo.png");
         ImageView logoView = new ImageView(logo);
         logoView.setFitHeight(140);

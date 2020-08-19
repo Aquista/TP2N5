@@ -106,9 +106,9 @@ public class Panel extends BorderPane {
         ArrayList<Jugador> jugadores = kahoot.getJugadores();
         Collections.sort(jugadores);
         VistaFinal vistaFinal = new VistaFinal(jugadores.get(0), jugadores.get(1));
-        Scene escenaFinal = new Scene(vistaFinal,800,600);
-        stage.setScene(escenaFinal);
-        actualizar();
+        setCenter(vistaFinal);
+        setBottom(null);
+        setLeft(null);
     }
 
     public Ronda getRonda() {
