@@ -10,8 +10,11 @@ import edu.fiuba.algo3.vista.VistaCambioTurno;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -37,11 +40,33 @@ public class Panel extends BorderPane {
 
     }
     public void empezarPartida() {
-        kahoot.empezarPartida();
-        stage.setScene(scene);
-        ArrayList<Jugador> jugadores = kahoot.getJugadores();
-        vistaPuntajes = new VistaPuntajes(jugadores.get(0), jugadores.get(1));
-        avanzarRonda();
+        String nombreArchivo = elegirArchivo();
+
+        if(nombreArchivo != null) {
+            kahoot.empezarPartida(nombreArchivo);
+            stage.setScene(scene);
+            ArrayList<Jugador> jugadores = kahoot.getJugadores();
+            vistaPuntajes = new VistaPuntajes(jugadores.get(0), jugadores.get(1));
+            avanzarRonda();
+        }
+    }
+
+    private String elegirArchivo(){
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Abrir archivo de respuestas");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Archivos JSON", "*.json"));
+
+        String currentPath = Paths.get(".").toAbsolutePath().normalize().toString();
+        fileChooser.setInitialDirectory(new File(currentPath + "/JSON"));
+        File file = fileChooser.showOpenDialog(stage);
+
+        if(file == null){
+            VistaAlertaArchivoNoSeleccionado alerta = new VistaAlertaArchivoNoSeleccionado();
+            alerta.showAndWait();
+            return null;
+        }
+        return file.toString();
     }
 
     public void avanzarRonda() {

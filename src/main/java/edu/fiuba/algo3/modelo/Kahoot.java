@@ -12,8 +12,8 @@ public class Kahoot {
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
     private Queue<Ronda> rondas = new LinkedList<Ronda>();
 
-    public void empezarPartida(){
-        preguntas.addAll(CreadorDePreguntas.generarPreguntas("Kahoot.json"));
+    public void empezarPartida(String nombreArchivo){
+        preguntas.addAll(CreadorDePreguntas.generarPreguntas(nombreArchivo));
         generarRondas();
     }
 
