@@ -51,7 +51,7 @@ public class PreguntaGroupChoice extends Pregunta{
     }
 
     public OpcionConGrupo agregarOpcion(String unTexto, int grupoCorrecto) throws CantidadInvalidaDeOpcionesException{
-        if(opciones.size() >= 5)
+        if(opciones.size() >= 6)
             throw new CantidadInvalidaDeOpcionesException();
         OpcionConGrupo unaOpcion = new OpcionConGrupo(unTexto, grupoCorrecto);
         opciones.add(unaOpcion);
