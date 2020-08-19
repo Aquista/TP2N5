@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.Puntajes;
 
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 
 public class PuntajeParcial extends Puntaje{
 

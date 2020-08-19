@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.Panel;
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Preguntas.*;
 import edu.fiuba.algo3.vista.vistasPreguntas.VistaPreguntaGroupChoice;
 import edu.fiuba.algo3.vista.vistasPreguntas.VistaPreguntaMultipleChoice;

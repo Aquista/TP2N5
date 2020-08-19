@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Modificadores.ExclusividadSimple;
 import edu.fiuba.algo3.modelo.Modificadores.MultiplicadorX2;
 import edu.fiuba.algo3.modelo.Modificadores.MultiplicadorX3;

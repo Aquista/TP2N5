@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.Jugadores;
+package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.Modificadores.*;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
@@ -6,7 +6,6 @@ import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Respuestas.*;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 public class Jugador implements Comparable<Jugador>{
     private String nombre;

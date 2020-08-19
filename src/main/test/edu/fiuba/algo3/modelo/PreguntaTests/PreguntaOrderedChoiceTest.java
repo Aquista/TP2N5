@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaOrderedChoice;
 import org.junit.jupiter.api.Test;
