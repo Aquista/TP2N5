@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista.otros;
+package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.AvanzarTurnoController;
 import edu.fiuba.algo3.controlador.Panel;
@@ -16,14 +16,17 @@ public class VistaCambioTurno extends VBox {
     private int tiempo = 3;
     private Label textoTiempo = new Label(String.valueOf(tiempo));
 
-    public VistaCambioTurno(Jugador jugador1, Panel panel){
+    public VistaCambioTurno(Jugador jugador, Panel panel){
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.setPrefWidth(200);
         this.textoTiempo.getStyleClass().add("temporizador");
+        this.setStyle("-fx-background-color: #26cec5");
 
-        Label nombreJugador1 = new Label("TURNO DE: " + jugador1.nombre());
-        nombreJugador1.setStyle("-fx-font-size: 40px; -fx-text-fill: #ff8080; -fx-margin-bottom: 0px");
+        Label textoTurno = new Label("TURNO DE:");
+        textoTurno.getStyleClass().add("texto-turno");
+        Label nombreJugador = new Label(jugador.nombre());
+        nombreJugador.getStyleClass().add("texto-jugador");
 
         Timeline timer = new Timeline(
                 new KeyFrame(Duration.seconds(1),
@@ -42,6 +45,6 @@ public class VistaCambioTurno extends VBox {
         timer.setCycleCount(tiempo);
         timer.play();
 
-        this.getChildren().addAll(textoTiempo,nombreJugador1);
+        this.getChildren().addAll(textoTiempo, textoTurno, nombreJugador);
     }
 }

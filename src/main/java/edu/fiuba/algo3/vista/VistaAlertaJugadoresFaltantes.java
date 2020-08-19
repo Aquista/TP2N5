@@ -7,6 +7,6 @@ public class VistaAlertaJugadoresFaltantes extends Alert {
     public VistaAlertaJugadoresFaltantes() {
         super(AlertType.WARNING);
         this.setTitle("Faltan Jugadores");
-        this.setHeaderText("Agregue a los jugadores que faltan");
+        this.setHeaderText("Agregue a los jugadores que faltan.");
     }
 }

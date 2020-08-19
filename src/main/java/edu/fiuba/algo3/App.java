@@ -26,12 +26,12 @@ public class App extends Application{
         Panel panel = new Panel(kahoot, stage);
         stage.setTitle("TP2-Kahoot");
         BorderPane layout = new BorderPane();
-        VistaMusica musica= new VistaMusica();
+        VistaMusica musica = new VistaMusica();
         layout.setRight(musica);
         layout.setCenter(new VistaCreacionJugadores(kahoot, panel));
         Scene scene = new Scene(layout,1000,600);
         stage.setScene(scene);
-        musica.encencer();
+        musica.encender();
         stage.show();
 
     }

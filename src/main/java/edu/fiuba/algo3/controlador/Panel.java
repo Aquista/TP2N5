@@ -4,12 +4,9 @@ package edu.fiuba.algo3.controlador;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
 import edu.fiuba.algo3.modelo.Kahoot;
 import edu.fiuba.algo3.modelo.Ronda;
-import edu.fiuba.algo3.vista.VistaModificadores;
-import edu.fiuba.algo3.vista.VistaPregunta;
-import edu.fiuba.algo3.vista.VistaPreguntasFactory;
-import edu.fiuba.algo3.vista.VistaPuntajes;
+import edu.fiuba.algo3.vista.*;
 import edu.fiuba.algo3.vista.finalScenes.VistaFinal;
-import edu.fiuba.algo3.vista.otros.VistaCambioTurno;
+import edu.fiuba.algo3.vista.VistaCambioTurno;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -51,7 +48,7 @@ public class Panel extends BorderPane {
         if(ronda == null)
             mostrarResultadosFinales();
         else
-            AvanzarTurnoController.avanzarTurno(this);
+            mostrarCambioRonda();
     }
 
     public void actualizar() {
@@ -67,6 +64,14 @@ public class Panel extends BorderPane {
     public void mostrarCambioTurno() {
         VistaCambioTurno vistaCambioTurno = new VistaCambioTurno(ronda.getJugador(),this);
         setCenter(vistaCambioTurno);
+        setBottom(null);
+        setLeft(null);
+    }
+
+    public void mostrarCambioRonda() {
+        ArrayList<Jugador> jugadores = kahoot.getJugadores();
+        VistaCambioRonda vistaCambioRonda = new VistaCambioRonda(jugadores.get(0), jugadores.get(1), this);
+        setCenter(vistaCambioRonda);
         setBottom(null);
         setLeft(null);
     }

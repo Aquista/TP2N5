@@ -9,8 +9,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
-import javafx.util.Duration;
 
 import java.nio.file.Paths;
 
@@ -39,7 +37,7 @@ public class VistaMusica extends VBox {
         sonido.setOnAction(new SonidoEventHandler(this));
         this.getChildren().add(sonido);
     }
-    public void encencer(){
+    public void encender(){
         this.apagado = false;
         this.reproductor.play();
         this.reproductor.setCycleCount(MediaPlayer.INDEFINITE);
@@ -52,7 +50,7 @@ public class VistaMusica extends VBox {
     }
     public void reproducir(){
         if(this.apagado){
-            this.encencer();
+            this.encender();
         }else{
             this.apagar();
         }

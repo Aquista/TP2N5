@@ -67,3 +67,10 @@
 .temporizador.alerta {
     -fx-text-fill: red;
 }
+.texto-turno {
+    -fx-text-fill: #FFFCF2;
+    -fx-font-family: "Cabin";
+    -fx-font-smoothing-type: gray;
+    -fx-font-size: 60px;
+    -fx-animated: true;
+}
