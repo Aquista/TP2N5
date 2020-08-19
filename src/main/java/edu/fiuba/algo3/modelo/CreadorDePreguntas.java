@@ -85,8 +85,14 @@ public class CreadorDePreguntas {
 
     private static void generarOpcionesVF(PreguntaVF pregunta, JSONObject preguntaJSON) {
         try {
-            pregunta.agregarOpcionCorrecta((String)preguntaJSON.get("opcionCorrecta"));
-            pregunta.agregarOpcionIncorrecta((String)preguntaJSON.get("opcionIncorrecta"));
+            String opcionTexto = preguntaJSON.get("opcionCorrecta").toString();
+            if(opcionTexto != "true" && opcionTexto != "false")
+                return;
+
+            boolean opcionCorrecta = (boolean)preguntaJSON.get("opcionCorrecta");
+            pregunta.agregarOpcionCorrecta(String.valueOf(opcionCorrecta));
+            pregunta.agregarOpcionIncorrecta(String.valueOf(!opcionCorrecta));
+
         } catch (JSONException e) {}
     }
 

@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.*;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaOrderedChoice;
 import javafx.geometry.Pos;
@@ -10,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class VistaPreguntaOrderedChoice extends VistaPregunta {
     private PreguntaOrderedChoice pregunta;
@@ -41,7 +43,8 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
         int columna = 0;
         int fila = 0;
 
-        ArrayList<OpcionConOrden> opcionesPregunta = this.pregunta.opciones();
+        ArrayList<OpcionConOrden> opciones = new ArrayList<OpcionConOrden>(this.pregunta.opciones());
+        Collections.shuffle(opciones);
         ArrayList<OpcionConOrden> opcionesSeleccionadas = new ArrayList<OpcionConOrden>();
 
         Label textoTiempo = new Label(String.valueOf(tiempo));
@@ -52,7 +55,7 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
 
         textoTiempo.getStyleClass().add("temporizador");
 
-        for (OpcionConOrden unaOpcion : opcionesPregunta){
+        for (OpcionConOrden unaOpcion : opciones){
             Button opcionActual = new Button(unaOpcion.texto());
             opcionActual.setStyle("-fx-font-size: 18px");
             SeleccionarOpcionConOrdenEventHandler eventoBoton = new SeleccionarOpcionConOrdenEventHandler(opcionesSeleccionadas, opcionActual, unaOpcion);

@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.*;
 import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaGroupChoice;
 import javafx.collections.FXCollections;
@@ -11,6 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class VistaPreguntaGroupChoice extends VistaPregunta{
     private PreguntaGroupChoice pregunta;
@@ -35,7 +37,9 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
         Label textoPregunta = new Label(this.pregunta.texto());
         textoPregunta.getStyleClass().add("texto-pregunta");
 
-        ArrayList<OpcionConGrupo> opciones = this.pregunta.opciones();
+        ArrayList<OpcionConGrupo> opciones = new ArrayList<OpcionConGrupo>(this.pregunta.opciones());
+        Collections.shuffle(opciones);
+
         ArrayList<ChoiceBox> choiceBoxes = new ArrayList<ChoiceBox>();
         GridPane contenedorOpciones = new GridPane();
         contenedorOpciones.setAlignment(Pos.CENTER);

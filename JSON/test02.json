@@ -3,8 +3,7 @@
 		"tipoPuntaje": "Clasico",
 		"tipoPregunta": "VF",
 		"pregunta": "Diego Sanchez es profesor de la materia Algoritmos 3?",
-		"opcionCorrecta": "true",
-		"opcionIncorrecta": "false",
+		"opcionCorrecta": true,
 		"tiempo": 30
 	},
 	{

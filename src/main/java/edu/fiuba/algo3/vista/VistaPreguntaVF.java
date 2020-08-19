@@ -18,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class VistaPreguntaVF extends VistaPregunta {
 
@@ -45,7 +46,9 @@ public class VistaPreguntaVF extends VistaPregunta {
 
         HBox botones = new HBox(10);
         botones.setAlignment(Pos.CENTER);
-        ArrayList<Opcion> opciones = this.pregunta.opciones();
+
+        ArrayList<Opcion> opciones = new ArrayList<Opcion>(this.pregunta.opciones());
+        Collections.shuffle(opciones);
 
         Label textoTiempo = new Label(String.valueOf(tiempo));
         Temporizador temporizador = new Temporizador(textoTiempo, tiempo);

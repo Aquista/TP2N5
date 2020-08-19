@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class VistaPreguntaMultipleChoice extends VistaPregunta {
     private PreguntaMultipleChoice pregunta;
@@ -47,7 +48,9 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
         contenedorOpciones.setVgap(20);
         int columna = 0;
         int fila = 0;
-        ArrayList<Opcion> opciones = this.pregunta.opciones();
+
+        ArrayList<Opcion> opciones = new ArrayList<Opcion>(this.pregunta.opciones());
+        Collections.shuffle(opciones);
         ArrayList<CheckBox> checkBoxes = new ArrayList<CheckBox>();
 
         Label textoTiempo = new Label(String.valueOf(tiempo));
