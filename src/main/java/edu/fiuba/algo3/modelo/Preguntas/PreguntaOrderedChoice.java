@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
+import edu.fiuba.algo3.modelo.Excepciones.CantidadInvalidaDeOpcionesException;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
@@ -40,14 +41,21 @@ public class PreguntaOrderedChoice extends Pregunta {
         return new RespuestaOrderChoice();
     }
 
+    @Override
+    public int getCantidadOpciones() {
+        return opciones.size();
+    }
+
     public ArrayList<OpcionConOrden> opciones(){
         return opciones;
     }
 
-    public OpcionConOrden agregarOpcion(String unTexto, int orden) {
+    public OpcionConOrden agregarOpcion(String unTexto, int orden) throws CantidadInvalidaDeOpcionesException {
+        if(opciones.size() >= 5)
+            throw new CantidadInvalidaDeOpcionesException();
+
         OpcionConOrden opcion = new OpcionConOrden(unTexto, orden);
         opciones.add(opcion);
         return opcion;
     }
-
 }

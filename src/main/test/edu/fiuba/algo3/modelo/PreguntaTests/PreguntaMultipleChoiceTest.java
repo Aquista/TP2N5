@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
+import edu.fiuba.algo3.modelo.Excepciones.CantidadInvalidaDeOpcionesException;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Modificadores.ExclusividadSimple;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
@@ -22,11 +23,14 @@ public class PreguntaMultipleChoiceTest {
         Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
-        OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
 
-        jugador.responder(pregunta.tipo(), op1);
+            jugador.responder(pregunta.tipo(), op1);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -42,12 +46,15 @@ public class PreguntaMultipleChoiceTest {
         Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
-        OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
-        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
 
-        jugador.responder(pregunta.tipo(), op1, op2, op3);
+            jugador.responder(pregunta.tipo(), op1, op2, op3);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -63,12 +70,15 @@ public class PreguntaMultipleChoiceTest {
         jugador.actualizarPuntaje(puntajeEsperado);
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
-        OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
-        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
 
-        jugador.responder(pregunta.tipo(), op4);
+            jugador.responder(pregunta.tipo(), op4);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -85,13 +95,17 @@ public class PreguntaMultipleChoiceTest {
         segundoJugador.actualizarPuntaje(puntajeEsperado);
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
-        OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
-        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
 
-        primerJugador.responder(pregunta.tipo(), op1, op2, op3);
-        segundoJugador.responder(pregunta.tipo(), op4);
+            primerJugador.responder(pregunta.tipo(), op1, op2, op3);
+            segundoJugador.responder(pregunta.tipo(), op4);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
+
 
         pregunta.evaluarJugadores(primerJugador, segundoJugador);
 
@@ -107,11 +121,16 @@ public class PreguntaMultipleChoiceTest {
         Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeConPenalidad());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
-        OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
 
-        jugador.responder(pregunta.tipo(), op1, op2, op3);
+            jugador.responder(pregunta.tipo(), op1, op2, op3);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
+
+
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -127,11 +146,16 @@ public class PreguntaMultipleChoiceTest {
         jugador.actualizarPuntaje(5);
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeConPenalidad());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
-        OpcionIncorrecta op2 = pregunta.agregarOpcionIncorrecta("texto opcion 2");
-        OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionIncorrecta op2 = pregunta.agregarOpcionIncorrecta("opcion 2");
+            OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
 
-        jugador.responder(pregunta.tipo(), op2, op3);
+            jugador.responder(pregunta.tipo(), op2, op3);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
+
+
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -146,13 +170,16 @@ public class PreguntaMultipleChoiceTest {
         Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeParcial());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
-        OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("texto opcion 3");
-        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
-        OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
+            OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
-        jugador.responder(pregunta.tipo(), op2, op3);
+            jugador.responder(pregunta.tipo(), op2, op3);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -167,13 +194,16 @@ public class PreguntaMultipleChoiceTest {
         Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeParcial());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
-        OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("texto opcion 3");
-        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
-        OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
+            OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
-        jugador.responder(pregunta.tipo(), op2, op3, op4);
+            jugador.responder(pregunta.tipo(), op2, op3, op4);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -188,15 +218,18 @@ public class PreguntaMultipleChoiceTest {
         Jugador jugador2 = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeParcial());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
-        OpcionCorrecta op2 =  pregunta.agregarOpcionCorrecta("texto opcion 2");
-        OpcionCorrecta op3 =  pregunta.agregarOpcionCorrecta("texto opcion 3");
-        OpcionIncorrecta op4 =  pregunta.agregarOpcionIncorrecta("texto opcion 4");
-        OpcionIncorrecta op5 =  pregunta.agregarOpcionIncorrecta("texto opcion 5");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
+            OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
-        jugador1.responder(pregunta.tipo(), op2, op3);
-        jugador1.seleccionarExclusividad(new ExclusividadSimple());
-        jugador2.responder(pregunta.tipo(), op4);
+            jugador1.responder(pregunta.tipo(), op2, op3);
+            jugador1.seleccionarExclusividad(new ExclusividadSimple());
+            jugador2.responder(pregunta.tipo(), op4);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -210,16 +243,19 @@ public class PreguntaMultipleChoiceTest {
         Jugador jugador2 = new Jugador("ASOIDF");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeParcial());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
-        OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("texto opcion 3");
-        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
-        OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("texto opcion 4");
+            OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("texto opcion 5");
 
-        jugador1.responder(pregunta.tipo(), op2, op3);
-        jugador1.seleccionarExclusividad(new ExclusividadSimple());
-        jugador2.responder(pregunta.tipo(), op4);
-        jugador2.seleccionarExclusividad(new ExclusividadSimple());
+            jugador1.responder(pregunta.tipo(), op2, op3);
+            jugador1.seleccionarExclusividad(new ExclusividadSimple());
+            jugador2.responder(pregunta.tipo(), op4);
+            jugador2.seleccionarExclusividad(new ExclusividadSimple());
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -233,13 +269,16 @@ public class PreguntaMultipleChoiceTest {
         Jugador jugador2 = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
-        OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
 
-        jugador1.responder(pregunta.tipo(), op1, op2);
-        jugador1.seleccionarExclusividad(new ExclusividadSimple());
-        jugador2.responder(pregunta.tipo(), op1, op2);
+            jugador1.responder(pregunta.tipo(), op1, op2);
+            jugador1.seleccionarExclusividad(new ExclusividadSimple());
+            jugador2.responder(pregunta.tipo(), op1, op2);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -257,14 +296,17 @@ public class PreguntaMultipleChoiceTest {
         Jugador jugador2 = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("texto opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("texto opcion 2");
-        OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("texto opcion 3");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
 
-        jugador1.responder(pregunta.tipo(), op1, op2);
-        jugador1.seleccionarExclusividad(new ExclusividadSimple());
+            jugador1.responder(pregunta.tipo(), op1, op2);
+            jugador1.seleccionarExclusividad(new ExclusividadSimple());
 
-        jugador2.responder(pregunta.tipo(), op1);
+            jugador2.responder(pregunta.tipo(), op1);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -280,12 +322,15 @@ public class PreguntaMultipleChoiceTest {
         Jugador contrincante = new Jugador("J2");
 
         PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
-        OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
-        OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
-        OpcionCorrecta op3 = pregunta.agregarOpcionCorrecta("opcion 3");
-        OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
 
-        jugador.responder(pregunta.tipo(), null);
+            jugador.responder(pregunta.tipo(), null);
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
 
         pregunta.evaluarJugadores(jugador, contrincante);
 

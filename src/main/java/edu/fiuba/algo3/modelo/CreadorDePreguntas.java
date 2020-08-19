@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.Excepciones.CantidadInvalidaDeOpcionesException;
 import edu.fiuba.algo3.modelo.Preguntas.*;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
@@ -24,14 +25,18 @@ public class CreadorDePreguntas {
         Pregunta preguntaActual;
 
         for(int i = 0; i < json.length(); i++) {
-            preguntaActual = generarPregunta(json.getJSONObject(i));
-            if(preguntaActual != null)
+            try {
+                preguntaActual = generarPregunta(json.getJSONObject(i));
                 preguntas.add(preguntaActual);
+            } catch(CantidadInvalidaDeOpcionesException | NullPointerException e ) {
+
+            }
         }
+
         return preguntas;
     }
 
-    private static Pregunta generarPregunta(JSONObject preguntaJSON) {
+    private static Pregunta generarPregunta(JSONObject preguntaJSON) throws CantidadInvalidaDeOpcionesException{
         Puntaje puntajePregunta;
         try {
             puntajePregunta = generarPuntaje(preguntaJSON.getString("tipoPuntaje"));
@@ -68,6 +73,9 @@ public class CreadorDePreguntas {
         else
             pregunta = null;
 
+        if(pregunta.getCantidadOpciones() < 2)
+            throw new CantidadInvalidaDeOpcionesException();
+
         return pregunta;
     }
 
@@ -97,7 +105,7 @@ public class CreadorDePreguntas {
         } catch (JSONException e) {}
     }
 
-    private static void generarOpcionesMultipleChoice(PreguntaMultipleChoice pregunta, JSONObject preguntaJSON) {
+    private static void generarOpcionesMultipleChoice(PreguntaMultipleChoice pregunta, JSONObject preguntaJSON) throws CantidadInvalidaDeOpcionesException {
         try {
             for(Object opcionCorrecta : preguntaJSON.getJSONArray("opcionesCorrectas"))
                 pregunta.agregarOpcionCorrecta((String)opcionCorrecta);
@@ -107,7 +115,7 @@ public class CreadorDePreguntas {
         } catch (JSONException e) {}
     }
 
-    private static void generarOpcionesOrderedChoice(PreguntaOrderedChoice pregunta, JSONObject preguntaJSON) {
+    private static void generarOpcionesOrderedChoice(PreguntaOrderedChoice pregunta, JSONObject preguntaJSON) throws CantidadInvalidaDeOpcionesException {
         try {
             JSONArray opciones = preguntaJSON.getJSONArray("opciones");
             for(int i = 0; i < opciones.length(); i++)
@@ -116,7 +124,7 @@ public class CreadorDePreguntas {
         } catch (JSONException e) {}
     }
 
-    private static void generarOpcionesGroupChoice(PreguntaGroupChoice pregunta, JSONObject preguntaJSON) {
+    private static void generarOpcionesGroupChoice(PreguntaGroupChoice pregunta, JSONObject preguntaJSON) throws CantidadInvalidaDeOpcionesException {
         try {
             for(Object opcionG1 : preguntaJSON.getJSONArray("grupo1"))
                 pregunta.agregarOpcion((String)opcionG1, 1);

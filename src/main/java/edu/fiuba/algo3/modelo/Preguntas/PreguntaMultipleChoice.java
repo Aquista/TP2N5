@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
+import edu.fiuba.algo3.modelo.Excepciones.CantidadInvalidaDeOpcionesException;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
@@ -33,13 +34,17 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
         puntaje2.asignarPuntaje(jugador2);
     }
 
-    public OpcionCorrecta agregarOpcionCorrecta(String texto) {
+    public OpcionCorrecta agregarOpcionCorrecta(String texto) throws CantidadInvalidaDeOpcionesException {
+        if(opciones.size() >= 5)
+            throw new CantidadInvalidaDeOpcionesException();
         OpcionCorrecta opcion = new OpcionCorrecta(texto);
         agregarOpcionCorrecta(opcion);
         return opcion;
     }
 
-    public OpcionIncorrecta agregarOpcionIncorrecta(String texto) {
+    public OpcionIncorrecta agregarOpcionIncorrecta(String texto) throws CantidadInvalidaDeOpcionesException {
+        if(opciones.size() >= 5)
+            throw new CantidadInvalidaDeOpcionesException();
         OpcionIncorrecta opcion = new OpcionIncorrecta(texto);
         agregarOpcionIncorrecta(opcion);
         return opcion;
@@ -47,6 +52,11 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
 
     public Respuesta tipo() {
         return new RespuestaMultipleChoice();
+    }
+
+    @Override
+    public int getCantidadOpciones() {
+        return opciones.size();
     }
 
 }

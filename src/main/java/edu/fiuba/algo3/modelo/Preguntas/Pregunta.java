@@ -36,4 +36,5 @@ public abstract class Pregunta {
         return tiempo;
     }
 
+    public abstract int getCantidadOpciones();
 }

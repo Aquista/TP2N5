@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import edu.fiuba.algo3.modelo.Excepciones.CantidadInvalidaDeOpcionesException;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaOrderedChoice;
@@ -15,11 +16,16 @@ public class PreguntaOrderedChoiceTest {
         Jugador contrincante = new Jugador("J2");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
-        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
-        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
+        try {
+            OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+            OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+            OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador.responder(pregunta.tipo(), opcion1.duplicar(), opcion2.duplicar(), opcion3.duplicar());
+            jugador.responder(pregunta.tipo(), opcion1.duplicar(), opcion2.duplicar(), opcion3.duplicar());
+        }
+        catch (CantidadInvalidaDeOpcionesException e) {
+
+        }
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -33,11 +39,16 @@ public class PreguntaOrderedChoiceTest {
         Jugador contrincante = new Jugador("ASOI");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
-        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
-        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
+        try {
+            OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+            OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+            OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador.responder(pregunta.tipo(), opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
+            jugador.responder(pregunta.tipo(), opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
+        }
+        catch (CantidadInvalidaDeOpcionesException e) {
+
+        }
 
         pregunta.evaluarJugadores(jugador, contrincante);
 
@@ -50,12 +61,17 @@ public class PreguntaOrderedChoiceTest {
         Jugador jugador2 = new Jugador("ASDF");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
-        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
-        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
+        try {
+            OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+            OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+            OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador1.responder(pregunta.tipo(), opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
-        jugador2.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+            jugador1.responder(pregunta.tipo(), opcion1.duplicar(), opcion3.duplicar(), opcion2.duplicar());
+            jugador2.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+        }
+        catch (CantidadInvalidaDeOpcionesException e) {
+
+        }
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -69,12 +85,17 @@ public class PreguntaOrderedChoiceTest {
         Jugador jugador2 = new Jugador("ASDF");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
-        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
-        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
+        try {
+            OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+            OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+            OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador1.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
-        jugador2.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+            jugador1.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+            jugador2.responder(pregunta.tipo(), opcion1.duplicar(),opcion2.duplicar(), opcion3.duplicar());
+        }
+        catch (CantidadInvalidaDeOpcionesException e) {
+
+        }
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -88,12 +109,17 @@ public class PreguntaOrderedChoiceTest {
         Jugador jugador2 = new Jugador("J2");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
-        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
-        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
+        try {
+            OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+            OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+            OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador1.responder(pregunta.tipo(), opcion3.duplicar(), opcion2.duplicar(), opcion1.duplicar());
-        jugador1.responder(pregunta.tipo(), opcion2.duplicar(), opcion3.duplicar(), opcion1.duplicar());
+            jugador1.responder(pregunta.tipo(), opcion3.duplicar(), opcion2.duplicar(), opcion1.duplicar());
+            jugador1.responder(pregunta.tipo(), opcion2.duplicar(), opcion3.duplicar(), opcion1.duplicar());
+        }
+        catch (CantidadInvalidaDeOpcionesException e) {
+
+        }
 
         pregunta.evaluarJugadores(jugador1, jugador2);
 
@@ -106,11 +132,16 @@ public class PreguntaOrderedChoiceTest {
         Jugador contrincante = new Jugador("J2");
 
         PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
-        OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
-        OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
-        OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
+        try {
+            OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+            OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+            OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
 
-        jugador.responder(pregunta.tipo(), null);
+            jugador.responder(pregunta.tipo(), null);
+        }
+        catch (CantidadInvalidaDeOpcionesException e) {
+
+        }
 
         pregunta.evaluarJugadores(jugador, contrincante);
 

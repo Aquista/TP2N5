@@ -49,4 +49,9 @@ public class PreguntaVF extends PreguntaClasica {
         return new RespuestaVF();
     }
 
+    @Override
+    public int getCantidadOpciones() {
+        return 2;
+    }
+
 }

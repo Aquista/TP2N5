@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
+import edu.fiuba.algo3.modelo.Excepciones.CantidadInvalidaDeOpcionesException;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
@@ -40,11 +41,18 @@ public class PreguntaGroupChoice extends Pregunta{
         return new RespuestaGroupChoice();
     }
 
+    @Override
+    public int getCantidadOpciones() {
+        return opciones.size();
+    }
+
     public ArrayList<OpcionConGrupo> opciones(){
         return opciones;
     }
 
-    public OpcionConGrupo agregarOpcion(String unTexto, int grupoCorrecto) {
+    public OpcionConGrupo agregarOpcion(String unTexto, int grupoCorrecto) throws CantidadInvalidaDeOpcionesException{
+        if(opciones.size() >= 5)
+            throw new CantidadInvalidaDeOpcionesException();
         OpcionConGrupo unaOpcion = new OpcionConGrupo(unTexto, grupoCorrecto);
         opciones.add(unaOpcion);
         return unaOpcion;

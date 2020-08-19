@@ -30,4 +30,5 @@ public abstract class PreguntaClasica extends Pregunta {
         opciones.add(opcionIncorrecta);
     }
 
+
 }
