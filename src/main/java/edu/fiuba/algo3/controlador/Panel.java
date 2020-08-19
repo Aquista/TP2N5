@@ -29,7 +29,6 @@ public class Panel extends BorderPane {
     public Panel(Kahoot kahoot, Stage stage) {
         this.kahoot = kahoot;
         this.stage = stage;
-
         scene = new Scene(this,800,600);
         String pathCSS = this.getClass().getResource("/style.css").toExternalForm();
         scene.getStylesheets().add(pathCSS);
@@ -41,13 +40,9 @@ public class Panel extends BorderPane {
     }
     public void empezarPartida() {
         kahoot.empezarPartida();
-
-
         stage.setScene(scene);
-
         ArrayList<Jugador> jugadores = kahoot.getJugadores();
         vistaPuntajes = new VistaPuntajes(jugadores.get(0), jugadores.get(1));
-
         avanzarRonda();
     }
 
@@ -57,7 +52,6 @@ public class Panel extends BorderPane {
             mostrarResultadosFinales();
         else
             AvanzarTurnoController.avanzarTurno(this);
-
     }
 
     public void actualizar() {
@@ -72,7 +66,6 @@ public class Panel extends BorderPane {
 
     public void mostrarCambioTurno() {
         VistaCambioTurno vistaCambioTurno = new VistaCambioTurno(ronda.getJugador(),this);
-
         setCenter(vistaCambioTurno);
         setBottom(null);
         setLeft(null);
@@ -80,12 +73,10 @@ public class Panel extends BorderPane {
 
     private void mostrarResultadosFinales() {
         ArrayList<Jugador> jugadores = kahoot.getJugadores();
-
         Collections.sort(jugadores);
         VistaFinal vistaFinal = new VistaFinal(jugadores.get(0), jugadores.get(1));
         Scene escenaFinal = new Scene(vistaFinal,800,600);
         stage.setScene(escenaFinal);
-
         actualizar();
     }
 
@@ -96,9 +87,7 @@ public class Panel extends BorderPane {
     public void avanzarTurno() {
         VistaPreguntasFactory factory = new VistaPreguntasFactory();
         vistaPregunta = factory.creaVistaPregunta(ronda.getJugador(), ronda.getPregunta(), this);
-
         vistaModificadores = new VistaModificadores(ronda);
-
         actualizar();
     }
 }

@@ -31,9 +31,6 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
     }
 
     public void agregarInfo(){
-        Label textoNombreJugador = new Label(this.jugador.nombre());
-        textoNombreJugador.getStyleClass().add("texto-jugador");
-
         Label textoPregunta = new Label(this.pregunta.texto());
         textoPregunta.getStyleClass().add("texto-pregunta");
 
@@ -75,6 +72,6 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
         Button enviarRespuesta = new Button("Enviar");
         enviarRespuesta.setStyle("-fx-font-size: 18px");
         enviarRespuesta.setOnAction(new AsignarRespuestaGroupChoiceEventHandler(jugador, pregunta, choiceBoxes, panel, temporizador));
-        this.getChildren().addAll(textoTiempo, textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
+        this.getChildren().addAll(textoTiempo,textoPregunta, contenedorOpciones,enviarRespuesta);
     }
 }

@@ -38,9 +38,6 @@ public class VistaPreguntaVF extends VistaPregunta {
     }
 
     public void agregarInfo(){
-        Label textoNombreJugador = new Label(this.jugador.nombre());
-        textoNombreJugador.getStyleClass().add("texto-jugador");
-
         Label textoPregunta = new Label(this.pregunta.texto());
         textoPregunta.getStyleClass().add("texto-pregunta");
 
@@ -66,6 +63,6 @@ public class VistaPreguntaVF extends VistaPregunta {
             botones.getChildren().add(opcionActual);
         }
 
-        this.getChildren().addAll(textoTiempo, textoNombreJugador, textoPregunta,botones);
+        this.getChildren().addAll(textoTiempo, textoPregunta,botones);
     }
 }

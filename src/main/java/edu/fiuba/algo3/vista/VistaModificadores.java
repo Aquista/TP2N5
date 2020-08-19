@@ -9,8 +9,10 @@ import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
 import edu.fiuba.algo3.modelo.Ronda;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.VBox;
 
@@ -18,15 +20,21 @@ import java.util.ArrayList;
 
 public class VistaModificadores extends VBox {
     private Ronda ronda;
+    private Label nombreJugador;
 
     public VistaModificadores(Ronda ronda) {
         this.ronda = ronda;
+        this.setAlignment(Pos.CENTER);
+        this.nombreJugador = new Label();
+        this.nombreJugador.getStyleClass().add("texto-jugador");
         this.getStyleClass().add("contenedor-modificadores");
         this.setSpacing(10);
         agregarInfo();
     }
 
     public void agregarInfo() {
+        this.nombreJugador.setText(ronda.getJugador().nombre());
+        this.getChildren().add(this.nombreJugador);
         Puntaje puntajePregunta = ronda.getPregunta().getPuntaje();
         if(puntajePregunta.getClass() == PuntajeConPenalidad.class)
             mostrarMultiplicadores();

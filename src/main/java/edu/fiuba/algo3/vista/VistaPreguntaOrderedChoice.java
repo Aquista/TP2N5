@@ -30,9 +30,6 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
     }
 
     public void agregarInfo(){
-        Label textoNombreJugador = new Label(this.jugador.nombre());
-        textoNombreJugador.getStyleClass().add("texto-jugador");
-
         Label textoPregunta = new Label(this.pregunta.texto());
         textoPregunta.getStyleClass().add("texto-pregunta");
 
@@ -72,6 +69,6 @@ public class VistaPreguntaOrderedChoice extends VistaPregunta {
         enviarRespuesta.setStyle("-fx-font-size: 18px");
         enviarRespuesta.setOnAction(new AsignarRespuestaOrderedChoiceEventHandler(jugador, pregunta, opcionesSeleccionadas, panel, temporizador));
 
-        this.getChildren().addAll(textoTiempo, textoNombreJugador, textoPregunta, contenedorOpciones,enviarRespuesta);
+        this.getChildren().addAll(textoTiempo,textoPregunta, contenedorOpciones,enviarRespuesta);
     }
 }
