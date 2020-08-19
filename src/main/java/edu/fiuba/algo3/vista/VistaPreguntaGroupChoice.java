@@ -10,11 +10,12 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class VistaPreguntaGroupChoice extends VistaPregunta{
+public class VistaPreguntaGroupChoice extends VBox {
     private PreguntaGroupChoice pregunta;
     private Jugador jugador;
     private Panel panel;

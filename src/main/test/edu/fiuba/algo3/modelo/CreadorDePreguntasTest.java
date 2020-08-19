@@ -14,7 +14,7 @@ public class CreadorDePreguntasTest {
     public void test01Creo1PreguntaAPartirDeUnArchivoCon1Pregunta() {
         int cantidadDePreguntasEsperada = 1;
 
-        List<Pregunta> preguntas = CreadorDePreguntas.generarPreguntas("test01.json");
+        List<Pregunta> preguntas = CreadorDePreguntas.generarPreguntas("tests/test01.json");
 
         assertEquals(cantidadDePreguntasEsperada, preguntas.size());
     }
@@ -22,7 +22,7 @@ public class CreadorDePreguntasTest {
     public void test02Creo4PreguntasAPartirDeUnArchivoCon4Preguntas() {
         int cantidadDePreguntasEsperada = 4;
 
-        List<Pregunta> preguntas = CreadorDePreguntas.generarPreguntas("test02.json");
+        List<Pregunta> preguntas = CreadorDePreguntas.generarPreguntas("tests/test02.json");
 
         assertEquals(cantidadDePreguntasEsperada, preguntas.size());
     }
@@ -30,7 +30,7 @@ public class CreadorDePreguntasTest {
     public void test03ArchivoVacioDevuelveUnaListaDePreguntasVacia() {
         int cantidadDePreguntasEsperada = 0;
 
-        List<Pregunta> preguntas = CreadorDePreguntas.generarPreguntas("test03.json");
+        List<Pregunta> preguntas = CreadorDePreguntas.generarPreguntas("tests/test03.json");
 
         assertEquals(cantidadDePreguntasEsperada, preguntas.size());
     }

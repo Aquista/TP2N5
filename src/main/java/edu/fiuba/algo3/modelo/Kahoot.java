@@ -13,9 +13,8 @@ public class Kahoot {
     private Queue<Ronda> rondas = new LinkedList<Ronda>();
 
     public void empezarPartida(){
-        preguntas.addAll(CreadorDePreguntas.generarPreguntas("test02.json"));
+        preguntas.addAll(CreadorDePreguntas.generarPreguntas("Kahoot.json"));
         generarRondas();
-
     }
 
     public Ronda avanzarRonda() {

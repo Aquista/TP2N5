@@ -9,11 +9,12 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class VistaPreguntaOrderedChoice extends VistaPregunta {
+public class VistaPreguntaOrderedChoice extends VBox {
     private PreguntaOrderedChoice pregunta;
     private Jugador jugador;
     private Panel panel;
