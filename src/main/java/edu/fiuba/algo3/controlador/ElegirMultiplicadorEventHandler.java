@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.controlador;
 
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Modificadores.Multiplicador;
 import edu.fiuba.algo3.vista.VistaModificadores;
 import javafx.event.ActionEvent;

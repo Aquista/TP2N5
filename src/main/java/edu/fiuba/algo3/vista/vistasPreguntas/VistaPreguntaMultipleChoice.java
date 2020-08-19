@@ -1,13 +1,11 @@
 package edu.fiuba.algo3.vista.vistasPreguntas;
 
-import edu.fiuba.algo3.controlador.AsignarRespuestaGroupChoiceEventHandler;
 import edu.fiuba.algo3.controlador.AsignarRespuestaMultipleChoiceEventHandler;
 import edu.fiuba.algo3.controlador.Temporizador;
 import edu.fiuba.algo3.controlador.Panel;
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.Opcion;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
-import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;

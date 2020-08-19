@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.Preguntas;
 
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import edu.fiuba.algo3.modelo.Respuestas.Respuesta;

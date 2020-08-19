@@ -2,18 +2,16 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.ElegirExclusividadEventHandler;
 import edu.fiuba.algo3.controlador.ElegirMultiplicadorEventHandler;
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Modificadores.Exclusividad;
 import edu.fiuba.algo3.modelo.Modificadores.Multiplicador;
 import edu.fiuba.algo3.modelo.Puntajes.Puntaje;
-import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
 import edu.fiuba.algo3.modelo.Ronda;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;

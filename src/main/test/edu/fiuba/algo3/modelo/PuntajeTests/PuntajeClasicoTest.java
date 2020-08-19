@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.PuntajeTests;
 
-import edu.fiuba.algo3.modelo.Jugadores.Jugador;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeClasico;
