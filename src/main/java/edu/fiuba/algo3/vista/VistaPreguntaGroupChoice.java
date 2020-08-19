@@ -18,13 +18,14 @@ public class VistaPreguntaGroupChoice extends VistaPregunta{
     private PreguntaGroupChoice pregunta;
     private Jugador jugador;
     private Panel panel;
-    private int tiempo = 10;
+    private int tiempo;
 
     public VistaPreguntaGroupChoice(Jugador jugador, PreguntaGroupChoice unaPregunta, Panel panel){
         this.setAlignment(Pos.CENTER);
         this.setStyle("-fx-background-color: rgb(69, 123, 229)");
         this.setSpacing(20);
         this.pregunta = unaPregunta;
+        this.tiempo = unaPregunta.getTiempo();
         this.jugador = jugador;
         this.panel = panel;
         this.agregarInfo();

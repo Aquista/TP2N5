@@ -13,6 +13,10 @@ public abstract class PreguntaClasica extends Pregunta {
         super(texto, puntaje);
     }
 
+    public PreguntaClasica(String texto, Puntaje puntaje, int tiempo){
+        super(texto, puntaje, tiempo);
+    }
+
     public void agregarOpcionCorrecta(OpcionCorrecta opcionCorrecta){
         opciones.add(opcionCorrecta);
         totalCorrectas++;

@@ -41,26 +41,27 @@ public class CreadorDePreguntas {
 
         String tipoPregunta = preguntaJSON.getString("tipoPregunta");
         String textoPregunta = preguntaJSON.getString("pregunta");
+        int tiempoPregunta = obtenerTiempoPregunta(preguntaJSON);
 
         Pregunta pregunta;
 
         if(tipoPregunta.equals("VF")) {
-            PreguntaVF preguntaVF = new PreguntaVF(textoPregunta, puntajePregunta);
+            PreguntaVF preguntaVF = new PreguntaVF(textoPregunta, puntajePregunta, tiempoPregunta);
             generarOpcionesVF(preguntaVF, preguntaJSON);
             pregunta = preguntaVF;
         }
         else if(tipoPregunta.equals("MultipleChoice")) {
-            PreguntaMultipleChoice preguntaMC = new PreguntaMultipleChoice(textoPregunta, puntajePregunta);
+            PreguntaMultipleChoice preguntaMC = new PreguntaMultipleChoice(textoPregunta, puntajePregunta, tiempoPregunta);
             generarOpcionesMultipleChoice(preguntaMC, preguntaJSON);
             pregunta = preguntaMC;
         }
         else if(tipoPregunta.equals("OrderedChoice")) {
-            PreguntaOrderedChoice preguntaOC = new PreguntaOrderedChoice(textoPregunta);
+            PreguntaOrderedChoice preguntaOC = new PreguntaOrderedChoice(textoPregunta, tiempoPregunta);
             generarOpcionesOrderedChoice(preguntaOC, preguntaJSON);
             pregunta = preguntaOC;
         }
         else if(tipoPregunta.equals("GroupChoice")) {
-            PreguntaGroupChoice preguntaGP = new PreguntaGroupChoice(textoPregunta);
+            PreguntaGroupChoice preguntaGP = new PreguntaGroupChoice(textoPregunta, tiempoPregunta);
             generarOpcionesGroupChoice(preguntaGP, preguntaJSON);
             pregunta = preguntaGP;
         }
@@ -123,5 +124,15 @@ public class CreadorDePreguntas {
             for(Object opcionG2 : preguntaJSON.getJSONArray("grupo2"))
                 pregunta.agregarOpcion((String)opcionG2, 2);
         } catch (JSONException e) {}
+    }
+
+    private static int obtenerTiempoPregunta(JSONObject preguntaJSON) {
+        int tiempo = 15;
+
+        try {
+            tiempo = preguntaJSON.getInt("tiempo");
+        } catch (JSONException e) { }
+
+        return tiempo;
     }
 }

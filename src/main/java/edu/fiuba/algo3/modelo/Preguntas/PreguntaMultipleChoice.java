@@ -13,6 +13,10 @@ public class PreguntaMultipleChoice extends PreguntaClasica {
         super(texto, puntaje);
     }
 
+    public PreguntaMultipleChoice(String texto, Puntaje puntaje, int tiempo) {
+        super(texto, puntaje, tiempo);
+    }
+
     @Override
     public void evaluarJugadores(Jugador jugador1, Jugador jugador2) {
 

@@ -25,16 +25,17 @@ public class VistaPreguntaVF extends VistaPregunta {
     private PreguntaVF pregunta;
     private Jugador jugador;
     private Panel panel;
-    private int tiempo = 15;
+    private int tiempo;
 
     public VistaPreguntaVF(Jugador jugador, PreguntaVF unaPregunta, Panel panel){
-            this.setAlignment(Pos.CENTER);
-            this.setSpacing(20);
-            this.setStyle("-fx-background-color: hotpink");
-            this.pregunta = unaPregunta;
-            this.jugador = jugador;
-            this.panel = panel;
-            this.agregarInfo();
+        this.setAlignment(Pos.CENTER);
+        this.setSpacing(20);
+        this.setStyle("-fx-background-color: hotpink");
+        this.pregunta = unaPregunta;
+        this.tiempo = unaPregunta.getTiempo();
+        this.jugador = jugador;
+        this.panel = panel;
+        this.agregarInfo();
     }
 
     public void agregarInfo(){

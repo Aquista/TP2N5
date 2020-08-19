@@ -21,13 +21,14 @@ public class VistaPreguntaMultipleChoice extends VistaPregunta {
     private PreguntaMultipleChoice pregunta;
     private Jugador jugador;
     private Panel panel;
-    int tiempo = 10;
+    int tiempo;
 
     public VistaPreguntaMultipleChoice(Jugador jugador, PreguntaMultipleChoice unaPregunta, Panel panel){
         this.setAlignment(Pos.CENTER);
         this.setStyle("-fx-background-color: rgb(217, 208, 54)");
         this.setSpacing(20);
         this.pregunta = unaPregunta;
+        this.tiempo = unaPregunta.getTiempo();
         this.jugador = jugador;
         this.panel = panel;
         this.agregarInfo();

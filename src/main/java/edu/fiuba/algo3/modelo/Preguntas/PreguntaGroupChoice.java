@@ -16,6 +16,10 @@ public class PreguntaGroupChoice extends Pregunta{
         super(texto, new PuntajeClasico());
     }
 
+    public PreguntaGroupChoice(String texto, int tiempo) {
+        super(texto, new PuntajeClasico(), tiempo);
+    }
+
     @Override
     public void evaluarJugadores(Jugador jugador1, Jugador jugador2) {
         PuntajeClasico puntaje1 = new PuntajeClasico();
