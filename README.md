@@ -21,7 +21,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 
 Corrector: **Diego Sanchez**
 
-Descargar informe: [informe](https://github.com/Aquista/TP2N5/blob/master/docs/TP2N5.pdf)
+Descargar [informe](https://github.com/Aquista/TP2N5/blob/master/docs/TP2N5.pdf).
 
 ### Diagramas
 
