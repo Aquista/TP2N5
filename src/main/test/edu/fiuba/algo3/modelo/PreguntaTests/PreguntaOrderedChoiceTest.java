@@ -1,10 +1,12 @@
 package edu.fiuba.algo3.modelo.PreguntaTests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import edu.fiuba.algo3.modelo.Excepciones.CantidadInvalidaDeOpcionesException;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Opciones.OpcionConOrden;
+import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaOrderedChoice;
 import org.junit.jupiter.api.Test;
 
@@ -146,6 +148,24 @@ public class PreguntaOrderedChoiceTest {
         pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(0, jugador.getPuntaje());
+    }
 
+    @Test
+    public void test07PreguntaOrderedChoiceConMasDe5OpcionesTiraExcepcion(){
+        PreguntaOrderedChoice pregunta = new PreguntaOrderedChoice("hola");
+        try {
+            OpcionConOrden opcion1 = pregunta.agregarOpcion("Voy primero", 1);
+            OpcionConOrden opcion2 = pregunta.agregarOpcion("Voy segundo", 2);
+            OpcionConOrden opcion3 = pregunta.agregarOpcion("Voy tercero", 3);
+            OpcionConOrden opcion4 = pregunta.agregarOpcion("Voy cuarto", 4);
+            OpcionConOrden opcion5 = pregunta.agregarOpcion("Voy quinto", 5);
+
+        }
+        catch (CantidadInvalidaDeOpcionesException e) {}
+
+        assertThrows(CantidadInvalidaDeOpcionesException.class,
+                ()-> {
+                    OpcionConOrden opcion6 = pregunta.agregarOpcion("opcion6",6);
+                });
     }
 }

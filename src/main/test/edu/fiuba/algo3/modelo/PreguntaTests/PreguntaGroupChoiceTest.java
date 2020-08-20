@@ -7,6 +7,7 @@ import edu.fiuba.algo3.modelo.Preguntas.PreguntaGroupChoice;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class PreguntaGroupChoiceTest {
@@ -136,5 +137,23 @@ public class PreguntaGroupChoiceTest {
         pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(0, jugador.getPuntaje());
+    }
+    @Test
+    public void test07PreguntaConMasDe7OpcionesArrojaExcepcion(){
+
+        PreguntaGroupChoice pregunta = new PreguntaGroupChoice("hola");
+        try {
+            OpcionConGrupo opcion1 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+            OpcionConGrupo opcion2 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+            OpcionConGrupo opcion3 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+            OpcionConGrupo opcion4 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+            OpcionConGrupo opcion5 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+            OpcionConGrupo opcion6 = pregunta.agregarOpcion("Soy del grupo 2", 2);
+        }catch (CantidadInvalidaDeOpcionesException e){}
+
+        assertThrows(CantidadInvalidaDeOpcionesException.class,
+                ()-> {
+                    OpcionConGrupo opcion7 = pregunta.agregarOpcion("Soy del grupo 1", 1);
+                });
     }
 }

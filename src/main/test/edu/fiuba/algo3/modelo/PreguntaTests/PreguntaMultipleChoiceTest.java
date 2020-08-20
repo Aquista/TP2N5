@@ -3,6 +3,7 @@ package edu.fiuba.algo3.modelo.PreguntaTests;
 import edu.fiuba.algo3.modelo.Excepciones.CantidadInvalidaDeOpcionesException;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Modificadores.ExclusividadSimple;
+import edu.fiuba.algo3.modelo.Opciones.OpcionConGrupo;
 import edu.fiuba.algo3.modelo.Opciones.OpcionCorrecta;
 import edu.fiuba.algo3.modelo.Opciones.OpcionIncorrecta;
 import edu.fiuba.algo3.modelo.Preguntas.PreguntaMultipleChoice;
@@ -11,6 +12,8 @@ import edu.fiuba.algo3.modelo.Puntajes.PuntajeConPenalidad;
 import edu.fiuba.algo3.modelo.Puntajes.PuntajeParcial;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 public class PreguntaMultipleChoiceTest {
@@ -335,5 +338,28 @@ public class PreguntaMultipleChoiceTest {
         pregunta.evaluarJugadores(jugador, contrincante);
 
         assertEquals(puntajeEsperado, jugador.getPuntaje());
+    }
+
+    @Test
+    public void test014PreguntaMCConMasDe5OpcionesTiraExcepcion(){
+        int puntajeEsperado = 0;
+
+        Jugador jugador = new Jugador("J1");
+        Jugador contrincante = new Jugador("J2");
+
+        PreguntaMultipleChoice pregunta = new PreguntaMultipleChoice("texto", new PuntajeClasico());
+        try {
+            OpcionCorrecta op1 = pregunta.agregarOpcionCorrecta("opcion 1");
+            OpcionCorrecta op2 = pregunta.agregarOpcionCorrecta("opcion 2");
+            OpcionIncorrecta op3 = pregunta.agregarOpcionIncorrecta("opcion 3");
+            OpcionIncorrecta op4 = pregunta.agregarOpcionIncorrecta("opcion 4");
+            OpcionIncorrecta op5 = pregunta.agregarOpcionIncorrecta("opcion 5");
+
+        } catch(CantidadInvalidaDeOpcionesException e) {}
+
+        assertThrows(CantidadInvalidaDeOpcionesException.class,
+                ()-> {
+                    OpcionCorrecta opcion6 = pregunta.agregarOpcionCorrecta("opcion6");
+                });
     }
 }
